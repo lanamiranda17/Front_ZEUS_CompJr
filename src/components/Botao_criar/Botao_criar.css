@@ -1,0 +1,51 @@
+.Login_botao_criar{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+
+.Botao_criar_conta{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 100px;
+    height: 46px;
+
+    border-radius: 10px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    font-family: 'Nunito', sans-serif;
+    
+    border: 1px solid transparent;
+
+    background: 
+    linear-gradient(white, white) padding-box, /* fundo branco */
+    linear-gradient(135deg, #14ADD6 0%, #384295 100%) border-box;
+
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+
+}
+
+.Texto_botao_criar_conta{
+    
+    background: linear-gradient(135deg, #14ADD6 0%, #384295 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+}

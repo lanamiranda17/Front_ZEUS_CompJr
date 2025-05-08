@@ -1,0 +1,264 @@
+.Tela_toda{
+    display:flex;
+    height: 100vh; /*100% da altura da tela visível.*/
+    background-color: white;   
+    overflow-y:auto; 
+}
+
+.Login_card{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login_container{
+    /*display: flex;            TAVA FAZENDO A VISU FICAR ERRADA*/ 
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.Top_login{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+}
+
+.Bemvindo-entrar_container{
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+   
+
+    width: 80%;
+    height:auto;
+
+    form{
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+.Imagem_card{ 
+
+    display: flex;
+    flex:1;
+    height: 100vh;
+    width: 50%;
+    margin: 0;
+    overflow-y: hidden;
+    min-height: 450px;
+
+}
+.Imagem{
+    object-fit: cover;
+    width: 100%;
+    min-height: 764px;
+
+}
+
+.Textos_pequenos {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+}
+.Texto_bemvindo {
+/* Bem vindo de volta! */
+    margin: 2px;
+    color: #383838;
+}
+
+.Texto_facalogin{
+/* Faça o login novamente */
+
+    margin-top: 0px;
+    margin-bottom: 40px;
+
+    /* Heading / 2 */
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+
+    color: #272525;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+/*
+.Input_label{
+/* Email, Senha 
+    color: #121212;
+
+    width: 35px;
+    height: 24px;
+
+}
+
+.Input_box{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 5px;
+
+}*/
+
+.Input_box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:5px;
+  width: 100%;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  
+}
+
+.Input_label {
+  font-size: 14px;
+  color: #121212;
+  font-weight: 400;
+  
+}
+
+.Input_box input {
+  width: 100%;
+  min-height: 40px;
+
+  border: 1px solid #D0D0D0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 0px; /* NAO TINHA NO FIGMA*/
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding-left: 12px;
+
+}
+
+
+.Input_box input::placeholder {
+  color: #A1A1A1;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.Checkbox_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    width: 100%;
+}
+
+.Texto_checkbox{
+    width: 97px;
+    height: 24px;
+
+    color: #515151;
+}
+/*className='Input_checkbox' removida: padrão do navegador*/
+
+.Checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 4px;
+
+    width: 50%;
+
+    order: 0; /*Sobrescevendo o .Checkbox_link_container*/
+}
+.Link_esqueci_senha{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 50%;
+    background: linear-gradient(135deg, #14ADD6 0%, #384295 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+}
+
+
+.Botao_entrar{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 100%;
+    height: 45px;
+
+    background: linear-gradient(135deg, #14ADD6 0%, #384295 100%);
+    border-radius: 10px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+
+    /* ESSENCIAIS PARA LIMPAR O PADRÃO DO NAVEGADOR */
+    border: none;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    cursor: pointer;
+
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 468px) {
+    .Imagem {
+      display: none;
+    }
+    .Login_card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 928px) {
+    
+    .Texto_facalogin{
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Login_container{
+        width: 70%;
+    }
+}
+@media (min-width: 1700px) and (max-width: 2000px){
+    .Login_container{
+        width: 70%;
+    }
+}
+
+@media (min-width: 2001px){
+    .Login_container{
+        width: 60%;
+    }
+}
+
