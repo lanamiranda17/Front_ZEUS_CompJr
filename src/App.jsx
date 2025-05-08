@@ -1,7 +1,6 @@
-import Logo_comp from './components/Logo_comp/Logo_comp';
-import Botao_criar from './components/Botao_criar/Botao_criar';
-
-import ImageLogin from './assets/image_login.svg';
+import Top_login from './components/Top_login/Top_login';
+import Imagem_login from './components/Imagem_login/Imagem_login';
+import Input_box from './components/Input_box/Input_box';
 import './App.css';
 import { useState } from 'react';
 
@@ -29,27 +28,18 @@ function App() {
    <div className='Tela_toda'>
       <div className='Login_card'>
         <div className='Login_container'>
-          <div className='Top_login'>
-            <Logo_comp />
-            <Botao_criar />
-          </div>
+          <Top_login />
 
           <div className='Bemvindo-entrar_container'>
             <form onSubmit={fazerLogin}>
               <p className='Textos_pequenos Texto_bemvindo'>Bem vindo de volta!</p>
               <h1 className='Texto_facalogin'>Faça o login novamente</h1>
 
-              <div className='Input_box'>
-                <label htmlFor="email" className='Textos_pequenos Input_label'>Email</label>
-                <input id="email" type="email" placeholder='Entre com endereço de email' value={email}
+              <Input_box id='email' label='Email' type='email' placeholder='Entre com endereço de email' value={email}
                     onChange={(e) => setEmail(e.target.value)}/>
-              </div>
 
-              <div className='Input_box'>
-                <label htmlFor="senha" className='Textos_pequenos Input_label'>Senha</label>
-                <input id="senha" type='password' value={senha}
+              <Input_box id='senha' label='Senha' type='password' placeholder='Digite sua senha' value={email}
                     onChange={(e) => setSenha(e.target.value)}/>
-              </div>
 
               <div className='Checkbox_container'>
                 <div className='Checkbox'>
@@ -69,10 +59,7 @@ function App() {
           
         </div>
       </div>
-    <div className='Imagem_card'>
-      <img src={ImageLogin} className='Imagem'></img>
-    </div>
-
+    <Imagem_login />
    </div>
   )
 }
