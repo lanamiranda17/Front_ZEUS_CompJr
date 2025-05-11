@@ -1,10 +1,10 @@
 import ImageLogin from '../../assets/image_login.svg';
-import "./Imagem_login.css";
+import "./Imagens.css";
 
 function Imagem_login() {
     return (
-        <div className='Imagem_login_card'>
-            <img src={ImageLogin} className='Imagem_login'></img>
+        <div className='Imagem_card'>
+            <img src={ImageLogin} className='Imagem_container'></img>
         </div>
     ); 
 }

@@ -1,4 +1,4 @@
-.Imagem_login_card{ 
+.Imagem_card{ 
 
     display: flex;
     flex:1;
@@ -7,11 +7,12 @@
     margin: 0;
     overflow-y: hidden;
     min-height: 450px;
-
 }
-.Imagem_login{
-    object-fit: cover;
+.Imagem_container{
+    display: flex;
+    object-fit:cover;
     width: 100%;
     min-height: 764px;
+    object-position: inherit;
 
 }

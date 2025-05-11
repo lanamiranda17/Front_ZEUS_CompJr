@@ -1,0 +1,157 @@
+.Autenticacao_card{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Autenticacao_container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Insira-verificar_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    height:auto;
+
+    form{
+        width: 100%;
+        height: auto;
+    }
+
+    h1{    
+    margin-top: 0px;
+    margin-bottom: 40px;
+    
+    /* Heading / 2 */
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 38px;
+    
+    color: #272525;
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    }
+}
+
+.Codigo_inputs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.Login_logo{
+    width: 80%;
+    
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.Input_codigo {
+  width: 36px;
+  height: 45px;
+
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Nunito';
+
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.Input_codigo:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 350px) {
+    .Input_codigo {
+        width: 100%;
+        height: calc(10vw * 1.1);
+        font-size: 13px;
+    }
+    .Insira-verificar_container{
+        width: 100%;
+    }
+    .Autenticacao_card{
+        width:100%;
+    }
+    .Login_logo{
+        width: 100%;
+    }
+}
+
+@media (max-width: 468px){
+    .Input_codigo {
+        width: 100%;
+        height: calc(10vw * 1.1);
+        font-size: 15px
+    }
+    .Insira-verificar_container{
+        width: 100%;
+        h1{
+            font-size: 25px;
+        }
+    }
+    .Autenticacao_card{
+        width:100%;
+    }
+    .Login_logo{
+        width: 100%;
+    }
+
+}
+
+@media (min-width: 469px) and (max-width: 600px){
+    .Input_codigo {
+        width: 100%;
+        height: calc(10vw * 0.9);
+        font-size: 15px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .Login_logo{
+        width: 80%;
+    }
+    .Autenticacao_card{
+        width:100%;
+    }
+}
+    
+@media (min-width: 601px) and (max-width: 928px) {
+    .Input_codigo {
+        width: 100%;
+        height: calc(10vw * 0.5);
+        font-size: 15px;
+    }
+    h1{
+        font-size: 23px;
+    }
+    .Codigo_inputs{
+        gap: 8px;
+    }
+    .Login_logo{
+        width: 80%;
+    }
+}

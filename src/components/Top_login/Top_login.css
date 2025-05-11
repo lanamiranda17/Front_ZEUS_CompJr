@@ -2,6 +2,13 @@
     width: 80%;
     display: flex;
     flex-direction: row;
+
+}
+.Login_logo{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
     margin-bottom: 50px;
 
 }
@@ -12,6 +19,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    margin-bottom: 50px;
 
 }
 
@@ -56,4 +64,9 @@
     order: 0;
     flex-grow: 0;
 
+}
+@media (max-width: 468px){
+    .Top_login{
+        width: 100%
+    }
 }
