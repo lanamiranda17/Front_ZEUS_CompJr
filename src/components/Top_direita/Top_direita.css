@@ -1,0 +1,43 @@
+
+.Top_direita{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    
+    width: 171px;
+    height: 40px;
+}
+
+.Textos_pequenos{
+    margin: 0px;
+}
+
+.Texto_setor{
+    width: 18px;
+    height: 20px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0px;
+
+    /* Grey / 70 */
+    color: #515151;
+
+}
+
+.Textos_direita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Botao_menu{
+    background: none;       /* remove fundo padrão */
+    border: none;           /* remove borda */
+    padding: 0;             /* remove espaçamento interno */
+    cursor: pointer;
+}

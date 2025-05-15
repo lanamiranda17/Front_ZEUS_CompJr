@@ -113,11 +113,11 @@
         height: calc(10vw * 0.9);
         font-size: 15px;
     }
-    h1{
-        font-size: 20px;
-    }
     .Verificacao_card{
         width:100%;
+        h1{
+            font-size: 20px;
+        }
     }
     
 }
@@ -128,8 +128,10 @@
         height: calc(10vw * 0.5);
         font-size: 15px;
     }
-    h1{
-        font-size: 23px;
+    .Recuperacao-verificar_container{
+        h1{
+            font-size: 23px;
+        }
     }
     .Codigo_inputs{
         gap: 8px;

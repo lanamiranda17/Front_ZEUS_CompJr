@@ -1,0 +1,48 @@
+.Top_dashboard{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+
+    background: #F8F9FD;
+
+}
+.Texto_saudacao{
+/* Bem-vindo, Sr. João Jão */
+
+    width: 200px;
+    height: 27px;
+
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 5px;
+    margin-left: 20px;
+
+}
+
+.Texto_data{
+/* Hoje é sábado, 11 de novembro de 2025. */
+
+    width: 222px;
+    height: 20px;
+    margin-top: 0px;
+    margin-left: 20px;
+
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #262626;
+}
+
+.Top_esquerda{
+    display: flex;
+    flex-direction: column;
+}

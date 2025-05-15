@@ -59,6 +59,7 @@ function Tela_autenticacao() {
     e.preventDefault();
     console.log("Código enviado:", codigo.join(''));
     // Validação do código pelo back-end viria aqui
+    navigate ('/confirmacao');
   };
 
   return (

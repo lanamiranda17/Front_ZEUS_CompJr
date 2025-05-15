@@ -62,7 +62,7 @@ function Tela_verificacao() {
     e.preventDefault();
     console.log("Código enviado:", codigo.join(''));
     // Validação do código pelo back-end viria aqui
-    navigate('/');
+    navigate('/confirmacao');
 
   };
 
@@ -91,7 +91,7 @@ function Tela_verificacao() {
                   />
                 ))}
               </div>              
-              <button onClick={Verificar_codigo} className='Textos_pequenos Botao_entrar' type='submit'>Enviar</button>
+              <button onClick={Verificar_codigo} className='Textos_pequenos Botao_entrar' type='submit'>Verificar</button>
             </form>
           </div>
         </div>

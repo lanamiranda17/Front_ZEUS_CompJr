@@ -1,0 +1,63 @@
+.Nav_bar{
+    width: 20%;
+    height: 100%;
+    background-color: white;
+
+}
+
+.Login_logo{
+    height: 150px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+
+.Botao_navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #272525;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Botao_navbar img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0); /* ícone preto */
+}
+
+.Botao_navbar:hover img {
+    fill:#0d6efd;
+    filter: none;
+}
+
+.Botao_navbar:hover {
+  background-color: #f2f2f2;
+  color: #0d6efd; /* azul principal */
+  font-weight: 600;
+  border-left: 4px solid #0d6efd;
+}
+
+
+.Botao_selecionado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  width: 100%;
+  border: none;
+  background-color: #e6f0ff; /* azul clarinho */
+  color: #0d6efd; /* azul principal */
+  font-weight: 600;
+  border-left: 4px solid #0d6efd;
+  text-align: left;
+}
+
