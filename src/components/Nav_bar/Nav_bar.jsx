@@ -19,38 +19,31 @@ function Nav_bar (){
     const location = useLocation();
     const pathname = location.pathname;
 
+    const renderizar_botao = (rota, icone, texto) => (
+    <button className={pathname === rota ? 'Botao_selecionado' : 'Botao_navbar'}>
+        <div className="Barra_azul"></div>
+        <img src={icone} alt="" /> <span>{texto}</span>
+    </button>
+);
+
     return (
         <div className='Nav_bar'>
-            <div className="Login_logo">
+            <div className="Login_logo_navbar">
                 <img src= {LogoComp} />
             </div>
-            <button className={pathname === '/dashboard' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_dashboard}/> Dashboard</button>
-            <button className={pathname === '/funcionarios' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_func_comprov}/> Funcionários</button>
-            <button className={pathname === '/comprovantes' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_func_comprov}/> Comprovantes de pagamento</button>
-            <button className={pathname === '/pagamentos' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_pag}/> Pagamentos recebidos</button>
-            <button className={pathname === '/comunicados' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_comunicados}/>Comunicados</button>
-            <button className={pathname === '/circulares' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_circ}/> Circulares</button>
-            <button className={pathname === '/manutencao' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_manut}/> Manutenção</button>
-            <button className={pathname === '/logistica' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_logist}/> Logística</button>
-            <button className={pathname === '/orcamento' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_orcam}/>  Orçamento</button>
-            <button className={pathname === '/estoque' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_estoq}/> Estoques e inventário</button>
-            <button className={pathname === '/notificacoes' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_notif}/> Notificações</button>
-            <button className={pathname === '/capacitacao' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_capac}/> Capacitação</button>
-            <button className={pathname === '/aquisicoes' ? 'Botao_selecionado' : 'Botao_navbar'}>
-                <img src={Icon_aquis}/> Aquisições</button>
-
+            {renderizar_botao('/dashboard', Icon_dashboard, 'Dashboard')}
+            {renderizar_botao('/funcionarios', Icon_func_comprov, 'Funcionários')}
+            {renderizar_botao('/comprovantes', Icon_func_comprov, 'Comprovantes de pagamento')}
+            {renderizar_botao('/pagamentos', Icon_pag, 'Pagamentos recebidos')}
+            {renderizar_botao('/comunicados', Icon_comunicados, 'Comunicados')}
+            {renderizar_botao('/circulares', Icon_circ, 'Circulares')}
+            {renderizar_botao('/manutencao', Icon_manut, 'Manutenção')}
+            {renderizar_botao('/logistica', Icon_logist, 'Logística')}
+            {renderizar_botao('/orcamento', Icon_orcam, 'Orçamento')}
+            {renderizar_botao('/estoque', Icon_estoq, 'Estoques e inventário')}
+            {renderizar_botao('/notificacoes', Icon_notif, 'Notificações')}
+            {renderizar_botao('/capacitacao', Icon_capac, 'Capacitação')}
+            {renderizar_botao('/aquisicoes', Icon_aquis, 'Aquisições')}
         </div>
     );
 }

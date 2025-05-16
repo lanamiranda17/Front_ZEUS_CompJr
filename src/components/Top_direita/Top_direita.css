@@ -36,8 +36,8 @@
 }
 
 .Botao_menu{
-    background: none;       /* remove fundo padrão */
-    border: none;           /* remove borda */
-    padding: 0;             /* remove espaçamento interno */
+    background: none;       /* removend config padrao */
+    border: none;           
+    padding: 0;             
     cursor: pointer;
 }

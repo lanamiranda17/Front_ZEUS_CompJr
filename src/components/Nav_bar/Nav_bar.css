@@ -1,11 +1,13 @@
 .Nav_bar{
     width: 20%;
-    height: 100%;
+    height: auto;
     background-color: white;
+    padding-bottom: 10px;
 
 }
 
-.Login_logo{
+.Login_logo_navbar{
+    display:flex;
     height: 150px;
     width: 100%;
     align-items: center;
@@ -13,39 +15,18 @@
     margin: 0px;
 }
 
-.Botao_navbar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  color: #272525;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: left;
-  transition: background-color 0.3s, color 0.3s;
-}
 
 .Botao_navbar img {
   width: 18px;
   height: 18px;
   filter: brightness(0); /* ícone preto */
+
 }
 
 .Botao_navbar:hover img {
     fill:#0d6efd;
     filter: none;
 }
-
-.Botao_navbar:hover {
-  background-color: #f2f2f2;
-  color: #0d6efd; /* azul principal */
-  font-weight: 600;
-  border-left: 4px solid #0d6efd;
-}
-
 
 .Botao_selecionado {
   display: flex;
@@ -60,4 +41,57 @@
   border-left: 4px solid #0d6efd;
   text-align: left;
 }
+.Botao_navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  padding-left: 16px; /* espaço para a barra */
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  gap: 12px;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+  color: #272525;
+  font-size: 14px;
+  text-align: left;
+}
 
+.Botao_navbar:hover {
+  background-color: #f2f2f2;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.Barra_azul {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background-color: #0d6efd;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: width 0.3s;
+}
+
+
+.Botao_navbar:hover .Barra_azul,
+.Botao_selecionado .Barra_azul {
+  width: 6px;
+}
+.Botao_navbar, .Botao_selecionado {
+  position: relative; /* Adiciona essa linha */
+}
+
+
+.Botao_navbar span,
+.Botao_selecionado span {
+  transition: padding-left 0.3s ease;
+}
+
+.Botao_navbar:hover span,
+.Botao_selecionado span {
+  padding-left: 4px;
+}

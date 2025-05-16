@@ -13,13 +13,20 @@ function Tela_dashboard() {
   return (
    <div className='Tela_toda'>
       <Nav_bar/>
-      <div className='Top_dashboard'>
+      <div className='Dashboard_card'>
+        <div className='Top_dashboard'>
         <div className='Top_esquerda'>
           <p className='Texto_saudacao'> Bem-vindo {nome_usuario}!</p>
           <p className='Texto_data'> Hoje é {dia_semana}, {data_dia} de {data_mes} de {data_ano}.</p>
         </div>
         <Top_direita/>
+        </div>
+        <div className='Cards_dashboard'>
+          
+
+        </div>
       </div>
+      
 
    </div>
         

@@ -4,10 +4,8 @@
     justify-content: space-between;
     align-items: center;
 
-    width: 80%;
+    width: 100%;
     height: 100px;
-    left: 0px;
-    top: 0px;
 
     background: #F8F9FD;
 
@@ -46,3 +44,19 @@
     display: flex;
     flex-direction: column;
 }
+
+.Cards_dashboard{
+    display: flex;
+    flex-direction: row;
+
+}
+.Dashboard_card{
+    display: flex;
+    flex-direction: column;
+    background: #F8F9FD;
+    width: 80%;
+    height: auto;
+}
+
+
+
