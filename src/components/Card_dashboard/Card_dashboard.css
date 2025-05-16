@@ -1,0 +1,60 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  gap: 16px;
+  width: 20%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+}
+
+.Card_topo {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Numero_card {
+  font-weight: 800;
+  font-size: 24px;
+  color: #121212;
+}
+
+.Titulo_card {
+  font-size: 14px;
+  color: #121212;
+  margin-top: 4px;
+}
+
+.Icone_card {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Estatistica {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+    color: #515151; 
+}
+
+.positivo {
+  color: #28a745;
+}
+
+.negativo {
+  color: #dc3545;
+}
+
+.Seta {
+  font-weight: 800;
+  font-size: 14px;
+}
