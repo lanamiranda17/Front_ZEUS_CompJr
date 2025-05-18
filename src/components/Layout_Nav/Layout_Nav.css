@@ -1,0 +1,65 @@
+.Nav_bar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #e7e7e7 #ffffff; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.Nav_bar::-webkit-scrollbar {
+  width: 6px;
+  background: #ffffff;
+}
+.Nav_bar::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  border-radius: 8px;
+}
+.Nav_bar::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden; 
+  margin: 0;
+}
+
+.LayoutComNav {
+  display: flex;
+  height: 100vh;
+}
+
+
+.ConteudoDashboard {
+  flex: 1;
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #edeff8;
+  box-sizing: border-box;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #cccccc #edeff8; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+.ConteudoDashboard::-webkit-scrollbar {
+  width: 6px;
+  background: #edeff8;
+}
+.ConteudoDashboard::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 8px;
+}
+.ConteudoDashboard::-webkit-scrollbar-track {
+  background: #edeff8;
+}

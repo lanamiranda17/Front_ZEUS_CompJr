@@ -1,79 +1,78 @@
-.Top_dashboard{
+.Top_dashboard {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 75px;
 
-    width: 100%;
-    height: 100px;
-
-    background: #dcdfeb;
-
-}
-.Texto_saudacao{
-/* Bem-vindo, Sr. João Jão */
-
-    width: 200px;
-    height: 27px;
-
-    font-weight: 800;
-    font-size: 20px;
-    line-height: 27px;
-    color: #000000;
-    margin-bottom: 5px;
-    margin-left: 20px;
+  background: #edeff8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px -2px rgba(0,0,0,0.10);  /* Sombra apenas na margem inferior */
 
 }
 
-.Texto_data{
-/* Hoje é sábado, 11 de novembro de 2025. */
-
-    width: 222px;
-    height: 20px;
-    margin-top: 0px;
-    margin-left: 20px;
-
-
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 20px;
-    color: #262626;
+.Texto_saudacao {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 5px;
+  margin-left: 20px;
 }
 
-.Top_esquerda{
-    display: flex;
-    flex-direction: column;
+.Texto_data {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #262626;
+  margin-top: 0;
+  margin-left: 20px;
 }
 
-.Cards_dashboard{
-    display: flex;
-    flex-direction: row;
-
+.Top_esquerda {
+  display: flex;
+  flex-direction: column;
 }
-.Dashboard_card{
-    display: flex;
-    flex-direction: column;
-    background: #dcdfeb;
-    width: 80%;
-    height: auto;
+
+.Tela_toda {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+}
+
+.Dashboard_card {
+  flex: 1;
+  overflow-y: auto;
+  background: #edeff8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .Cards_dashboard {
-    display: flex;
-    flex-direction: row;
-    margin: 0px 20px 0px 20px;
-    gap:10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 96%;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 0 20px 10px 20px;
 }
 
-.Card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-    width: 20%;
-    height: 102px;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.05);
+.Tabelas {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px 40px 20px;
 }
 
+.Tabela {
+  width: 49%;
+  box-sizing: border-box;
+}

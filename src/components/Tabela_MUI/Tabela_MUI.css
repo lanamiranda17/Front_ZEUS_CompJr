@@ -1,0 +1,42 @@
+.TabelaContainer {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.Titulo_tabela {
+  font-weight: 800;
+  font-size: 15px;
+  color: #272525;
+  padding: 2px 0 6px 4px;
+}
+
+/* Estilo padrão das células */
+.TabelaContainer .MuiTableCell-root,
+.TabelaContainer .MuiTableCell-head {
+  font-size: 12px !important;
+  padding: 8px 12px !important;
+  color: #272525 !important;
+  background: white !important;
+  font-family: 'Nunito' !important;
+}
+
+.TabelaContainer .MuiTableCell-head {
+  font-weight: 600 !important;
+}
+
+/* Estilo de status */
+.Status {
+  font-weight: 600;
+}
+
+.Status.Aprovado {
+  color: #1c9e4b; /* Verde */
+}
+
+.Status.Pendente {
+  color: #f2994a; /* Laranja */
+}

@@ -154,3 +154,20 @@
     }
 }
 
+.Tela_toda {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+}
+@media (max-width: 900px) {
+    .Tela_toda {
+        flex-direction: column;
+        height: auto;
+    }
+    .Verificacao_card {
+        width: 100%;
+    }
+}
+

@@ -3,6 +3,7 @@ import './Card_dashboard.css';
 
 function Card_dashboard({ valor, titulo, variacao, tipoVariacao, icone, corIcone }) {
   const isPositivo = tipoVariacao === 'positivo';
+  const sem_variacao = tipoVariacao === '';
 
   return (
     <div className="Card">
@@ -15,14 +16,19 @@ function Card_dashboard({ valor, titulo, variacao, tipoVariacao, icone, corIcone
           <img src={icone} alt="icone" />
         
       </div>
+      {!sem_variacao && (
       <div className= "Estatistica">
         <span className={`Seta ${isPositivo ? 'positivo' : 'negativo'}`}>
           {isPositivo ? <FaArrowUp /> : <FaArrowDown />}
         </span>
-        <span>{variacao}</span>
+        <span>
+          {variacao} {isPositivo? "a mais que no último trimestre" : "a menos que no último trimestre"}
+        </span>
       </div>
+      )}
     </div>
   );
 }
+
 
 export default Card_dashboard;

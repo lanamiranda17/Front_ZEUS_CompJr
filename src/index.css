@@ -6,6 +6,8 @@ body{
     overflow-y: auto;
 }
 
+
+
 .Textos_pequenos{
     font-style: normal;
     font-weight: 400;
@@ -14,11 +16,22 @@ body{
     /* identical to box height, or 171% */
 }
 
-.Tela_toda{
-    display:flex;
-    height: 100vh; /*100% da altura da tela visível.*/
-    background-color: white;   
-    overflow-y:auto; 
+.Tela_toda {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+}
+
+@media (max-width: 900px) {
+    .Tela_toda {
+        flex-direction: column;
+        height: auto;
+    }
+    .Login_card, .Recuperacao_card, .Redefinicao_card, .Verificacao_card, .Autenticacao_card {
+        width: 100%;
+    }
 }
 
 h2 {
