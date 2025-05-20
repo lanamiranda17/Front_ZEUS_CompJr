@@ -6,7 +6,8 @@ import Tela_esqueceu from './Pages/Tela_esqueceu/Tela_esqueceu';
 import Tela_verificacao from './Pages/Tela_verificacao/Tela_verificacao';
 import Tela_redefinicao from './Pages/Tela_redefinicao/Tela_redefinicao';
 import Tela_dashboard from './Pages/Tela_dashboard/Tela_dashboard';
-import Nav_bar from './components/Nav_bar/Nav_bar';
+import Tela_funcionarios from './Pages/Tela_funcionarios/Tela_funcionarios';
+import Top_direita from './components/Top_direita/Top_direita';
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
       <Route path="/recuperacao_de_senha" element={<Tela_esqueceu />} />
       <Route path="/redefinicao" element={<Tela_verificacao />} />
       <Route path="/confirmacao" element={<Tela_redefinicao />} />
-
       <Route path="/dashboard" element={<Tela_dashboard />} />
-      <Route path="/navbar" element={<Nav_bar />} />
+      <Route path="/funcionarios" element={<Tela_funcionarios />} />
+      <Route path="/top" element={<Top_direita />} />
 
     </Routes>
   );

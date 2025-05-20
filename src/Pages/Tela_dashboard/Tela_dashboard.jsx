@@ -8,6 +8,7 @@ import Icon_proj from "../../assets/Icons/Icon_proj.svg";
 import Icon_depart from "../../assets/Icons/Icon_depart.svg" ;
 import Tabela_MUI from '../../components/Tabela_MUI/Tabela_MUI';
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
+import Donut_MUI from '../../components/Donut_MUI/Donut_MUI';
 
 
 function Tela_dashboard() {
@@ -186,8 +187,8 @@ const dadosCandidaturas = [
             <div className='Tabela'>
               <Tabela_MUI titulo="Comprovantes de pagamentos" colunas={colunasPagamentos} dados={dadosPagamentos} />
             </div>
-            <div>
-              {/* <Donut_MUI titulo="Card de candidaturas" dados={dadosCandidaturas} /> */}
+            <div className='Tabela'>
+              <Donut_MUI titulo="Candidaturas" dados={dadosCandidaturas} />
             </div>
           </div>
         </div>

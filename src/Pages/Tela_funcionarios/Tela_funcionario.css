@@ -1,0 +1,456 @@
+.Top_funcionarios {
+  display: flex;
+  width: 99%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+
+  height: 75px;
+
+  background: #edeff8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px -2px rgba(0,0,0,0.10);  /* Sombra apenas na margem inferior */
+
+}
+
+.Texto_titulo {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+.Texto_subtitulo {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #262626;
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+.Top_esquerda {
+  display: flex;
+  flex-direction: column;
+}
+
+.Tela_toda {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; 
+}
+
+.Funcionarios_card {
+  flex: 1;
+  overflow-y: auto;
+  background: #edeff8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Card_pesquisa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  width: 100%;
+  gap: 12px;
+  border-radius: 20px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.Paginacao_func {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Botao_paginacao {
+  background: #fff;
+  border: 1.5px solid #c7d7f7;
+  color: #3a3a3a;
+  font-weight: 600;
+  font-size: 0.7rem;
+  border-radius: 8px;
+  min-width: 28px;
+  min-height: 28px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  outline: none;
+}
+.Botao_paginacao.ativa {
+  background: #f3f6fa;
+  color: #555;
+  border-color: #3b82f6;
+  pointer-events: none;
+}
+.Botao_paginacao:focus {
+  border-color: #2563eb;
+}
+.Botao_paginacao:active:not(.ativa) {
+  background: #e0e7ff;
+}
+
+.Seta_paginacao {
+  background: #f3f6fa;
+  border: 1.5px solid #c7d7f7;
+  border-radius: 8px;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  color: #555;
+  margin: 0 2px;
+}
+.Seta_paginacao svg {
+  display: block;
+  stroke: #555;
+}
+.Seta_paginacao.desativado,
+.Seta_paginacao:disabled {
+  background: #f3f6fa;
+  border-color: #e5e7eb;
+  color: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.Seta_paginacao.desativado svg {
+  stroke: #bdbdbd;
+}
+
+.Info_paginacao {
+  font-size: 0.98rem;
+  color: #555;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.Select_paginacao {
+  background: #f2f7ff;
+  border: 1.5px solid #c7d7f7;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #3a3a3a;
+  padding: 5px 12px;
+  margin-left: 8px;
+  outline: none;
+  transition: border 0.2s;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+.Select_paginacao:focus {
+  border-color: #2563eb;
+}
+
+.Conteudo_funcionarios{
+  padding: 20px;
+}
+
+.Caixa_pesquisa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 0 1.2rem;
+  height: 50px;
+  margin: 0;
+  border: 1.5px solid #d1d1d1;
+  width: 100%;
+}
+
+.Texto_pesquisa {
+  margin-bottom: 12px;
+  margin-left: 2px;
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #121212;
+  width: 100%;
+}
+
+.Input_pesquisa {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: "Nunito";
+  background: transparent;
+  color: #444;
+  padding: 0.5rem 0;
+}
+
+.Input_pesquisa::placeholder {
+  color: #d1d1d1;
+  font-size: 0.90rem;
+  font-family: 'Nunito';
+}
+
+.Botao_pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0 0 0 0.5rem;
+  cursor: pointer;
+  height: 100%;
+  transition: filter 0.2s;
+}
+
+.Titulo_funcionarios{
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  color: #272525;
+}
+
+.Barra_pesquisa {
+  display: flex;
+  flex-direction: column;
+  width: 28%
+}
+
+.Botao_pesquisa:hover svg {
+  filter: brightness(0.7);
+}
+
+.Texto_funcionarios{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #515151;
+  width: 13%
+}
+
+.Numero_funcionarios{
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #272525;
+}
+
+.Filtro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 20%;
+}
+
+
+.Select_filtro {
+  width: 100%;
+  min-width: 150px;
+  max-width: 220px;
+  background: #F2F7FF;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 18px 14px 18px;
+  font-size: 1.00rem;
+  color: #9ca3af;
+  font-family: 'Nunito';
+  appearance: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L10 12L14 8' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+
+.Select_filtro:focus {
+  box-shadow: 0 0 0 2px #c7d7f7;
+}
+
+.Select_filtro option {
+  color: #222;
+  background: #fff;
+  font-size: 14px;
+}
+
+.Botao_adicionar{
+  width: 20%;
+}
+
+/* PAGINAÇÃO FUNCIONÁRIOS */
+.Paginacao_func {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0 0 0;
+  padding: 0;
+  width: 100%;
+}
+
+.Botao_paginacao {
+  background: #fff;
+  border: 1.5px solid #c7d7f7;
+  color: #3a3a3a;
+  font-weight: 600;
+  font-size: 0.7rem;
+  border-radius: 8px;
+  min-width: 28px;
+  min-height: 28px;
+  margin: 0 2px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  outline: none;
+}
+.Botao_paginacao.ativa {
+  background: #f3f6fa;
+  color: #555;
+  border-color: #3b82f6;
+  pointer-events: none;
+}
+.Botao_paginacao:focus {
+  border-color: #2563eb;
+}
+.Botao_paginacao:active:not(.ativa) {
+  background: #e0e7ff;
+}
+
+.Seta_paginacao {
+  background: #f3f6fa;
+  border: 1.5px solid #c7d7f7;
+  border-radius: 8px;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  color: #555;
+  margin: 0 2px;
+}
+.Seta_paginacao svg {
+  display: block;
+  stroke: #555;
+}
+.Seta_paginacao.desativado,
+.Seta_paginacao:disabled {
+  background: #f3f6fa;
+  border-color: #e5e7eb;
+  color: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.Seta_paginacao.desativado svg {
+  stroke: #bdbdbd;
+}
+
+.Select_paginacao {
+  background: #f2f7ff;
+  border: 1.5px solid #c7d7f7;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #3a3a3a;
+  padding: 5px 12px;
+  margin-left: 8px;
+  outline: none;
+  transition: border 0.2s;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+.Select_paginacao:focus {
+  border-color: #2563eb;
+}
+
+@media (max-width: 1000px) {
+  .Card_pesquisa {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
+    min-width: 140px;
+    max-width: 100%;
+    flex: 1 1 140px;
+  }
+}
+
+@media (max-width: 700px) {
+  .Card_pesquisa {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .Paginacao_func {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 16px;
+  }
+  .Botao_paginacao, .Seta_paginacao {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 0.95rem;
+  }
+  .Info_paginacao {
+    font-size: 0.8rem;
+    margin: 0 4px;
+  }
+  .Select_paginacao {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Barra_pesquisa {
+    max-width: 100%;
+    height: 42px;
+    padding: 0 0.7rem;
+  }
+  .Input_pesquisa {
+    font-size: 0.95rem;
+  }
+  .Caixa_pesquisa {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .Filtro {
+    min-width: 120px;
+    max-width: 100%;
+  }
+  .Select_filtro {
+    min-width: 100px;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 10px 12px 10px 12px;
+  }
+}
+

@@ -1,60 +1,41 @@
-import { PieChart } from '@mui/x-charts/PieChart';
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { PieChart } from '@mui/x-charts';
+import { useMediaQuery, useTheme } from '@mui/material';
+import './Donut_MUI.css';
 
 export default function Donut_MUI({ titulo, dados }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
   const total = dados.reduce((acc, item) => acc + item.value, 0);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
-        justifyContent: 'space-between',
-        alignItems: isMobile ? 'flex-start' : 'center',
-        padding: 2,
-        borderRadius: 2,
-        backgroundColor: 'white',
-        boxShadow: 2,
-        width: '100%',
-        height: '100%',
-        gap: 2,
-      }}
-    >
-      <Box>
-        <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-          {titulo}
-        </Typography>
-
-        <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
-        {total} Total de {String(titulo).toLowerCase()}
-        </Typography>
-
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+    <div className="Donut_card">
+      <div className="Donut_info">
+        <div className='Titulo_grafico'>{titulo}</div>
+        <div className="Donut_total">{total} Total de candidaturas</div>
+        <div className="Donut_legenda">
           {dados.map((item) => (
-            <Typography key={item.id}>
-              <span style={{ color: item.color, fontWeight: 'bold' }}>{item.value}</span> {item.label}
-            </Typography>
+            <div className="Donut_legenda_item" key={item.id}>
+              <span className="Donut_legenda_cor" style={{ background: item.color }}></span>
+              <span style={{ color: item.color, fontWeight: 700 }}>{item.value}</span> {item.label}
+            </div>
           ))}
-        </Box>
-      </Box>
-
+        </div>
+      </div>
       <PieChart
         series={[
           {
             data: dados,
-            innerRadius: 70,
-            outerRadius: 100,
+            innerRadius: 45,
+            outerRadius: 65,
             paddingAngle: 2,
-            cornerRadius: 4,
+            cornerRadius: 5,
           },
         ]}
-        height={isMobile ? 250 : 200}
-        width={isMobile ? 250 : 200}
-        legend={{ hidden: true }}
+        height={isMobile ? 130 : 130}
+        width={isMobile ? 130 : 130}
+        slotProps={{ legend: { hidden: true } }}
+        sx={{ aspectRatio: '1 / 1' }}
       />
-    </Box>
+    </div>
   );
 }

@@ -1,0 +1,85 @@
+.Donut_card {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 4px 16px 0px #0000000A;
+  padding: 32px 36px 32px 36px;
+  gap: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 225px;
+}
+
+.Donut_info {
+  display: flex;
+  flex-direction: column;
+  gap:18px;
+}
+
+.Donut_total {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.Donut_legenda {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Nunito';
+}
+
+.Donut_legenda_item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.Donut_legenda_cor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+.MuiChartsLegend-root {
+  display:none !important;
+}
+.css-1ym6rdq-MuiChartsWrapper-root{
+  height:150px !important;
+}
+
+@media (max-width: 700px) {
+  .Donut_card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 10px;
+    gap: 20px;
+    min-width: 0;
+    width: 100%;
+    max-height: none;
+    min-height: 0;
+  }
+  .Tabela, .Donut_card {
+    width: 100%;
+  }
+  .Donut_total {
+    font-size: 14px;
+  }
+  .Donut_legenda_item {
+    font-size: 12px;
+  }
+}
+.Titulo_grafico {
+  font-weight: 800;
+  font-size: 15px;
+  color: #272525;
+  padding: 0 0 6px 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: flex-start;
+}
