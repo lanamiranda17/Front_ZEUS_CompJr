@@ -1,0 +1,128 @@
+import { useNavigate } from 'react-router-dom';
+import './Tela_novoFunc.css';
+import Top_direita from '../../components/Top_direita/Top_direita';
+
+import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
+import '../../components/Botao.css';
+import Icon_func from "../../assets/Icons/Icon_func_comprov.svg";
+import Avatar_MUI from '../../components/Avatar_MUI/Avatar_MUI';
+import Imput_box from '../../components/Input_box/Input_box';
+import Select_box from '../../components/Input_box/Select_box';
+import { useState } from 'react';
+
+
+
+function Tela_novoFunc() {
+  const [genero, setGenero] = useState("");
+  const [setor, setSetor] = useState("");
+  const [cargo, setCargo] = useState("");
+
+  const opcoesCargoPorSetor = {
+    vendas: [
+      { value: "diretor comercial", label: "Diretor Comercial" },
+      { value: "gerente de vendas", label: "Gerente de Vendas" },
+      { value: "assessor de vendas", label: "Assessor de Vendas"},
+    ],
+    marketing: [
+      { value: "gerente de marketing", label: "Gerente de Marketing" },
+      { value: "assessor de marketing", label: "Assessor de Marketing" },
+    ],
+    gestao_de_pessoas: [
+      { value: "vice de gente e gestão", label: "Vice-Presidente de Gente e Gestão" },
+      { value: "gerente gp", label: "Gerente de Gestão de Pessoas" },
+      { value: "recruiter", label: "Recruiter" },
+      { value: "assesor de gp", label: "Assessor de Gestão de Pessoas" },
+    ],
+    projetos: [
+      { value: "diretor de projetos", label: "Diretor de Projetos" },
+      { value: "gerente de projetos", label: "Gerente de Projetos" },
+      { value: "gerente de qualidade", label: "Gerente de Qualidade" },
+      { value: "projetista", label: "Projeista" },
+    ],
+    presidencia: [
+      { value: "presidente", label: "Presidente" },
+      { value: "assessor admFinanceiro", label: "Assessor Administrativo-Financeiro" },
+    ],
+  };
+
+  const opcoesCargo = setor ? opcoesCargoPorSetor[setor] || [] : [];
+
+  return (
+    <Layout_Nav>
+      <div className='Tela_toda'>
+        <div className='Novo_card'>
+          <div className='Top_novo'>
+            <div className='Top_esquerda'>
+              <img src={Icon_func} className="Icon_func" /> 
+              <div className='Texto_topo'>
+                <p className='Texto_titulo'>Novo funcionário</p>
+                <p className='Texto_subtitulo'>Criar um novo funcionário</p>
+              </div>
+            </div>
+            <Top_direita/>
+          </div>
+          <div className='Conteudo_novo'>
+            <a className='Link_voltar' href="/funcionarios">
+              <svg className="Link_voltar_icon" width="18" height="18" viewBox="0 0 18 18">
+                <defs>
+                  <linearGradient id="gradiente-voltar" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#2563eb" />
+                  </linearGradient>
+                </defs>
+                <polyline points="12 3 6 9 12 15" fill="none" stroke="url(#gradiente-voltar)" strokeWidth="2"/>
+              </svg>
+              Voltar
+            </a>
+
+            <div className='Card_novo'>
+              <div className='Texto_titulo'>Adicionar funcionário</div>
+              <div className='Form_novo'>
+                <div className='Coluna_avatar'>
+                  <Avatar_MUI/>
+                  <div className='Texto_avatar'>
+                    <div className= 'Texto_claro'>Formato permitido</div>
+                    <div> JPEG, JPG e PNG</div>
+                    <div className= 'Texto_claro'>Tamanho máximo</div>
+                    <div>2MB</div>
+                  </div>
+                </div>
+                <div className='Coluna_imputs'>
+                  <Imput_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value=""/>
+                  <Imput_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value=""/>
+                  <Select_box id="genero" label="Gênero" value={genero} placeholder="Selecione o gênero"
+                    onChange={e => setGenero(e.target.value)}
+                    options={[
+                      { value: "feminino", label: "Feminino" },
+                      { value: "masculino", label: "Masculino" },
+                      { value: "nao_identificar", label: "Prefiro não identificar" },
+                    ]}
+                  />
+                  <Select_box id="setor" label="Setor" value={setor} placeholder="Selecione o setor"
+                    onChange={e => {
+                      setSetor(e.target.value);
+                      setCargo(""); // Limpa o cargo ao trocar setor
+                    }}
+                    options={[
+                      { value: "vendas", label: "Vendas" },
+                      { value: "marketing", label: "Marketing" },
+                      { value: "gestao_de_pessoas", label: "Gestão de pessoas" },
+                      { value: "projetos", label: "Projetos" },
+                      { value: "presidencia", label: "Presidência" },
+                    ]}
+                  />
+                  <Select_box id="cargo" label="Cargo" value={cargo} placeholder={"Selecione o cargo"}
+                    onChange={e => setCargo(e.target.value)}
+                    options={opcoesCargo}
+                    disabled={!setor}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout_Nav>
+  )
+}
+export default Tela_novoFunc

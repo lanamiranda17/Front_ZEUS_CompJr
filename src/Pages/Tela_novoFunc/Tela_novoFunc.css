@@ -1,4 +1,4 @@
-.Top_funcionarios {
+.Top_novo {
   display: flex;
   width: 99%;
   justify-content: space-between;
@@ -20,8 +20,9 @@
   font-size: 20px;
   line-height: 27px;
   color: #000000;
-  margin-bottom: 5px;
-  margin-left: 20px;
+  margin-bottom: 0;
+  margin-left: 0;
+  
 }
 
 .Texto_subtitulo {
@@ -30,12 +31,15 @@
   line-height: 20px;
   color: #262626;
   margin-top: 0;
-  margin-left: 20px;
+  margin-left: 0;
 }
 
 .Top_esquerda {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
 }
 
 .Tela_toda {
@@ -46,7 +50,7 @@
   overflow-y: auto; 
 }
 
-.Funcionarios_card {
+.Novo_card {
   flex: 1;
   overflow-y: auto;
   background: #edeff8;
@@ -55,7 +59,7 @@
   gap: 20px;
 }
 
-.Card_pesquisa {
+.Card_novo {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -69,100 +73,18 @@
   box-sizing: border-box;
   padding: 20px;
 }
-.Paginacao_func {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 24px 0 0 0;
-  padding: 0;
-  width: 100%;
-}
 
-.Botao_paginacao {
-  background: #fff;
-  border: 1.5px solid #c7d7f7;
-  color: #3a3a3a;
-  font-weight: 600;
-  font-size: 0.7rem;
-  border-radius: 8px;
-  min-width: 28px;
-  min-height: 28px;
-  margin: 0 2px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-  outline: none;
-}
-.Botao_paginacao.ativa {
-  background: #f3f6fa;
-  color: #555;
-  border-color: #3b82f6;
-  pointer-events: none;
-}
-.Botao_paginacao:focus {
-  border-color: #2563eb;
-}
-.Botao_paginacao:active:not(.ativa) {
-  background: #e0e7ff;
-}
-
-.Seta_paginacao {
-  background: #f3f6fa;
-  border: 1.5px solid #c7d7f7;
-  border-radius: 8px;
-  min-width: 28px;
-  min-height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, border 0.2s;
-  color: #555;
-  margin: 0 2px;
-}
-.Seta_paginacao svg {
-  display: block;
-  stroke: #555;
-}
-.Seta_paginacao.desativado,
-.Seta_paginacao:disabled {
-  background: #f3f6fa;
-  border-color: #e5e7eb;
-  color: #bdbdbd;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-.Seta_paginacao.desativado svg {
-  stroke: #bdbdbd;
-}
-
-.Info_paginacao {
-  font-size: 0.98rem;
-  color: #555;
-  margin: 0 10px;
-  font-weight: 500;
-}
-
-.Select_paginacao {
-  background: #f2f7ff;
-  border: 1.5px solid #c7d7f7;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  color: #3a3a3a;
-  padding: 5px 12px;
-  margin-left: 8px;
-  outline: none;
-  transition: border 0.2s;
-  font-family: 'Nunito', Arial, sans-serif;
-}
-.Select_paginacao:focus {
-  border-color: #2563eb;
-}
-
-.Conteudo_funcionarios{
+.Conteudo_novo{
   padding: 20px;
+}
+
+.Icon_func{
+    width: 25px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 18px 20px;
 }
 
 .Caixa_pesquisa {
@@ -219,13 +141,6 @@
   transition: filter 0.2s;
 }
 
-.Titulo_funcionarios{
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  color: #272525;
-}
-
 .Barra_pesquisa {
   display: flex;
   flex-direction: column;
@@ -236,7 +151,7 @@
   filter: brightness(0.7);
 }
 
-.Texto_funcionarios{
+.Texto_novo{
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -244,7 +159,7 @@
   width: 13%
 }
 
-.Numero_funcionarios{
+.Numero_novo{
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -252,49 +167,92 @@
   color: #272525;
 }
 
-.Filtro {
+.Form_novo {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   gap: 6px;
-  width: 20%;
-}
-
-
-.Select_filtro {
   width: 100%;
-  min-width: 150px;
-  max-width: 220px;
-  background: #F2F7FF;
-  border-radius: 10px;
+  height: 400px;
+}
+
+.Coluna_avatar {
+  width: 30%;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.5px solid #e6e3e3;
+  border-radius: 12px;
+  padding: 30px
+}
+
+.Link_voltar {
+  background: none;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: none;
-  padding: 10px 18px 14px 18px;
-  font-size: 1.00rem;
-  color: #9ca3af;
-  font-family: 'Nunito';
-  appearance: none;
   outline: none;
-  transition: box-shadow 0.2s;
+  box-shadow: none;
   cursor: pointer;
-  margin-top: 0;
-  margin-bottom: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L10 12L14 8' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
+  background-image: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* fallback para navegadores que não suportam background-clip */
+  transition: filter 0.18s, color 0.18s;
+}
+@supports not (-webkit-background-clip: text) {
+  .Link_voltar {
+    color: #2563eb;
+    background: none;
+  }
+}
+.Link_voltar:hover, .Link_voltar:focus {
+  filter: brightness(1.1) saturate(1.2);
+  text-decoration: underline;
+}
+.Link_voltar_icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  stroke: #3b82f6;
+  /* fallback azul */
+  /* Gradiente no stroke para navegadores modernos */
+  stroke: url(#gradiente-voltar);
+  /* Para browsers baseados em Webkit/Blink (Chrome, Edge, Safari) */
+  -webkit-mask-image: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  mask-image: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
 }
 
-.Select_filtro:focus {
-  box-shadow: 0 0 0 2px #c7d7f7;
-}
-
-.Select_filtro option {
-  color: #222;
-  background: #fff;
-  font-size: 14px;
+.Link_voltar svg defs {
+  /* Garante que o gradiente seja definido no SVG */
+  display: block;
 }
 
 .Botao_adicionar{
   width: 20%;
+}
+
+
+.Texto_claro{
+  color: #777777;
+  margin-top: 25px;
+}
+.Texto_avatar{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
 }
 
 /* PAGINAÇÃO FUNCIONÁRIOS */
@@ -404,13 +362,44 @@
   text-decoration: underline;
 }
 
+.Select_box {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #D0D0D0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding-left: 12px;
+  background: #fff;
+  color: #121212;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke="%23121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px 18px;
+  padding-right: 36px;
+}
+/* Removido :placeholder-shown pois não é suportado em <select> */
+.Select_box:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.Select_box option {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+}
 
 @media (max-width: 1000px) {
   .Card_pesquisa {
     flex-wrap: wrap;
     gap: 16px;
   }
-  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
+  .Barra_pesquisa, .Filtro, .Texto_novo, .Botao_adicionar {
     min-width: 140px;
     max-width: 100%;
     flex: 1 1 140px;
@@ -423,7 +412,7 @@
     align-items: stretch;
     gap: 10px;
   }
-  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
+  .Barra_pesquisa, .Filtro, .Texto_novo, .Botao_adicionar {
     width: 100%;
     min-width: 0;
     max-width: 100%;

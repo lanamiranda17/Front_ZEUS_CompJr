@@ -1,0 +1,44 @@
+.AvatarUpload_circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  border: 2px dashed #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 auto;
+  gap: 10px;
+  transition: border 0.2s;
+}
+.AvatarUpload_circle:hover,
+.AvatarUpload_circle:focus-within {
+  border-color: #bdbdbd;
+}
+.AvatarUpload_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.AvatarUpload_icon svg {
+  width: 30px;
+  height: 30px;
+}
+.AvatarUpload_text {
+  color: #757575;
+  font-size: 0.95rem;
+  font-family: 'Nunito', Arial, sans-serif;
+  text-align: center;
+  font-weight: 500;
+}
+.AvatarUpload_input {
+  display: none;
+}
+.AvatarUpload_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

@@ -32,7 +32,7 @@ function Nav_bar (){
                 <img src= {LogoComp} />
             </div>
             {renderizar_botao('/dashboard', Icon_dashboard, 'Dashboard')}
-            {renderizar_botao('/funcionarios', Icon_func_comprov, 'Funcionários')}
+            {renderizar_botao(pathname === '/funcionarios' || pathname === '/novo' ? pathname : '/funcionarios', Icon_func_comprov, 'Funcionários')}
             {renderizar_botao('/comprovantes', Icon_func_comprov, 'Comprovantes de pagamento')}
             {renderizar_botao('/pagamentos', Icon_pag, 'Pagamentos recebidos')}
             {renderizar_botao('/comunicados', Icon_comunicados, 'Comunicados')}

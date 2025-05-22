@@ -41,7 +41,7 @@ const dadosFuncionariosDetalhado = [
     email: 'sandra@compjr.com',
     area: 'Gerência',
     cargo: 'Recursos Humanos',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '02',
@@ -52,7 +52,7 @@ const dadosFuncionariosDetalhado = [
     email: 'abdu@compjr.com',
     area: 'Projetos',
     cargo: 'Operações',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '03',
@@ -63,7 +63,7 @@ const dadosFuncionariosDetalhado = [
     email: 'jao@compjr.com',
     area: 'Projetos',
     cargo: 'Operações',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '04',
@@ -74,7 +74,7 @@ const dadosFuncionariosDetalhado = [
     email: 'jose@compjr.com',
     area: 'Gerência',
     cargo: 'Gerente de projetos',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '05',
@@ -85,7 +85,7 @@ const dadosFuncionariosDetalhado = [
     email: 'fatima@compjr.com',
     area: 'RH',
     cargo: 'Atendimento ao Cliente',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '06',
@@ -96,7 +96,7 @@ const dadosFuncionariosDetalhado = [
     email: 'carlota@compjr.com',
     area: 'RH',
     cargo: 'Recursos Humanos',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '07',
@@ -107,7 +107,7 @@ const dadosFuncionariosDetalhado = [
     email: 'sandro@compjr.com',
     area: 'RH',
     cargo: 'Recursos Humanos',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '08',
@@ -118,7 +118,7 @@ const dadosFuncionariosDetalhado = [
     email: 'josue@compjr.com',
     area: 'Projetos',
     cargo: 'Infraestrutura',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '09',
@@ -129,7 +129,7 @@ const dadosFuncionariosDetalhado = [
     email: 'lerico@compjr.com',
     area: 'Comercial',
     cargo: 'Operações',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
   {
     sn: '10',
@@ -140,7 +140,7 @@ const dadosFuncionariosDetalhado = [
     email: 'lele@compjr.com',
     area: 'Gerência',
     cargo: 'Segurança',
-    acao: 'Ver mais',
+    acao: <a href="#" className="Link_vermais">Ver mais</a>,
   },
 ];
 

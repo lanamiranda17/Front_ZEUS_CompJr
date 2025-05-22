@@ -1,4 +1,3 @@
-
 .Input_box {
     display: flex;
     flex-direction: column;
@@ -39,4 +38,10 @@
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
     text-align: center;
+  }
+
+  .Input_box input:focus {
+    border: 1px solid #2563eb;
+    outline: none;
+    transition: border 0.2s;
   }
