@@ -14,6 +14,7 @@
     font-size: 14px;
     color: #121212;
     font-weight: 400;
+    margin-bottom: 6px;
     
   }
   
@@ -44,4 +45,222 @@
     border: 1px solid #2563eb;
     outline: none;
     transition: border 0.2s;
+  }
+
+  .Input_box input[type="date"] {
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #D0D0D0;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    background: #fff;
+    color: #121212;
+
+  }
+
+  .Input_box input[type="date"]::-webkit-input-placeholder {
+    color: #bdbdbd;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    margin-left: 10px;
+  }
+  .Input_box input[type="date"]::placeholder {
+    color: #bdbdbd;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    margin-left: 10px;
+  }
+  .Input_box input[type="date"]::-webkit-datetime-edit {
+    color: #bdbdbd;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    margin-left: 10px;
+  }
+  .Input_box input[type="date"]:not(:focus):not([value])::-webkit-datetime-edit {
+    color: #bdbdbd;
+  }
+  .Input_box input[type="date"]:focus {
+    border: 1px solid #2563eb;
+    outline: none;
+  }
+
+  .Input_box input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-right: 10px;
+    filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(10deg) brightness(80%) contrast(100%);
+    /* A cor direta não é suportada, usei filter para ajustar */
+    cursor: pointer;
+  }
+
+  .FormControl_custom {
+    width: 100%;
+  }
+
+  .Select_custom {
+    width: 100% !important;
+    min-height: 40px !important;
+    border: 1px solid #D0D0D0 !important;
+    border-radius: 10px !important;
+    margin-bottom: 0 !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14px !important;
+    box-sizing: border-box !important;
+    padding-left: 12px !important;
+    background: #fff !important;
+    color: #121212 !important;
+    transition: border 0.2s !important;
+    outline: none !important;
+    padding-right: 36px !important;
+    position: relative;
+    box-shadow: none !important;
+  }
+
+  .Select_custom.Mui-focused,
+.Select_custom:focus,
+.OutlinedInput_custom.Mui-focused,
+.OutlinedInput_custom:focus {
+  border: 1.5px solid #2563eb !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove qualquer sombra ou efeito do menu */
+.MuiPaper-root.MuiMenu-paper {
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  border: 1px solid #D0D0D0 !important;
+}
+
+/* Remove fundo azul ao selecionar item */
+.MuiMenuItem-root:focus {
+  background-color: #f3f6fa !important;
+}
+
+/* Remove qualquer efeito de hover/active nas caixinhas */
+.MenuItem_custom:active, .MenuItem_custom:focus, .MenuItem_custom:hover {
+  background: #f3f6fa !important;
+  color: #121212 !important;
+}
+
+/* Caixinhas de seleção (checkbox) mais simples */
+.Checkbox_custom .MuiSvgIcon-root {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1.5px solid #D0D0D0;
+  background: #fff;
+  box-shadow: none;
+}
+.Checkbox_custom.Mui-checked .MuiSvgIcon-root {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* Placeholder do MUI Select */
+.MenuItem_placeholder {
+    color: #A1A1A1 !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14px !important;
+  }
+
+  /* Itens do menu do MUI Select */
+  .MenuItem_custom {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14px !important;
+    color: #121212 !important;
+  }
+
+  /* Checkbox customizado para o multi-select */
+  .Checkbox_custom .MuiSvgIcon-root {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1.5px solid #D0D0D0;
+    background: #fff;
+  }
+  .Checkbox_custom.Mui-checked .MuiSvgIcon-root {
+    border-color: #2563eb;
+    background: #2563eb;
+    color: #fff;
+  }
+
+  /* Remove o fundo azul do MUI ao focar item do menu */
+  .MuiMenuItem-root:focus {
+    background-color: #f3f6fa !important;
+  }
+
+  /* Remove sombra do menu do MUI */
+  .MuiPaper-root.MuiMenu-paper {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    border-radius: 10px !important;
+  }
+
+  /* Custom arrow para o MUI Select (usando ::after) */
+  .Select_custom::after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke="%23121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+    transform: translateY(-50%);
+  }
+
+  /* Corrige sobreposição do arrow nativo do MUI */
+  .Select_custom .MuiSelect-icon {
+    display: none !important;
+  }
+
+  /* Corrige cor do texto selecionado */
+  .Select_custom .MuiSelect-select {
+    color: #121212 !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+    min-height: 40px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Corrige disabled */
+  .Select_custom.Mui-disabled, .OutlinedInput_custom.Mui-disabled {
+    background: #f3f6fa !important;
+    color: #bdbdbd !important;
+    border-color: #e5e7eb !important;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
+  }
+
+  /* Corrige erro */
+  .Select_custom.Mui-error, .OutlinedInput_custom.Mui-error {
+    border-color: #dc2626 !important;
+  }
+
+  /* Corrige espaçamento do menu do MUI */
+  .MuiMenu-paper {
+    margin-top: 6px !important;
+  }
+
+  /* Corrige ListItemText */
+  .ListItemText_custom span {
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14px !important;
+    color: #121212 !important;
   }

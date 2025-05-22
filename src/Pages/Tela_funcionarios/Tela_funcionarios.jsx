@@ -1,3 +1,4 @@
+import { useFuncionarios } from '../../context/FuncionariosContext';
 import { useNavigate } from 'react-router-dom';
 import './Tela_funcionario.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
@@ -9,6 +10,7 @@ import { useState } from 'react';
 
 
 function Tela_funcionarios() {
+  const { funcionarios } = useFuncionarios();
   const [filtro, setFiltro] = useState('todos');
   const [valorFiltro, setValorFiltro] = useState('');
   const [pesquisa, setPesquisa] = useState('');
@@ -145,18 +147,33 @@ const dadosFuncionariosDetalhado = [
 ];
 
 
+  // Substitui dadosFuncionariosDetalhado pelo contexto, se houver funcionários cadastrados
+  const dadosFuncionariosDetalhadoContext = funcionarios.length > 0
+    ? funcionarios.map((f, idx) => ({
+        sn: String(idx + 1).padStart(2, '0'),
+        nome: f.nome,
+        telefone: f.telefone,
+        nascimento: f.dataNascimento,
+        ingresso: f.dataAdmissao,
+        email: f.email,
+        area: f.setor,
+        cargo: f.cargo,
+        acao: <a href="#" className="Link_vermais">Ver mais</a>,
+      }))
+    : dadosFuncionariosDetalhado;
+
   // Obter áreas e cargos únicos
-  const areasUnicas = Array.from(new Set(dadosFuncionariosDetalhado.map(f => f.area))).filter(Boolean);
-  const cargosUnicos = Array.from(new Set(dadosFuncionariosDetalhado.map(f => f.cargo))).filter(Boolean);
+  const areasUnicas = Array.from(new Set(dadosFuncionariosDetalhadoContext.map(f => f.area))).filter(Boolean);
+  const cargosUnicos = Array.from(new Set(dadosFuncionariosDetalhadoContext.map(f => f.cargo))).filter(Boolean);
 
   // Filtro aplicado na tabela
-  let dadosTabela = dadosFuncionariosDetalhado;
+  let dadosTabela = dadosFuncionariosDetalhadoContext;
   if (filtro === 'area' && valorFiltro) {
-    dadosTabela = dadosFuncionariosDetalhado.filter(f => f.area === valorFiltro);
+    dadosTabela = dadosFuncionariosDetalhadoContext.filter(f => f.area === valorFiltro);
   } else if (filtro === 'cargo' && valorFiltro) {
-    dadosTabela = dadosFuncionariosDetalhado.filter(f => f.cargo === valorFiltro);
+    dadosTabela = dadosFuncionariosDetalhadoContext.filter(f => f.cargo === valorFiltro);
   } else if (filtro === 'todos') {
-    dadosTabela = dadosFuncionariosDetalhado;
+    dadosTabela = dadosFuncionariosDetalhadoContext;
   }
   if (pesquisaAtiva.trim() !== '') {
     dadosTabela = dadosTabela.filter(f => f.nome.toLowerCase().includes(pesquisaAtiva.toLowerCase()));

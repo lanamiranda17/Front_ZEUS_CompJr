@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './Tela_novoFunc.css';
+import './PopupNovoFuncionario.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
 
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
@@ -8,14 +9,22 @@ import Icon_func from "../../assets/Icons/Icon_func_comprov.svg";
 import Avatar_MUI from '../../components/Avatar_MUI/Avatar_MUI';
 import Imput_box from '../../components/Input_box/Input_box';
 import Select_box from '../../components/Input_box/Select_box';
+import Icon_check from '../../assets/Icons/Icon_check.svg';
 import { useState } from 'react';
-
-
 
 function Tela_novoFunc() {
   const [genero, setGenero] = useState("");
   const [setor, setSetor] = useState("");
   const [cargo, setCargo] = useState("");
+
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [dataAdmissao, setDataAdmissao] = useState("");
+  const [habilidades, setHabilidades] = useState([]); // array vazio
+  const [showPopup, setShowPopup] = useState(false);
 
   const opcoesCargoPorSetor = {
     vendas: [
@@ -47,6 +56,28 @@ function Tela_novoFunc() {
 
   const opcoesCargo = setor ? opcoesCargoPorSetor[setor] || [] : [];
 
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Enviar os dados para a API ou fazer o que precisar
+    const novoFuncionario = {
+      nome,
+      email,
+      genero,
+      setor,
+      cargo,
+      dataNascimento,
+      cpf,
+      telefone,
+      dataAdmissao,
+      habilidades,
+    };
+
+    setShowPopup(true);
+  };
+
   return (
     <Layout_Nav>
       <div className='Tela_toda'>
@@ -77,19 +108,22 @@ function Tela_novoFunc() {
 
             <div className='Card_novo'>
               <div className='Texto_titulo'>Adicionar funcionário</div>
-              <div className='Form_novo'>
-                <div className='Coluna_avatar'>
-                  <Avatar_MUI/>
-                  <div className='Texto_avatar'>
-                    <div className= 'Texto_claro'>Formato permitido</div>
-                    <div> JPEG, JPG e PNG</div>
-                    <div className= 'Texto_claro'>Tamanho máximo</div>
-                    <div>2MB</div>
+              <form className='Form_novo' onSubmit={handleSubmit}>
+                <div className='Coluna_avatar'> 
+                  <div className='Borda_avatar'>
+                    <Avatar_MUI/>
+                    <div className='Texto_avatar'>
+                      <div className= 'Texto_claro'>Formato permitido</div>
+                      <div> JPEG, JPG e PNG</div>
+                      <div className= 'Texto_claro'>Tamanho máximo</div>
+                      <div>2MB</div>
+                    </div>
                   </div>
+                  <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
                 </div>
                 <div className='Coluna_imputs'>
-                  <Imput_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value=""/>
-                  <Imput_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value=""/>
+                  <Imput_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />
+                  <Imput_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value={email} onChange={e => setEmail(e.target.value)} />
                   <Select_box id="genero" label="Gênero" value={genero} placeholder="Selecione o gênero"
                     onChange={e => setGenero(e.target.value)}
                     options={[
@@ -98,7 +132,7 @@ function Tela_novoFunc() {
                       { value: "nao_identificar", label: "Prefiro não identificar" },
                     ]}
                   />
-                  <Select_box id="setor" label="Setor" value={setor} placeholder="Selecione o setor"
+                  <Select_box multiple={false} id="setor" label="Setor" value={setor} placeholder="Selecione o setor"
                     onChange={e => {
                       setSetor(e.target.value);
                       setCargo(""); // Limpa o cargo ao trocar setor
@@ -111,17 +145,45 @@ function Tela_novoFunc() {
                       { value: "presidencia", label: "Presidência" },
                     ]}
                   />
-                  <Select_box id="cargo" label="Cargo" value={cargo} placeholder={"Selecione o cargo"}
+                  <Select_box multiple={false} id="cargo" label="Cargo" value={cargo} placeholder={"Selecione o cargo"}
                     onChange={e => setCargo(e.target.value)}
                     options={opcoesCargo}
                     disabled={!setor}
                   />
                 </div>
-              </div>
+                <div className='Coluna_imputs'>
+                  <Imput_box id ="data_nascimento" label="Data de nascimento" type="date" placeholder="Selecione a data de nascimento" value={dataNascimento} onChange={e => setDataNascimento(e.target.value)} />
+                  <Imput_box id ="cpf" label="CPF" type="text" placeholder="Digite o CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
+                  <Imput_box id ="telefone" label="Telefone" type="text" placeholder="Digite o telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
+                  <Imput_box id ="data_admissao" label="Data de admissão" type="date" placeholder="Selecione a data de admissão" value={dataAdmissao} onChange={e => setDataAdmissao(e.target.value)} />
+                  <Select_box multiple={true} id="habilidades" label="Habilidades" value={habilidades} placeholder={"Selecione as habilidades"}
+                    onChange={e => setHabilidades(typeof e.target.value === 'string' ? e.target.value.split(',') : e.target.value)}
+                    options={[
+                      { value: "front-end", label: "Front-end" },
+                      { value: "back-end", label: "Back-end" },
+                      { value: "mobile", label: "Mobile" },
+                      { value: "infraestrutura", label: "Infraestrutura" },
+                      { value: "design", label: "Design" },
+                    ]}
+                  />
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
+      {showPopup && (
+        <div className="Popup_fundo">
+          <div className="Popup_caixa">
+            <img src={Icon_check} alt="Ícone de confirmação" className="Popup_icon" />
+            <div className="Popup_titulo">Funcionário cadastrado!</div>
+            <div className="Popup_mensagem">Você adicionou um novo funcionário com sucesso.</div>
+            <button className="Popup_botao" onClick={() => setShowPopup(false)}>
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </Layout_Nav>
   )
 }
