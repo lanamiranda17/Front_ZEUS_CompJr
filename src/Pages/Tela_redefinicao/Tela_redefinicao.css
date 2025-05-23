@@ -1,4 +1,4 @@
-.Redefinicao_card{
+.Redefinicao_card_redefinicao{
     display: flex;
     height: 100%;
     width: 50%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Redefinicao_container{
+.Redefinicao_container_redefinicao{
     width: 80%;
     height: 80%;
     display: flex;
@@ -16,7 +16,7 @@
 
 }
 
-.Recuperacao-redefinir_container{
+.Recuperacao-redefinir_container_redefinicao{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -49,31 +49,31 @@
 /*RESPONSIVIDADE*/
 
 @media (max-width: 600px) {
-    .Redefinicao_card{
+    .Redefinicao_card_redefinicao{
         width: 100%;
     }
     
 }
 @media (max-width: 928px) {
-    .Recuperacao-redefinir_container{
+    .Recuperacao-redefinir_container_redefinicao{
     h1{
         font-size: 20px;
     }
     }
 }
 @media (min-width: 1200px) {
-    .Redefinicao_container{
+    .Redefinicao_container_redefinicao{
         width: 70%;
     }
 }
 
 @media (min-width: 2001px){
-    .Redefinicao_container{
+    .Redefinicao_container_redefinicao{
         width: 60%;
     }
 }
 
-.Tela_toda {
+.Tela_toda_redefinicao {
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -81,11 +81,11 @@
     overflow-y: auto;
 }
 @media (max-width: 900px) {
-    .Tela_toda {
+    .Tela_toda_redefinicao {
         flex-direction: column;
         height: auto;
     }
-    .Redefinicao_card {
+    .Redefinicao_card_redefinicao {
         width: 100%;
     }
 }

@@ -67,24 +67,24 @@ function Tela_verificacao() {
   };
 
   return (
-   <div className='Tela_toda'>
-      <div className='Verificacao_card'>
-        <div className='Verificacao_container'>
+   <div className='Tela_toda_verificacao'>
+      <div className='Verificacao_card_verificacao'>
+        <div className='Verificacao_container_verificacao'>
           <Top_login />
 
-          <div className='Recuperacao-verificar_container'>
+          <div className='Recuperacao-verificar_container_verificacao'>
             <form onSubmit={Verificar_codigo}>
               <h2 className='Textos_pequenos'>Recuperação de senha</h2>
               <h1>Verificação de email</h1>
               <h2 style={{marginBottom: 40}} className='Textos_pequenos'>Por favor, digite o código de 6 dígitos que foi enviado para seu endereço de e-mail.</h2>
-                <div className="Codigo_inputs">
+                <div className="Codigo_inputs_verificacao">
                 {codigo.map((valor, index) => (
                   <input
                     key={index}
                     id={`dig${index}`}
                     type="text"
                     maxLength="1"
-                    className="Input_codigo"
+                    className="Input_codigo_verificacao"
                     value={valor}
                     onChange={(e) => handleInput(e, index)}
                     onKeyDown={(e) => handleInput(e, index)}

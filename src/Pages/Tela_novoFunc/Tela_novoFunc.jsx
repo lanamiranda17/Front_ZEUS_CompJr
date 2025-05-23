@@ -83,11 +83,11 @@ function Tela_novoFunc() {
       <div className='Tela_toda'>
         <div className='Novo_card'>
           <div className='Top_novo'>
-            <div className='Top_esquerda'>
+            <div className='Top_esquerda_novo'>
               <img src={Icon_func} className="Icon_func" /> 
               <div className='Texto_topo'>
-                <p className='Texto_titulo'>Novo funcionário</p>
-                <p className='Texto_subtitulo'>Criar um novo funcionário</p>
+                <p className='Texto_titulo_novo'>Novo funcionário</p>
+                <p className='Texto_subtitulo_novo'>Criar um novo funcionário</p>
               </div>
             </div>
             <Top_direita/>
@@ -107,21 +107,21 @@ function Tela_novoFunc() {
             </a>
 
             <div className='Card_novo'>
-              <div className='Texto_titulo'>Adicionar funcionário</div>
+              <div className='Texto_titulo_novo'>Adicionar funcionário</div>
               <form className='Form_novo' onSubmit={handleSubmit}>
-                <div className='Coluna_avatar'> 
-                  <div className='Borda_avatar'>
+                <div className='Coluna_avatar_novo'> 
+                  <div className='Borda_avatar_novo'>
                     <Avatar_MUI/>
-                    <div className='Texto_avatar'>
-                      <div className= 'Texto_claro'>Formato permitido</div>
+                    <div className='Texto_avatar_novo'>
+                      <div className= 'Texto_claro_novo'>Formato permitido</div>
                       <div> JPEG, JPG e PNG</div>
-                      <div className= 'Texto_claro'>Tamanho máximo</div>
+                      <div className= 'Texto_claro_novo'>Tamanho máximo</div>
                       <div>2MB</div>
                     </div>
                   </div>
                   <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
                 </div>
-                <div className='Coluna_imputs'>
+                <div className='Coluna_imputs_novo'>
                   <Imput_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />
                   <Imput_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value={email} onChange={e => setEmail(e.target.value)} />
                   <Select_box id="genero" label="Gênero" value={genero} placeholder="Selecione o gênero"
@@ -151,7 +151,7 @@ function Tela_novoFunc() {
                     disabled={!setor}
                   />
                 </div>
-                <div className='Coluna_imputs'>
+                <div className='Coluna_imputs_novo'>
                   <Imput_box id ="data_nascimento" label="Data de nascimento" type="date" placeholder="Selecione a data de nascimento" value={dataNascimento} onChange={e => setDataNascimento(e.target.value)} />
                   <Imput_box id ="cpf" label="CPF" type="text" placeholder="Digite o CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
                   <Imput_box id ="telefone" label="Telefone" type="text" placeholder="Digite o telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
@@ -178,9 +178,7 @@ function Tela_novoFunc() {
             <img src={Icon_check} alt="Ícone de confirmação" className="Popup_icon" />
             <div className="Popup_titulo">Funcionário cadastrado!</div>
             <div className="Popup_mensagem">Você adicionou um novo funcionário com sucesso.</div>
-            <button className="Popup_botao" onClick={() => setShowPopup(false)}>
-              OK
-            </button>
+            <button className="Popup_botao" onClick={() => setShowPopup(false)}>OK</button>
           </div>
         </div>
       )}

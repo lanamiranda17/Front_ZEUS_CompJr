@@ -28,12 +28,12 @@ function Tela_login() {
   };
 
   return (
-   <div className='Tela_toda'>
-      <div className='Login_card'>
-        <div className='Login_container'>
+   <div className='Tela_toda_login'>
+      <div className='Login_card_login'>
+        <div className='Login_container_login'>
           <Top_login />
 
-          <div className='Bemvindo-entrar_container'>
+          <div className='Bemvindo-entrar_container_login'>
             <form onSubmit={fazerLogin}>
               <h2 className='Textos_pequenos'>Bem vindo de volta!</h2>
               <h1>Faça o login novamente</h1>
@@ -44,13 +44,12 @@ function Tela_login() {
               <Input_box id='senha' label='Senha' type='password' placeholder='Digite sua senha' value={senha}
                     onChange={(e) => setSenha(e.target.value)}/>
 
-              <div className='Checkbox_container'>
-                <div className='Checkbox'>
-                  <input type='checkbox' id='lembrar_senha'></input> {/*className='Input_checkbox' removida: padrão do navegador*/}
-                  <label htmlFor='lembrar_senha' className='Textos_pequenos Texto_checkbox'>Lembrar</label>
+              <div className='Checkbox_container_login'>
+                <div className='Checkbox_login'>
+                  <input type='checkbox' id='lembrar_senha'></input>
+                  <label htmlFor='lembrar_senha' className='Textos_pequenos Texto_checkbox_login'>Lembrar</label>
                 </div>
-
-                <div className='Link_esqueci_senha'>
+                <div className='Link_esqueci_senha_login'>
                   <a href='/recuperacao_de_senha' className='Textos_pequenos'>Esqueci senha</a>
                 </div>
               </div>

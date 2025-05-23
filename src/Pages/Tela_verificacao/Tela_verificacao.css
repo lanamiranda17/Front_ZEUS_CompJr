@@ -1,4 +1,4 @@
-.Verificacao_card{
+.Verificacao_card_verificacao{
     display: flex;
     height: 100%;
     width: 50%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Verificacao_container{
+.Verificacao_container_verificacao{
     width: 80%;
     height: 80%;
     display: flex;
@@ -16,7 +16,7 @@
 
 }
 
-.Recuperacao-verificar_container{
+.Recuperacao-verificar_container_verificacao{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -45,14 +45,14 @@
 }
 }
 
-.Codigo_inputs {
+.Codigo_inputs_verificacao {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin: 20px 0;
 }
 
-.Input_codigo {
+.Input_codigo_verificacao {
   width: 36px;
   height: 45px;
 
@@ -67,7 +67,7 @@
   outline: none;
 }
 
-.Input_codigo:focus {
+.Input_codigo_verificacao:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
 }
@@ -76,44 +76,44 @@
 /*RESPONSIVIDADE*/
 
 @media (max-width: 350px) {
-    .Input_codigo {
+    .Input_codigo_verificacao {
         width: 100%;
         height: calc(10vw * 1.1);
         font-size: 13px;
     }
-    .Recuperacao-verificar_container{
+    .Recuperacao-verificar_container_verificacao{
         width: 100%;
     }
-    .Verificacao_card{
+    .Verificacao_card_verificacao{
         width:100%;
     }
 }
 
 
 @media (max-width: 468px){
-    .Input_codigo {
+    .Input_codigo_verificacao {
         width: 100%;
         height: calc(10vw * 1.1);
         font-size: 15px
     }
-    .Recuperacao-verificar_container{
+    .Recuperacao-verificar_container_verificacao{
         width: 100%;
         h1{
             font-size: 25px;
         }
     }
-    .Verificacao_card{
+    .Verificacao_card_verificacao{
         width:100%;
     }
 }
 
 @media (min-width: 469px) and (max-width: 600px){
-    .Input_codigo {
+    .Input_codigo_verificacao {
         width: 100%;
         height: calc(10vw * 0.9);
         font-size: 15px;
     }
-    .Verificacao_card{
+    .Verificacao_card_verificacao{
         width:100%;
         h1{
             font-size: 20px;
@@ -123,38 +123,38 @@
 }
    
 @media (min-width: 601px) and (max-width: 928px) {
-    .Input_codigo {
+    .Input_codigo_verificacao {
         width: 100%;
         height: calc(10vw * 0.5);
         font-size: 15px;
     }
-    .Recuperacao-verificar_container{
+    .Recuperacao-verificar_container_verificacao{
         h1{
             font-size: 23px;
         }
     }
-    .Codigo_inputs{
+    .Codigo_inputs_verificacao{
         gap: 8px;
     }
 }
 
 @media (min-width: 1200px) {
-    .Verificacao_container{
+    .Verificacao_container_verificacao{
         width: 70%;
     }
 }
 @media (min-width: 1700px) and (max-width: 2000px){
-    .Verificacao_container{
+    .Verificacao_container_verificacao{
         width: 70%;
     }
 }
 @media (min-width: 2001px){
-    .Verificacao_container{
+    .Verificacao_container_verificacao{
         width: 60%;
     }
 }
 
-.Tela_toda {
+.Tela_toda_verificacao {
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -162,11 +162,11 @@
     overflow-y: auto;
 }
 @media (max-width: 900px) {
-    .Tela_toda {
+    .Tela_toda_verificacao {
         flex-direction: column;
         height: auto;
     }
-    .Verificacao_card {
+    .Verificacao_card_verificacao {
         width: 100%;
     }
 }

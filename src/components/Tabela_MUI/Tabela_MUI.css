@@ -30,7 +30,7 @@
 
 /* Estilo de status */
 .Status {
-  font-weight: 600;
+  font-weight: 550;
 }
 
 .Status.Aprovado {
@@ -39,4 +39,12 @@
 
 .Status.Pendente {
   color: #f2994a; /* Laranja */
+}
+
+.Status.Emanálise {
+  color: #494cf1; /* Laranja */
+}
+
+.Status.Reprovado {
+  color: #eb5757; /* Vermelho */
 }

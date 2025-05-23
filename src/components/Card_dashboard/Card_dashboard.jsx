@@ -1,7 +1,7 @@
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import './Card_dashboard.css';
 
-function Card_dashboard({ valor, titulo, variacao, tipoVariacao, icone, corIcone }) {
+function Card_dashboard({ valor, titulo, variacao, tipoVariacao, icone}) {
   const isPositivo = tipoVariacao === 'positivo';
   const sem_variacao = tipoVariacao === '';
 

@@ -1,4 +1,4 @@
-.Login_card{
+.Login_card_login{
     display: flex;
     height: 100%;
     width: 50%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Login_container{
+.Login_container_login{
     width: 80%;
     height: 80%;
     display: flex;
@@ -16,7 +16,7 @@
 
 }
 
-.Bemvindo-entrar_container{
+.Bemvindo-entrar_container_login{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -46,7 +46,7 @@
 
 }
 
-.Checkbox_container{
+.Checkbox_container_login{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,14 +55,14 @@
     width: 100%;
 }
 
-.Texto_checkbox{
+.Texto_checkbox_login{
     width: 97px;
     height: 24px;
     color: #515151;
 }
 /*className='Input_checkbox' removida: padrão do navegador*/
 
-.Checkbox{
+.Checkbox_login{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -72,7 +72,7 @@
     order: 0; /*Sobrescevendo o .Checkbox_link_container*/
 }
 
-.Link_esqueci_senha{
+.Link_esqueci_senha_login{
     display: flex;
     flex-direction: row-reverse;
     width: 50%;
@@ -83,7 +83,7 @@
 }
 
 /* NOVO CÓDIGO */
-.Tela_toda {
+.Tela_toda_login {
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -91,11 +91,11 @@
     overflow-y: auto;
 }
 @media (max-width: 900px) {
-    .Tela_toda {
+    .Tela_toda_login {
         flex-direction: column;
         height: auto;
     }
-    .Login_card {
+    .Login_card_login {
         width: 100%;
     }
 }
@@ -103,30 +103,30 @@
 /*RESPONSIVIDADE*/
 
 @media (max-width: 600px) {
-    .Login_card{
+    .Login_card_login{
         width: 100%;
     }
     
 }
 @media (max-width: 928px) {
-    .Bemvindo-entrar_container{
+    .Bemvindo-entrar_container_login{
     h1{
         font-size: 20px;
     }
 }
 }
 @media (min-width: 1200px) {
-    .Login_container{
+    .Login_container_login{
         width: 70%;
     }
 }
 @media (min-width: 1700px) and (max-width: 2000px){
-    .Login_container{
+    .Login_container_login{
         width: 70%;
     }
 }
 @media (min-width: 2001px){
-    .Login_container{
+    .Login_container_login{
         width: 60%;
     }
 }

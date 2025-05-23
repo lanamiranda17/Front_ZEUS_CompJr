@@ -185,23 +185,23 @@ const dadosFuncionariosDetalhado = [
 
   return (
     <Layout_Nav>
-      <div className='Tela_toda'>
-        <div className='Funcionarios_card'>
-          <div className='Top_funcionarios'>
-            <div className='Top_esquerda'>
-              <p className='Texto_titulo'>Todos os funcionários</p>
-              <p className='Texto_subtitulo'> Visualizar, pesquisar e adicionar novos funcionários</p>
+      <div className='Tela_toda_func'>
+        <div className='Funcionarios_card_func'>
+          <div className='Top_funcionarios_func'>
+            <div className='Top_esquerda_func'>
+              <p className='Texto_titulo_func'>Todos os funcionários</p>
+              <p className='Texto_subtitulo_func'> Visualizar, pesquisar e adicionar novos funcionários</p>
             </div>
             <Top_direita/>
           </div>
-          <div className='Conteudo_funcionarios'>
-            <div className='Card_pesquisa'>
-              <div className='Barra_pesquisa'>
-                <div className='Texto_pesquisa'>Pesquisa rápida de um funcionário</div>
-                <div className='Caixa_pesquisa'>
+          <div className='Conteudo_funcionarios_func'>
+            <div className='Card_pesquisa_func'>
+              <div className='Barra_pesquisa_func'>
+                <div className='Texto_pesquisa_func'>Pesquisa rápida de um funcionário</div>
+                <div className='Caixa_pesquisa_func'>
                   <input
                     type="text"
-                    className='Input_pesquisa'
+                    className='Input_pesquisa_func'
                     placeholder='Digite o nome da pesquisa'
                     value={pesquisa}
                     onChange={e => {
@@ -211,7 +211,7 @@ const dadosFuncionariosDetalhado = [
                     onKeyDown={e => { if (e.key === 'Enter') { setPesquisaAtiva(pesquisa); } }}
                   />
                   <button
-                    className='Botao_pesquisa'
+                    className='Botao_pesquisa_func'
                     style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                     onClick={e => { e.preventDefault(); setPesquisaAtiva(pesquisa); }}
                   >
@@ -219,19 +219,19 @@ const dadosFuncionariosDetalhado = [
                   </button>
                 </div>
               </div>
-              <div className='Texto_funcionarios'>
-                <div className='Numero_funcionarios'>{numero_funcionarios}</div>
+              <div className='Texto_funcionarios_func'>
+                <div className='Numero_funcionarios_func'>{numero_funcionarios}</div>
                 <div>Total de funcionários</div>
               </div>
-              <div className='Filtro'>
-                <div className='Texto_pesquisa'>Filtrar funcionário</div>
-                <select className='Select_filtro' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
+              <div className='Filtro_func'>
+                <div className='Texto_pesquisa_func'>Filtrar funcionário</div>
+                <select className='Select_filtro_func' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
                   <option value="todos">Todos</option>
                   <option value="area">Área</option>
                   <option value="cargo">Cargo</option>
                 </select>
                 {filtro === 'area' && (
-                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                  <select className='Select_filtro_func' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
                     <option value="">Selecione a área</option>
                     {areasUnicas.map(area => (
                       <option key={area} value={area}>{area}</option>
@@ -239,7 +239,7 @@ const dadosFuncionariosDetalhado = [
                   </select>
                 )}
                 {filtro === 'cargo' && (
-                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                  <select className='Select_filtro_func' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
                     <option value="">Selecione o cargo</option>
                     {cargosUnicos.map(cargo => (
                       <option key={cargo} value={cargo}>{cargo}</option>
@@ -247,15 +247,15 @@ const dadosFuncionariosDetalhado = [
                   </select>
                 )}
               </div>
-              <div className='Botao_adicionar'>
-                <button className='Botao_entrar'>Adicionar novo</button>
+              <div className='Botao_adicionar_func'>
+                <button className='Botao_entrar_func'>Adicionar novo</button>
               </div>
             </div>
             <Tabela_MUI titulo="Todos os funcionários" colunas={colunasFuncionariosDetalhado} dados={dadosPaginados} />
 
-            <div className='Paginacao_func'>
+            <div className='Paginacao_func_func'>
               <button
-                className={`Seta_paginacao${pagina === 0 ? ' desativado' : ''}`}
+                className={`Seta_paginacao_func${pagina === 0 ? ' desativado' : ''}`}
                 onClick={() => setPagina(p => Math.max(0, p - 1))}
                 disabled={pagina === 0}
                 aria-label="Página anterior"
@@ -265,7 +265,7 @@ const dadosFuncionariosDetalhado = [
               {Array.from({ length: totalPaginas }, (_, i) =>
                 <button
                   key={i}
-                  className={`Botao_paginacao${pagina === i ? ' ativa' : ''}`}
+                  className={`Botao_paginacao_func${pagina === i ? ' ativa' : ''}`}
                   onClick={() => setPagina(i)}
                   aria-current={pagina === i ? 'page' : undefined}
                 >
@@ -273,7 +273,7 @@ const dadosFuncionariosDetalhado = [
                 </button>
               )}
               <button
-                className={`Seta_paginacao${pagina >= totalPaginas - 1 ? ' desativado' : ''}`}
+                className={`Seta_paginacao_func${pagina >= totalPaginas - 1 ? ' desativado' : ''}`}
                 onClick={() => setPagina(p => Math.min(totalPaginas - 1, p + 1))}
                 disabled={pagina >= totalPaginas - 1}
                 aria-label="Próxima página"
@@ -281,7 +281,7 @@ const dadosFuncionariosDetalhado = [
                 <svg width="18" height="18" viewBox="0 0 18 18"><polyline points="6 3 12 9 6 15" fill="none" stroke="#555" strokeWidth="2"/></svg>
               </button>
               <select
-                className='Select_paginacao'
+                className='Select_paginacao_func'
                 value={itensPorPagina}
                 onChange={e => { setItensPorPagina(Number(e.target.value)); setPagina(0); }}
               >

@@ -24,12 +24,12 @@ function Tela_esqueceu() {
   };
 
   return (
-   <div className='Tela_toda'>
-      <div className='Recuperacao_card'>
-        <div className='Recuperacao_container'>
+   <div className='Tela_toda_esqueceu'>
+      <div className='Recuperacao_card_esqueceu'>
+        <div className='Recuperacao_container_esqueceu'>
           <Top_login />
 
-          <div className='Recuperacao-enviar_container'>
+          <div className='Recuperacao-enviar_container_esqueceu'>
             <form onSubmit={esqueceuSenha}>
               <h2 className='Textos_pequenos'>Recuperação de senha</h2>
               <h1>Esqueceu sua senha?</h1>

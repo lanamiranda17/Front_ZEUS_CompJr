@@ -15,7 +15,7 @@
 
 }
 
-.Texto_saudacao {
+.Texto_saudacao_dashboard {
   font-weight: 800;
   font-size: 20px;
   line-height: 27px;
@@ -24,7 +24,7 @@
   margin-left: 20px;
 }
 
-.Texto_data {
+.Texto_data_dashboard {
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -33,23 +33,23 @@
   margin-left: 20px;
 }
 
-.Top_esquerda {
+.Top_esquerda_dashboard {
   display: flex;
   flex-direction: column;
 }
 
-.Tela_toda {
+.Tela_toda_dashboard {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto; 
+  background: #edeff8;
+  gap: 20px;
 }
 
-.Dashboard_card {
+.Dashboard_card_dashboard {
   flex: 1;
-  overflow-y: auto;
-  background: #edeff8;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -64,7 +64,7 @@
   padding: 0 20px 10px 20px;
 }
 
-.Tabelas {
+.Tabelas_dashboard {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -72,7 +72,7 @@
   padding: 0 20px 40px 20px;
 }
 
-.Tabela {
+.Tabela_dashboard {
   width: 49%;
   box-sizing: border-box;
 }

@@ -26,12 +26,12 @@ function Tela_redefinicao() {
   };
 
   return (
-   <div className='Tela_toda'>
-      <div className='Redefinicao_card'>
-        <div className='Redefinicao_container'>
+   <div className='Tela_toda_redefinicao'>
+      <div className='Redefinicao_card_redefinicao'>
+        <div className='Redefinicao_container_redefinicao'>
           <Top_login />
 
-          <div className='Recuperacao-redefinir_container'>
+          <div className='Recuperacao-redefinir_container_redefinicao'>
             <form onSubmit={redefinirSenha}>
               <h2 className='Textos_pequenos'>Recuperação de senha</h2>
               <h1>Redefinição de senha</h1>

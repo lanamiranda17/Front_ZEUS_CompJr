@@ -1,4 +1,4 @@
-.Top_novo {
+.Top_novo_orcamento {
   display: flex;
   width: 99%;
   justify-content: space-between;
@@ -35,7 +35,7 @@
 }
 
 
-.Top_esquerda_novo {
+.Top_esquerda_orcamento_novo {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -43,7 +43,7 @@
   margin: 0;
 }
 
-.Conteudo_novo{
+.Conteudo_novo_orcamento{
   width: 96%;
   margin: 0 auto;
   display: flex;
@@ -52,7 +52,7 @@
   justify-content: center;
 }
 
-.Texto_titulo_novo {
+.Texto_titulo_novo_orcamento {
   font-weight: 800;
   font-size: 20px;
   line-height: 27px;
@@ -61,7 +61,7 @@
   margin-left: 0;
 }
 
-.Texto_subtitulo_novo {
+.Texto_subtitulo_novo_orcamento {
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
@@ -78,7 +78,7 @@
   overflow-y: auto; 
 }
 
-.Novo_card {
+.Novo_orcamento_card {
   flex: 1;
   overflow-y: auto;
   background: #edeff8;
@@ -87,7 +87,7 @@
   gap: 20px;
 }
 
-.Card_novo {
+.Card_novo_orcamento {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,43 +102,16 @@
   padding: 20px;
 }
 
-.Coluna_avatar_novo{
-  width: 30%;
-  margin: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.Borda_avatar_novo {
-  margin: 15px;
-  width: 100%;
-  gap: 10px;
-  border: 1.5px solid #e6e3e3;
-  border-radius: 12px;
-  padding: 30px 0 30px 0;
-}
-
-.Texto_avatar_novo{
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  text-align: center;
-}
-
 .Texto_claro {
   color: #777777;
   margin-top: 25px;
 }
-.Texto_claro_novo{
+.Texto_claro_novo_orcamento{
   color: #777777;
   margin-top: 25px;
 }
 
-.Texto_novo{
+.Texto_novo_orcamento{
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -146,7 +119,7 @@
   width: 13%
 }
 
-.Numero_novo{
+.Numero_novo_orcamento{
   font-style: normal;
   font-weight: 800;
   font-size: 24px;
@@ -154,7 +127,7 @@
   color: #272525;
 }
 
-.Form_novo {
+.Form_novo_orcamento {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -173,17 +146,17 @@
   gap: 10px;
 }
 
-.Coluna_imputs_novo {
-  width: 30%;
+.Linha_imputs_novo_orcamento {
+  width: 100%;
   margin: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.Icon_func{
+.Icon_orcam{
     width: 25px;
     height: 35px;
     display: flex;
@@ -312,151 +285,12 @@
 }
 
 
-/* PAGINAÇÃO FUNCIONÁRIOS */
-.Paginacao_func {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin: 24px 0 0 0;
-  padding: 0;
-  width: 100%;
-}
-
-.Botao_paginacao {
-  background: #fff;
-  border: 1.5px solid #c7d7f7;
-  color: #3a3a3a;
-  font-weight: 600;
-  font-size: 0.7rem;
-  border-radius: 8px;
-  min-width: 28px;
-  min-height: 28px;
-  margin: 0 2px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-  outline: none;
-}
-.Botao_paginacao.ativa {
-  background: #f3f6fa;
-  color: #555;
-  border-color: #3b82f6;
-  pointer-events: none;
-}
-.Botao_paginacao:focus {
-  border-color: #2563eb;
-}
-.Botao_paginacao:active:not(.ativa) {
-  background: #e0e7ff;
-}
-
-.Seta_paginacao {
-  background: #f3f6fa;
-  border: 1.5px solid #c7d7f7;
-  border-radius: 8px;
-  min-width: 28px;
-  min-height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, border 0.2s;
-  color: #555;
-  margin: 0 2px;
-}
-.Seta_paginacao svg {
-  display: block;
-  stroke: #555;
-}
-.Seta_paginacao.desativado,
-.Seta_paginacao:disabled {
-  background: #f3f6fa;
-  border-color: #e5e7eb;
-  color: #bdbdbd;
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-.Seta_paginacao.desativado svg {
-  stroke: #bdbdbd;
-}
-
-.Select_paginacao {
-  background: #f2f7ff;
-  border: 1.5px solid #c7d7f7;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  color: #3a3a3a;
-  padding: 5px 12px;
-  margin-left: 8px;
-  outline: none;
-  transition: border 0.2s;
-  font-family: 'Nunito', Arial, sans-serif;
-}
-.Select_paginacao:focus {
-  border-color: #2563eb;
-}
-
-.Link_vermais {
-  background: none;
-  color: transparent;
-  font-size: 0.8rem;
-  text-decoration: none;
-  display: inline-block;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  cursor: pointer;
-  background-image: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: filter 0.18s;
-}
-.Link_vermais:hover, .Link_vermais:focus {
-  filter: brightness(1.1) saturate(1.2);
-  text-decoration: underline;
-}
-
-.Select_box {
-  width: 100%;
-  min-height: 40px;
-  border: 1px solid #D0D0D0;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  box-sizing: border-box;
-  padding-left: 12px;
-  background: #fff;
-  color: #121212;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M6 9l6 6 6-6" stroke="%23121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 18px 18px;
-  padding-right: 36px;
-}
-/* Removido :placeholder-shown pois não é suportado em <select> */
-.Select_box:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-
-.Select_box option {
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-}
-
 @media (max-width: 1000px) {
   .Card_pesquisa {
     flex-wrap: wrap;
     gap: 16px;
   }
-  .Barra_pesquisa, .Filtro, .Texto_novo, .Botao_adicionar {
+  .Barra_pesquisa, .Filtro, .Texto_novo_orcamento, .Botao_adicionar {
     min-width: 140px;
     max-width: 100%;
     flex: 1 1 140px;
@@ -469,7 +303,7 @@
     align-items: stretch;
     gap: 10px;
   }
-  .Barra_pesquisa, .Filtro, .Texto_novo, .Botao_adicionar {
+  .Barra_pesquisa, .Filtro, .Texto_novo_orcamento, .Botao_adicionar {
     width: 100%;
     min-width: 0;
     max-width: 100%;

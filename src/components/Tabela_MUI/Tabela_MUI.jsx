@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 
 
 function Tabela_MUI({ titulo, colunas, dados }) {
+  
   return (
     <div className="TabelaContainer">
       <TableContainer component={Paper}>
@@ -36,7 +37,7 @@ function Tabela_MUI({ titulo, colunas, dados }) {
                     align={coluna.alinhamento || 'left'}
                   >
                     {coluna.id === 'status' ? (
-                      <span className={`Status ${linha[coluna.id]}`}>{linha[coluna.id]}</span>
+                      <span className={`Status ${linha[coluna.id].replace(/\s/g, '')}`}>{linha[coluna.id]}</span>
                     ) : (
                       linha[coluna.id]
                     )}

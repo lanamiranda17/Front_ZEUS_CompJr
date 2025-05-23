@@ -24,6 +24,7 @@ body{
     overflow-y: auto;
 }
 
+
 @media (max-width: 900px) {
     .Tela_toda {
         flex-direction: column;

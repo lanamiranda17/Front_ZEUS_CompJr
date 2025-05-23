@@ -63,23 +63,23 @@ function Tela_autenticacao() {
   };
 
   return (
-    <div className='Tela_toda'>
-      <div className='Autenticacao_card'>
-        <div className='Autenticacao_container'>        
-          <div className="Login_logo">
+    <div className='Tela_toda_autenticacao'>
+      <div className='Autenticacao_card_autenticacao'>
+        <div className='Autenticacao_container_autenticacao'>        
+          <div className="Login_logo_autenticacao">
             <img src= {LogoComp} />
           </div>
-          <div className='Insira-verificar_container'>
+          <div className='Insira-verificar_container_autenticacao'>
             <form onSubmit={Verificar_codigo}>
               <h1>Insira o código enviado para seu e-mail</h1>
-              <div className="Codigo_inputs">
+              <div className="Codigo_inputs_autenticacao">
                 {codigo.map((valor, index) => (
                   <input
                     key={index}
                     id={`dig${index}`}
                     type="text"
                     maxLength="1"
-                    className="Input_codigo"
+                    className="Input_codigo_autenticacao"
                     value={valor}
                     onChange={(e) => handleInput(e, index)}
                     onKeyDown={(e) => handleInput(e, index)}

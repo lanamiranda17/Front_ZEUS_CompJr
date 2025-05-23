@@ -138,12 +138,12 @@ const dadosCandidaturas = [
 
   return (
     <Layout_Nav>
-    <div className='Tela_toda'>
-        <div className='Dashboard_card'>
+    <div className='Tela_toda_dashboard'>
+        <div className='Dashboard_card_dashboard'>
           <div className='Top_dashboard'>
-          <div className='Top_esquerda'>
-            <p className='Texto_saudacao'> Bem-vindo {nome_usuario}!</p>
-            <p className='Texto_data'> Hoje é {dia_semana}, {data_dia} de {data_mes} de {data_ano}.</p>
+          <div className='Top_esquerda_dashboard'>
+            <p className='Texto_saudacao_dashboard'> Bem-vindo {nome_usuario}!</p>
+            <p className='Texto_data_dashboard'> Hoje é {dia_semana}, {data_dia} de {data_mes} de {data_ano}.</p>
           </div>
           <Top_direita/>
           </div>
@@ -177,17 +177,17 @@ const dadosCandidaturas = [
               icone={Icon_depart}
             />
           </div>
-          <div className='Tabelas'>
-            <div className='Tabela'>
+          <div className='Tabelas_dashboard'>
+            <div className='Tabela_dashboard'>
               <Tabela_MUI titulo="Comunicados" colunas={colunasComunicados} dados={dadosComunicados} />
             </div>
-            <div className='Tabela'>
+            <div className='Tabela_dashboard'>
               <Tabela_MUI titulo="Lista de funcionários" colunas={colunasFuncionarios} dados={dadosFuncionarios} />
             </div>
-            <div className='Tabela'>
+            <div className='Tabela_dashboard'>
               <Tabela_MUI titulo="Comprovantes de pagamentos" colunas={colunasPagamentos} dados={dadosPagamentos} />
             </div>
-            <div className='Tabela'>
+            <div className='Tabela_dashboard'>
               <Donut_MUI titulo="Candidaturas" dados={dadosCandidaturas} />
             </div>
           </div>

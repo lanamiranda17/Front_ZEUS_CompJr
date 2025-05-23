@@ -1,4 +1,4 @@
-.Recuperacao_card{
+.Recuperacao_card_esqueceu{
     display: flex;
     height: 100%;
     width: 50%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Recuperacao_container{
+.Recuperacao_container_esqueceu{
     width: 80%;
     height: 80%;
     display: flex;
@@ -16,7 +16,7 @@
 
 }
 
-.Recuperacao-enviar_container{
+.Recuperacao-enviar_container_esqueceu{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,10 +50,10 @@
 /*RESPONSIVIDADE*/
 
 @media (max-width: 600px) {
-    .Recuperacao_card{
+    .Recuperacao_card_esqueceu{
         width: 100%;
     }
-    .Recuperacao-enviar_container{ 
+    .Recuperacao-enviar_container_esqueceu{ 
         h1{
             font-size: 20px;
         }
@@ -61,22 +61,22 @@
 }
 
 @media (min-width: 1200px) {
-    .Recuperacao_container{
+    .Recuperacao_container_esqueceu{
         width: 70%;
     }
 }
 @media (min-width: 1700px) and (max-width: 2000px){
-    .Recuperacao_container{
+    .Recuperacao_container_esqueceu{
         width: 70%;
     }
 }
 @media (min-width: 2001px){
-    .Recuperacao_container{
+    .Recuperacao_container_esqueceu{
         width: 60%;
     }
 }
 
-.Tela_toda {
+.Tela_toda_esqueceu {
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -84,11 +84,11 @@
     overflow-y: auto;
 }
 @media (max-width: 900px) {
-    .Tela_toda {
+    .Tela_toda_esqueceu {
         flex-direction: column;
         height: auto;
     }
-    .Recuperacao_card {
+    .Recuperacao_card_esqueceu {
         width: 100%;
     }
 }

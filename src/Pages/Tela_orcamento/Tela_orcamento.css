@@ -1,0 +1,213 @@
+.Top_orcamento {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  height: 75px;
+  background: #edeff8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px -2px rgba(0,0,0,0.10);
+}
+
+.Texto_titulo_orcamento {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  color: #000000;
+  margin-bottom: 0;
+  margin-left: 0;
+}
+
+.Texto_subtitulo_orcamento {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #262626;
+  margin-top: 0;
+  margin-left: 0;
+}
+img.svg-verde {
+  color: green;
+}
+
+.Top_esquerda_orcamento {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+}
+
+.Tela_toda {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.Orcamento_card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #edeff8;
+  width: 96%;
+}
+
+.Cards_orcamento {
+  display: flex;
+  flex-wrap: wrap;
+  width: 96%;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 0 20px 0 20px;
+}
+
+.Card_criar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 94%;
+  gap: 16px;
+  padding: 10px 20px 10px 20px;
+  margin: 0 15px 0 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.Texto_criar_orcamento {
+  font-weight: 800;
+  font-size: 16px;
+  color: #000000;
+  margin: 0;
+}
+
+.Card_criar .Botao_entrar {
+  width: 20%;
+  height: 38px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #14ADD6 0%, #384295 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  box-shadow: none;
+  transition: background 0.2s;
+  margin: 0;
+}
+
+.Card_criar .Botao_entrar:hover {
+  background: linear-gradient(90deg, #384295 0%, #14ADD6 100%);
+}
+
+.Tabela_orcamento {
+  width: 98%;
+  margin: 0 auto 30px auto;
+  box-sizing: border-box;
+}
+
+.Conteudo_Orcamento{
+  padding: 20px;
+}
+
+
+
+.Botao_adicionar{
+  width: 20%;
+}
+
+.Icon_orcam{
+    width: 25px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 18px 20px;
+}
+
+
+@media (max-width: 1000px) {
+  .Cards_orcamento {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    padding: 0 5px 10px 5px;
+  }
+  .Tabela_orcamento {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .Card_pesquisa {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .Barra_pesquisa, .Filtro, .Texto_Orcamento, .Botao_adicionar {
+    min-width: 140px;
+    max-width: 100%;
+    flex: 1 1 140px;
+  }
+}
+
+@media (max-width: 700px) {
+  .Card_pesquisa {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .Barra_pesquisa, .Filtro, .Texto_Orcamento, .Botao_adicionar {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .Paginacao_func {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 16px;
+  }
+  .Botao_paginacao, .Seta_paginacao {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 0.95rem;
+  }
+  .Info_paginacao {
+    font-size: 0.8rem;
+    margin: 0 4px;
+  }
+  .Select_paginacao {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Barra_pesquisa {
+    max-width: 100%;
+    height: 42px;
+    padding: 0 0.7rem;
+  }
+  .Input_pesquisa {
+    font-size: 0.95rem;
+  }
+  .Caixa_pesquisa {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .Filtro {
+    min-width: 120px;
+    max-width: 100%;
+  }
+  .Select_filtro {
+    min-width: 100px;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 10px 12px 10px 12px;
+  }
+}

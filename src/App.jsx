@@ -8,25 +8,26 @@ import Tela_redefinicao from './Pages/Tela_redefinicao/Tela_redefinicao';
 import Tela_dashboard from './Pages/Tela_dashboard/Tela_dashboard';
 import Tela_funcionarios from './Pages/Tela_funcionarios/Tela_funcionarios';
 import Tela_novoFunc from './Pages/Tela_novoFunc/Tela_novoFunc';
-import { FuncionariosProvider } from "./context/FuncionariosContext";
+import Tela_orcamento from './Pages/Tela_orcamento/Tela_orcamento';
+import Tela_novo_orcamento from './Pages/Tela_novo_orcamento/Tela_novo_orcamento';
 
 function App() {
   return (
-    <FuncionariosProvider>
-      <Routes>
-        <Route path="/" element={<Tela_login />} />
-        <Route path="/verificar" element={<Tela_autenticacao />} />
-        <Route path="/recuperacao_de_senha" element={<Tela_esqueceu />} />
-        <Route path="/redefinicao" element={<Tela_verificacao />} />
-        <Route path="/confirmacao" element={<Tela_redefinicao />} />
-        <Route path="/dashboard" element={<Tela_dashboard />} />
-        <Route path="/funcionarios" element={<Tela_funcionarios />} />
-        <Route path="/novo" element={<Tela_novoFunc/>} />
-      </Routes>
-    </FuncionariosProvider>
+    <Routes>
+      <Route path="/" element={<Tela_login />} />
+      <Route path="/verificar" element={<Tela_autenticacao />} />
+      <Route path="/recuperacao_de_senha" element={<Tela_esqueceu />} />
+      <Route path="/redefinicao" element={<Tela_verificacao />} />
+      <Route path="/confirmacao" element={<Tela_redefinicao />} />
+      <Route path="/dashboard" element={<Tela_dashboard />} />
+      <Route path="/funcionarios" element={<Tela_funcionarios />} />
+      <Route path="/novo" element={<Tela_novoFunc/>} />
+      <Route path="/orcamento" element={<Tela_orcamento />} />
+      <Route path="/novo_orcamento" element={<Tela_novo_orcamento />} />
+
+    </Routes>
   );
 }
 
 export default App;
 
-///<Route path="/dashboard/:id" element={<Tela_dashboard />} />

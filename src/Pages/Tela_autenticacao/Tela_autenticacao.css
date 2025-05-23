@@ -1,4 +1,4 @@
-.Autenticacao_card{
+.Autenticacao_card_autenticacao{
     display: flex;
     height: 100%;
     width: 50%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.Autenticacao_container{
+.Autenticacao_container_autenticacao{
     width: 80%;
     height: 80%;
     display: flex;
@@ -16,7 +16,15 @@
 
 }
 
-.Insira-verificar_container{
+.Login_logo_autenticacao{
+    width: 80%;
+    
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+
+.Insira-verificar_container_autenticacao{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -46,22 +54,14 @@
     }
 }
 
-.Codigo_inputs {
+.Codigo_inputs_autenticacao {
   display: flex;
   justify-content:center;
   gap: 16px;
   margin: 20px 0;
 }
 
-.Login_logo{
-    width: 80%;
-    
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 50px;
-}
-
-.Input_codigo {
+.Input_codigo_autenticacao {
   width: 100%;
   height: calc(10vw * 0.5);
 
@@ -76,7 +76,7 @@
   outline: none;
 }
 
-.Input_codigo:focus {
+.Input_codigo_autenticacao:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
 }
@@ -85,53 +85,53 @@
 /*RESPONSIVIDADE*/
 
 @media (max-width: 350px) {
-    .Input_codigo {
+    .Input_codigo_autenticacao {
         width: 100%;
         height: calc(10vw * 1.1);
         font-size: 13px;
     }
-    .Insira-verificar_container{
+    .Insira-verificar_container_autenticacao{
         width: 100%;
     }
-    .Autenticacao_card{
+    .Autenticacao_card_autenticacao{
         width:100%;
     }
-    .Login_logo{
+    .Login_logo_autenticacao{
         width: 100%;
     }
 }
 
 @media (max-width: 468px){
-    .Input_codigo {
+    .Input_codigo_autenticacao {
         width: 100%;
         height: calc(10vw * 1.1);
         font-size: 15px
     }
-    .Insira-verificar_container{
+    .Insira-verificar_container_autenticacao{
         width: 100%;
         h1{
             font-size: 25px;
         }
     }
-    .Autenticacao_card{
+    .Autenticacao_card_autenticacao{
         width:100%;
     }
-    .Login_logo{
+    .Login_logo_autenticacao{
         width: 100%;
     }
 
 }
 
 @media (min-width: 469px) and (max-width: 600px){
-    .Input_codigo {
+    .Input_codigo_autenticacao {
         width: 100%;
         height: calc(10vw * 0.9);
         font-size: 15px;
     }
-    .Login_logo{
+    .Login_logo_autenticacao{
         width: 80%;
     }
-    .Autenticacao_card{
+    .Autenticacao_card_autenticacao{
         width:100%;
         h1{
             font-size: 25px;
@@ -140,18 +140,18 @@
 }
     
 @media (min-width: 601px) and (max-width: 928px) {
-    .Input_codigo {
+    .Input_codigo_autenticacao {
         width: 100%;
         height: calc(10vw * 0.5);
         font-size: 15px;
     }
-    .Codigo_inputs{
+    .Codigo_inputs_autenticacao{
         gap: 8px;
     }
-    .Login_logo{
+    .Login_logo_autenticacao{
         width: 80%;
     }
-    .Autenticacao_card{
+    .Autenticacao_card_autenticacao{
         h1{
             font-size: 25px;
         }
@@ -159,23 +159,23 @@
 }
 
 @media (min-width: 1200px) {
-    .Autenticacao_container{
+    .Autenticacao_container_autenticacao{
         width: 70%;
     }
     
 }
 @media (min-width: 1700px) and (max-width: 2000px){
-    .Autenticacao_container{
+    .Autenticacao_container_autenticacao{
         width: 70%;
     }
 }
 @media (min-width: 2001px){
-    .Autenticacao_container{
+    .Autenticacao_container_autenticacao{
         width: 60%;
     }
 }
 
-.Tela_toda {
+.Tela_toda_autenticacao {
     display: flex;
     flex-direction: row;
     height: 100vh;
@@ -183,11 +183,11 @@
     overflow-y: auto;
 }
 @media (max-width: 900px) {
-    .Tela_toda {
+    .Tela_toda_autenticacao {
         flex-direction: column;
         height: auto;
     }
-    .Autenticacao_card {
+    .Autenticacao_card_autenticacao {
         width: 100%;
     }
 }
