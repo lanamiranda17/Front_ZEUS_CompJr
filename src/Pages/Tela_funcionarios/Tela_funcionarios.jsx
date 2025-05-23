@@ -1,4 +1,3 @@
-import { useFuncionarios } from '../../context/FuncionariosContext';
 import { useNavigate } from 'react-router-dom';
 import './Tela_funcionario.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
@@ -6,11 +5,11 @@ import Top_direita from '../../components/Top_direita/Top_direita';
 import Tabela_MUI from '../../components/Tabela_MUI/Tabela_MUI';
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
 import '../../components/Botao.css';
+import Icon_func from "../../assets/Icons/Icon_func_comprov.svg";
 import { useState } from 'react';
 
 
 function Tela_funcionarios() {
-  const { funcionarios } = useFuncionarios();
   const [filtro, setFiltro] = useState('todos');
   const [valorFiltro, setValorFiltro] = useState('');
   const [pesquisa, setPesquisa] = useState('');
@@ -43,7 +42,7 @@ const dadosFuncionariosDetalhado = [
     email: 'sandra@compjr.com',
     area: 'Gerência',
     cargo: 'Recursos Humanos',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '02',
@@ -54,7 +53,7 @@ const dadosFuncionariosDetalhado = [
     email: 'abdu@compjr.com',
     area: 'Projetos',
     cargo: 'Operações',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '03',
@@ -65,7 +64,7 @@ const dadosFuncionariosDetalhado = [
     email: 'jao@compjr.com',
     area: 'Projetos',
     cargo: 'Operações',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '04',
@@ -76,7 +75,7 @@ const dadosFuncionariosDetalhado = [
     email: 'jose@compjr.com',
     area: 'Gerência',
     cargo: 'Gerente de projetos',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '05',
@@ -87,7 +86,7 @@ const dadosFuncionariosDetalhado = [
     email: 'fatima@compjr.com',
     area: 'RH',
     cargo: 'Atendimento ao Cliente',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '06',
@@ -98,7 +97,7 @@ const dadosFuncionariosDetalhado = [
     email: 'carlota@compjr.com',
     area: 'RH',
     cargo: 'Recursos Humanos',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '07',
@@ -109,7 +108,7 @@ const dadosFuncionariosDetalhado = [
     email: 'sandro@compjr.com',
     area: 'RH',
     cargo: 'Recursos Humanos',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '08',
@@ -120,7 +119,7 @@ const dadosFuncionariosDetalhado = [
     email: 'josue@compjr.com',
     area: 'Projetos',
     cargo: 'Infraestrutura',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '09',
@@ -131,7 +130,7 @@ const dadosFuncionariosDetalhado = [
     email: 'lerico@compjr.com',
     area: 'Comercial',
     cargo: 'Operações',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
   {
     sn: '10',
@@ -142,38 +141,23 @@ const dadosFuncionariosDetalhado = [
     email: 'lele@compjr.com',
     area: 'Gerência',
     cargo: 'Segurança',
-    acao: <a href="#" className="Link_vermais">Ver mais</a>,
+    acao: 'Ver mais',
   },
 ];
 
 
-  // Substitui dadosFuncionariosDetalhado pelo contexto, se houver funcionários cadastrados
-  const dadosFuncionariosDetalhadoContext = funcionarios.length > 0
-    ? funcionarios.map((f, idx) => ({
-        sn: String(idx + 1).padStart(2, '0'),
-        nome: f.nome,
-        telefone: f.telefone,
-        nascimento: f.dataNascimento,
-        ingresso: f.dataAdmissao,
-        email: f.email,
-        area: f.setor,
-        cargo: f.cargo,
-        acao: <a href="#" className="Link_vermais">Ver mais</a>,
-      }))
-    : dadosFuncionariosDetalhado;
-
   // Obter áreas e cargos únicos
-  const areasUnicas = Array.from(new Set(dadosFuncionariosDetalhadoContext.map(f => f.area))).filter(Boolean);
-  const cargosUnicos = Array.from(new Set(dadosFuncionariosDetalhadoContext.map(f => f.cargo))).filter(Boolean);
+  const areasUnicas = Array.from(new Set(dadosFuncionariosDetalhado.map(f => f.area))).filter(Boolean);
+  const cargosUnicos = Array.from(new Set(dadosFuncionariosDetalhado.map(f => f.cargo))).filter(Boolean);
 
   // Filtro aplicado na tabela
-  let dadosTabela = dadosFuncionariosDetalhadoContext;
+  let dadosTabela = dadosFuncionariosDetalhado;
   if (filtro === 'area' && valorFiltro) {
-    dadosTabela = dadosFuncionariosDetalhadoContext.filter(f => f.area === valorFiltro);
+    dadosTabela = dadosFuncionariosDetalhado.filter(f => f.area === valorFiltro);
   } else if (filtro === 'cargo' && valorFiltro) {
-    dadosTabela = dadosFuncionariosDetalhadoContext.filter(f => f.cargo === valorFiltro);
+    dadosTabela = dadosFuncionariosDetalhado.filter(f => f.cargo === valorFiltro);
   } else if (filtro === 'todos') {
-    dadosTabela = dadosFuncionariosDetalhadoContext;
+    dadosTabela = dadosFuncionariosDetalhado;
   }
   if (pesquisaAtiva.trim() !== '') {
     dadosTabela = dadosTabela.filter(f => f.nome.toLowerCase().includes(pesquisaAtiva.toLowerCase()));
@@ -185,23 +169,26 @@ const dadosFuncionariosDetalhado = [
 
   return (
     <Layout_Nav>
-      <div className='Tela_toda_func'>
-        <div className='Funcionarios_card_func'>
-          <div className='Top_funcionarios_func'>
-            <div className='Top_esquerda_func'>
-              <p className='Texto_titulo_func'>Todos os funcionários</p>
-              <p className='Texto_subtitulo_func'> Visualizar, pesquisar e adicionar novos funcionários</p>
+      <div className='Tela_toda'>
+        <div className='Funcionarios_card'>
+          <div className='Top_funcionarios'>
+            <div className='Top_esquerda'>
+              <img src={Icon_func} className="Icon_func" />
+              <div className='Texto_topo'>
+                <p className='Texto_titulo'>Todos os funcionários</p>
+                <p className='Texto_subtitulo'> Visualizar, pesquisar e adicionar novos funcionários</p>
+              </div>
             </div>
             <Top_direita/>
           </div>
-          <div className='Conteudo_funcionarios_func'>
-            <div className='Card_pesquisa_func'>
-              <div className='Barra_pesquisa_func'>
-                <div className='Texto_pesquisa_func'>Pesquisa rápida de um funcionário</div>
-                <div className='Caixa_pesquisa_func'>
+          <div className='Conteudo_funcionarios'>
+            <div className='Card_pesquisa'>
+              <div className='Barra_pesquisa'>
+                <div className='Texto_pesquisa'>Pesquisa rápida de um funcionário</div>
+                <div className='Caixa_pesquisa'>
                   <input
                     type="text"
-                    className='Input_pesquisa_func'
+                    className='Input_pesquisa'
                     placeholder='Digite o nome da pesquisa'
                     value={pesquisa}
                     onChange={e => {
@@ -211,7 +198,7 @@ const dadosFuncionariosDetalhado = [
                     onKeyDown={e => { if (e.key === 'Enter') { setPesquisaAtiva(pesquisa); } }}
                   />
                   <button
-                    className='Botao_pesquisa_func'
+                    className='Botao_pesquisa'
                     style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
                     onClick={e => { e.preventDefault(); setPesquisaAtiva(pesquisa); }}
                   >
@@ -219,19 +206,19 @@ const dadosFuncionariosDetalhado = [
                   </button>
                 </div>
               </div>
-              <div className='Texto_funcionarios_func'>
-                <div className='Numero_funcionarios_func'>{numero_funcionarios}</div>
+              <div className='Texto_funcionarios'>
+                <div className='Numero_funcionarios'>{numero_funcionarios}</div>
                 <div>Total de funcionários</div>
               </div>
-              <div className='Filtro_func'>
-                <div className='Texto_pesquisa_func'>Filtrar funcionário</div>
-                <select className='Select_filtro_func' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
+              <div className='Filtro'>
+                <div className='Texto_pesquisa'>Filtrar funcionário</div>
+                <select className='Select_filtro' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
                   <option value="todos">Todos</option>
                   <option value="area">Área</option>
                   <option value="cargo">Cargo</option>
                 </select>
                 {filtro === 'area' && (
-                  <select className='Select_filtro_func' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
                     <option value="">Selecione a área</option>
                     {areasUnicas.map(area => (
                       <option key={area} value={area}>{area}</option>
@@ -239,7 +226,7 @@ const dadosFuncionariosDetalhado = [
                   </select>
                 )}
                 {filtro === 'cargo' && (
-                  <select className='Select_filtro_func' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
                     <option value="">Selecione o cargo</option>
                     {cargosUnicos.map(cargo => (
                       <option key={cargo} value={cargo}>{cargo}</option>
@@ -247,15 +234,15 @@ const dadosFuncionariosDetalhado = [
                   </select>
                 )}
               </div>
-              <div className='Botao_adicionar_func'>
-                <button className='Botao_entrar_func'>Adicionar novo</button>
+              <div className='Botao_adicionar'>
+                <button className='Botao_entrar'>Adicionar novo</button>
               </div>
             </div>
             <Tabela_MUI titulo="Todos os funcionários" colunas={colunasFuncionariosDetalhado} dados={dadosPaginados} />
 
-            <div className='Paginacao_func_func'>
+            <div className='Paginacao_func'>
               <button
-                className={`Seta_paginacao_func${pagina === 0 ? ' desativado' : ''}`}
+                className={`Seta_paginacao${pagina === 0 ? ' desativado' : ''}`}
                 onClick={() => setPagina(p => Math.max(0, p - 1))}
                 disabled={pagina === 0}
                 aria-label="Página anterior"
@@ -265,7 +252,7 @@ const dadosFuncionariosDetalhado = [
               {Array.from({ length: totalPaginas }, (_, i) =>
                 <button
                   key={i}
-                  className={`Botao_paginacao_func${pagina === i ? ' ativa' : ''}`}
+                  className={`Botao_paginacao${pagina === i ? ' ativa' : ''}`}
                   onClick={() => setPagina(i)}
                   aria-current={pagina === i ? 'page' : undefined}
                 >
@@ -273,7 +260,7 @@ const dadosFuncionariosDetalhado = [
                 </button>
               )}
               <button
-                className={`Seta_paginacao_func${pagina >= totalPaginas - 1 ? ' desativado' : ''}`}
+                className={`Seta_paginacao${pagina >= totalPaginas - 1 ? ' desativado' : ''}`}
                 onClick={() => setPagina(p => Math.min(totalPaginas - 1, p + 1))}
                 disabled={pagina >= totalPaginas - 1}
                 aria-label="Próxima página"
@@ -281,7 +268,7 @@ const dadosFuncionariosDetalhado = [
                 <svg width="18" height="18" viewBox="0 0 18 18"><polyline points="6 3 12 9 6 15" fill="none" stroke="#555" strokeWidth="2"/></svg>
               </button>
               <select
-                className='Select_paginacao_func'
+                className='Select_paginacao'
                 value={itensPorPagina}
                 onChange={e => { setItensPorPagina(Number(e.target.value)); setPagina(0); }}
               >

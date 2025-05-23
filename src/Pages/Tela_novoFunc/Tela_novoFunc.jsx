@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import './Tela_novoFunc.css';
-import './PopupNovoFuncionario.css';
+import '../../components/Popup_novo.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
 
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
 import '../../components/Botao.css';
 import Icon_func from "../../assets/Icons/Icon_func_comprov.svg";
 import Avatar_MUI from '../../components/Avatar_MUI/Avatar_MUI';
-import Imput_box from '../../components/Input_box/Input_box';
+import Input_box from '../../components/Input_box/Input_box';
 import Select_box from '../../components/Input_box/Select_box';
 import Icon_check from '../../assets/Icons/Icon_check.svg';
 import { useState } from 'react';
@@ -122,8 +122,8 @@ function Tela_novoFunc() {
                   <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
                 </div>
                 <div className='Coluna_imputs_novo'>
-                  <Imput_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />
-                  <Imput_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value={email} onChange={e => setEmail(e.target.value)} />
+                  <Input_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />
+                  <Input_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value={email} onChange={e => setEmail(e.target.value)} />
                   <Select_box id="genero" label="Gênero" value={genero} placeholder="Selecione o gênero"
                     onChange={e => setGenero(e.target.value)}
                     options={[
@@ -152,10 +152,10 @@ function Tela_novoFunc() {
                   />
                 </div>
                 <div className='Coluna_imputs_novo'>
-                  <Imput_box id ="data_nascimento" label="Data de nascimento" type="date" placeholder="Selecione a data de nascimento" value={dataNascimento} onChange={e => setDataNascimento(e.target.value)} />
-                  <Imput_box id ="cpf" label="CPF" type="text" placeholder="Digite o CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
-                  <Imput_box id ="telefone" label="Telefone" type="text" placeholder="Digite o telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
-                  <Imput_box id ="data_admissao" label="Data de admissão" type="date" placeholder="Selecione a data de admissão" value={dataAdmissao} onChange={e => setDataAdmissao(e.target.value)} />
+                  <Input_box id ="data_nascimento" label="Data de nascimento" type="date" placeholder="Selecione a data de nascimento" value={dataNascimento} onChange={e => setDataNascimento(e.target.value)} />
+                  <Input_box id ="cpf" label="CPF" type="text" placeholder="Digite o CPF" value={cpf} onChange={e => setCpf(e.target.value)} />
+                  <Input_box id ="telefone" label="Telefone" type="text" placeholder="Digite o telefone" value={telefone} onChange={e => setTelefone(e.target.value)} />
+                  <Input_box id ="data_admissao" label="Data de admissão" type="date" placeholder="Selecione a data de admissão" value={dataAdmissao} onChange={e => setDataAdmissao(e.target.value)} />
                   <Select_box multiple={true} id="habilidades" label="Habilidades" value={habilidades} placeholder={"Selecione as habilidades"}
                     onChange={e => setHabilidades(typeof e.target.value === 'string' ? e.target.value.split(',') : e.target.value)}
                     options={[

@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import './Tela_novo_orcamento.css';
-import '.PopupNovoOrcam.css';
+import '../../components/Popup_novo.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
 
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
 import '../../components/Botao.css';
 import Icon_orcamento from "../../assets/Icons/Icon_orcam.svg";
-import Imput_box from '../../components/Input_box/Input_box';
+import Input_box from '../../components/Input_box/Input_box';
 import Select_box from '../../components/Input_box/Select_box';
 import Icon_check from '../../assets/Icons/Icon_check.svg';
-import NumberFormat from 'react-number-format';
+import Tabela_MUI from '../../components/Tabela_MUI/Tabela_MUI';
 
 import { useState } from 'react';
 
@@ -29,6 +29,29 @@ function Tela_novo_orcamento() {
     setShowPopup(true);
   }
   
+  const colunasSolicitacao = [
+    { id: 'sn', rotulo: 'S/N' },
+    { id: 'orcamento', rotulo: 'Orçamento nº' },
+    { id: 'descricao', rotulo: 'Descrição do projeto' },
+    { id: 'valorEstimado', rotulo: 'Valor estimado (R$)', alinhamento: 'right' },
+    { id: 'dataCriacao', rotulo: 'Data de criação' },
+    { id: 'acao', rotulo: '' } // coluna do botão (sem título)
+  ];
+
+  const dadosSolicitacao = [
+    {
+      sn: '01',
+      orcamento: '00211235',
+      descricao: 'Criação de landingpage beneficente',
+      valorEstimado: '1.400.000,00',
+      dataCriacao: '18/11/2022',
+      acao: (
+        <button className="Botao_enviar">Enviar</button>
+      )
+    }
+  ];
+
+
   return (
     <Layout_Nav>
       <div className='Tela_toda'>
@@ -59,38 +82,21 @@ function Tela_novo_orcamento() {
 
             <div className='Card_novo_orcamento'>
               <div className='Texto_titulo_novo_orcamento'>Criar orçamento</div>
-              <p>Preencha o formulário abaixo para criar um novo orçamento.</p>
+              <div classname= 'Texto_novo_orcamento'>Preencha o formulário abaixo para criar um novo orçamento.</div>
               <form className='Form_novo_orcamento' onSubmit={handleSubmit}>
-                <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
-                <div className='Linha_imputs_novo_orcamento'>
-                  <Imput_box id ="numero" label="Número do orçamento" type="number" placeholder="Insira o número" value={numero} onChange={e => setNumero(e.target.value)} />
-                  <Imput_box id ="desc" label="Descrição" type="text" placeholder="Insira a descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
-                  <div className = "Input_valor">
-                    <label htmlFor="valor" className="Input_label">Valor estimado</label>
-                    <NumberFormat id="valor" value={valor} onValueChange={(val) => setValor(val.value)}
-                        thousandSeparator="."
-                        decimalSeparator=","
-                        prefix="R$ "
-                        allowNegative={false}
-                        placeholder="Insira o valor estimado"
-                        className="Input_box"
-                    />
-                    </div>
+                <div className='Coluna_imputs_novo_orcamento'>
+                  <Input_box id ="numero" label="Número do orçamento" type="number" placeholder="Insira o número" value={numero} onChange={e => setNumero(e.target.value)} />
+                  <Input_box id ="custos" label="Custos previstos" type="text" placeholder="Insira o custo previsto em R$" value={custos} onChange={e => setCustos(e.target.value)} />
+                  <button className="Botao_entrar" type="submit">Criar orçamento</button>
+
                 </div>
-                <div className='Linha_imputs_novo_orcamento'>
-                    <div className = "Input_valor">
-                        <label htmlFor="custos" className="Input_label">Custos previstos</label>
-                        <NumberFormat id="custos" value={custos} onValueChange={(val) => setCustos(val.value)}
-                            thousandSeparator="."
-                            decimalSeparator=","
-                            prefix="R$ "
-                            allowNegative={false}
-                            placeholder="Insira o custo previsto em R$"
-                            className="Input_box"
-                        />
-                    </div>
-                    <Imput_box id ="cliente" label="Cliente associado" type="text" placeholder="Insira o nome completo do cliente" value={cliente} onChange={e => setCliente(e.target.value)} />
-                    <Select_box id="membro" label="Membro responsável" value={membro} placeholder="Selecione o membro"
+                <div className='Coluna_imputs_novo_orcamento'>
+                  <Input_box id ="desc" label="Descrição" type="text" placeholder="Insira a descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
+                  <Input_box id ="cliente" label="Cliente associado" type="text" placeholder="Insira o nome completo do cliente" value={cliente} onChange={e => setCliente(e.target.value)} />
+                </div>
+                <div className='Coluna_imputs_novo_orcamento'>
+                  <Input_box id ="valor" label="Valor estimado" type="text" placeholder="Insira o valor estimado" value={valor} onChange={e => setValor(e.target.value)} />
+                  <Select_box id="membro" label="Membro responsável" value={membro} placeholder="Selecione o membro"
                     onChange={e => setMembro(e.target.value)}
                     options={[
                       { value: "feminino", label: "Feminino" },
@@ -100,8 +106,8 @@ function Tela_novo_orcamento() {
                   />
                 </div>
               </form>
-              <button className="Botao_entrar" type="submit">Criar orçamento</button>
             </div>
+            <Tabela_MUI titulo="Solicitação de orçamento" colunas={colunasSolicitacao} dados={dadosSolicitacao} />
           </div>
         </div>
       </div>
@@ -111,9 +117,7 @@ function Tela_novo_orcamento() {
             <img src={Icon_check} alt="Ícone de confirmação" className="Popup_icon" />
             <div className="Popup_titulo">Orçamento criado!</div>
             <div className="Popup_mensagem">Você criou um novo orçamento com sucesso.</div>
-            <button className="Popup_botao" onClick={() => setShowPopup(false)}>
-              OK
-            </button>
+            <button className="Popup_botao" onClick={() => setShowPopup(false)}>OK</button>
           </div>
         </div>
       )}

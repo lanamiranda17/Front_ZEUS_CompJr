@@ -46,6 +46,7 @@
 .Conteudo_novo_orcamento{
   width: 96%;
   margin: 0 auto;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -89,8 +90,8 @@
 
 .Card_novo_orcamento {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   flex-wrap: wrap;
   background: white;
   width: 100%;
@@ -114,7 +115,7 @@
 .Texto_novo_orcamento{
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   color: #515151;
   width: 13%
 }
@@ -136,21 +137,11 @@
   height: auto;
 }
 
-.Coluna_imputs {
+.Coluna_imputs_novo_orcamento {
   width: 30%;
   margin: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.Linha_imputs_novo_orcamento {
-  width: 100%;
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -248,6 +239,30 @@
   /* fallback para navegadores que não suportam background-clip */
   transition: filter 0.18s, color 0.18s;
   margin-bottom: 10px;
+}
+
+.Botao_enviar{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 80%;
+    height: 20px;
+
+    background: linear-gradient(135deg, #14ADD6 0%, #384295 100%);
+    border-radius: 10px;
+
+    /* ESSENCIAIS PARA LIMPAR O PADRÃO DO NAVEGADOR */
+    border: none;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+
 }
 
 @supports not (-webkit-background-clip: text) {
