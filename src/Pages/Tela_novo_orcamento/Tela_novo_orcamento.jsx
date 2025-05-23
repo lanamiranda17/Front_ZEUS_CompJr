@@ -1,15 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import './Tela_novo_orcamento.css';
-import '.PopupNovoOrcam.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
 
 import Layout_Nav from '../../components/Layout_Nav/Layout_Nav';
 import '../../components/Botao.css';
 import Icon_orcamento from "../../assets/Icons/Icon_orcam.svg";
-import Imput_box from '../../components/Input_box/Input_box';
+import Input_box from '../../components/Input_box/Input_box';
 import Select_box from '../../components/Input_box/Select_box';
 import Icon_check from '../../assets/Icons/Icon_check.svg';
-import NumberFormat from 'react-number-format';
 
 import { useState } from 'react';
 
@@ -28,6 +26,28 @@ function Tela_novo_orcamento() {
     e.preventDefault();
     setShowPopup(true);
   }
+
+  const colunasSolicitacao = [
+  { id: 'sn', rotulo: 'S/N' },
+  { id: 'orcamento', rotulo: 'Orçamento nº' },
+  { id: 'descricao', rotulo: 'Descrição do projeto' },
+  { id: 'valorEstimado', rotulo: 'Valor estimado (R$)', alinhamento: 'right' },
+  { id: 'dataCriacao', rotulo: 'Data de criação' },
+  { id: 'acao', rotulo: '' } // coluna do botão (sem título)
+];
+
+const dadosSolicitacao = [
+  {
+    sn: '01',
+    orcamento: '00211235',
+    descricao: 'Criação de landingpage beneficente',
+    valorEstimado: '1.400.000,00',
+    dataCriacao: '18/11/2022',
+    acao: (
+      <button className="Botao_entrar">Enviar</button>
+    )
+  }
+];
   
   return (
     <Layout_Nav>
@@ -63,8 +83,8 @@ function Tela_novo_orcamento() {
               <form className='Form_novo_orcamento' onSubmit={handleSubmit}>
                 <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
                 <div className='Linha_imputs_novo_orcamento'>
-                  <Imput_box id ="numero" label="Número do orçamento" type="number" placeholder="Insira o número" value={numero} onChange={e => setNumero(e.target.value)} />
-                  <Imput_box id ="desc" label="Descrição" type="text" placeholder="Insira a descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
+                  <Input_box id ="numero" label="Número do orçamento" type="number" placeholder="Insira o número" value={numero} onChange={e => setNumero(e.target.value)} />
+                  <Input_box id ="desc" label="Descrição" type="text" placeholder="Insira a descrição" value={descricao} onChange={e => setDescricao(e.target.value)} />
                   <div className = "Input_valor">
                     <label htmlFor="valor" className="Input_label">Valor estimado</label>
                     <NumberFormat id="valor" value={valor} onValueChange={(val) => setValor(val.value)}
@@ -80,16 +100,16 @@ function Tela_novo_orcamento() {
                 <div className='Linha_imputs_novo_orcamento'>
                     <div className = "Input_valor">
                         <label htmlFor="custos" className="Input_label">Custos previstos</label>
-                        <NumberFormat id="custos" value={custos} onValueChange={(val) => setCustos(val.value)}
+                        {/*<NumberFormat id="custos" value={custos} onValueChange={(val) => setCustos(val.value)}
                             thousandSeparator="."
                             decimalSeparator=","
                             prefix="R$ "
                             allowNegative={false}
                             placeholder="Insira o custo previsto em R$"
                             className="Input_box"
-                        />
+                        />*/}
                     </div>
-                    <Imput_box id ="cliente" label="Cliente associado" type="text" placeholder="Insira o nome completo do cliente" value={cliente} onChange={e => setCliente(e.target.value)} />
+                    <Input_box id ="cliente" label="Cliente associado" type="text" placeholder="Insira o nome completo do cliente" value={cliente} onChange={e => setCliente(e.target.value)} />
                     <Select_box id="membro" label="Membro responsável" value={membro} placeholder="Selecione o membro"
                     onChange={e => setMembro(e.target.value)}
                     options={[
@@ -117,6 +137,8 @@ function Tela_novo_orcamento() {
           </div>
         </div>
       )}
+      <Tabela_MUI titulo="Solicitação de orçamento" colunas={colunasSolicitacao} dados={dadosSolicitacao} />
+      
     </Layout_Nav>
   )
 }
