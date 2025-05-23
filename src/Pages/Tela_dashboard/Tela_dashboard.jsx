@@ -12,11 +12,17 @@ import Donut_MUI from '../../components/Donut_MUI/Donut_MUI';
 
 
 function Tela_dashboard() {
+
+    const dataAtual = new Date();
+    const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+    const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    const dia_semana = diasSemana[dataAtual.getDay()];
+    const data_dia = dataAtual.getDate();
+    const data_mes = meses[dataAtual.getMonth()];
+    const data_ano = dataAtual.getFullYear();
+
   const nome_usuario = "Lana";
-  const dia_semana = "sábado";
-  const data_dia = 17;
-  const data_mes = "maio";
-  const data_ano = 2025;
   const funcionarios = 250;
   const variacao_func = 12; // Positivo ou negativo
   const candidaturas = 100;

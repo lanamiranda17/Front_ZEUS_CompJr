@@ -10,6 +10,7 @@ import Tela_funcionarios from './Pages/Tela_funcionarios/Tela_funcionarios';
 import Tela_novoFunc from './Pages/Tela_novoFunc/Tela_novoFunc';
 import Tela_orcamento from './Pages/Tela_orcamento/Tela_orcamento';
 import Tela_novo_orcamento from './Pages/Tela_novo_orcamento/Tela_novo_orcamento';
+import Tela_erro from './Pages/Tela_erro/Tela_erro';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/novo" element={<Tela_novoFunc/>} />
       <Route path="/orcamento" element={<Tela_orcamento />} />
       <Route path="/novo_orcamento" element={<Tela_novo_orcamento />} />
+      <Route path="/*" element={<Tela_erro />} />
 
     </Routes>
   );

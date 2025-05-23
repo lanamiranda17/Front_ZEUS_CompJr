@@ -1,0 +1,64 @@
+
+.Tela_erro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9fafb;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.Logo_comp {
+  width: 120px;
+  margin-bottom: 40px;
+}
+
+/* Container para alinhar horizontalmente o ícone e o texto "Ops!" */
+.Container_icone_texto {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre o emoji e o texto */
+  margin-bottom: 20px;
+}
+
+.Icone_construcao {
+  font-size: 4rem; /* tamanho do emoji */
+  animation: balancar 1.5s ease-in-out infinite;
+}
+
+.Container_icone_texto h1 {
+  font-size: 2rem;
+  margin: 0; /* remove margem padrão para alinhamento perfeito */
+}
+
+p {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+small {
+  color: #666;
+  font-size: 1rem;
+}
+
+@keyframes balancar {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+.Botao_entrar{
+    width: 20%;
+    margin: 30px;
+}
+
