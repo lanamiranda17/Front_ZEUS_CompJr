@@ -2,30 +2,34 @@ import Top_login from '../../components/Top_login/Top_login';
 import Imagem_login from '../../components/Imagens/Imagem_login';
 import Input_box from '../../components/Input_box/Input_box';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import '../../components/Botao.css';
 import './Tela_login.css';
-import { useState } from 'react';
 
 function Tela_login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [showAlert, setShowAlert] = useState(false); // Novo estado para popup
   const navigate = useNavigate();
 
   // Função que roda quando o botão é clicado
   function fazerLogin(event) {
     event.preventDefault();
-    console.log('Função fazerLogin foi chamada!');
   
     if (!email.trim() || !senha.trim()) {
-      alert('Preencha todos os campos!');
+      setShowAlert(true); // Mostra popup se campos vazios
       return;
     }
     
     console.log('Email digitado:', email);
     console.log('Senha digitada:', senha);
     navigate('/verificar');
-  };
+  }
+
+  function handleCloseAlert() {
+    setShowAlert(false);
+  }
 
   return (
    <div className='Tela_toda_login'>
@@ -53,12 +57,22 @@ function Tela_login() {
                   <a href='/recuperacao_de_senha' className='Textos_pequenos'>Esqueci senha</a>
                 </div>
               </div>
-              <button onClick={fazerLogin} className='Textos_pequenos Botao_entrar' type='submit'>Entrar</button>
+              <button className='Textos_pequenos Botao_padrao' type='submit'>Entrar</button>
             </form>
           </div>
         </div>
       </div>
     <Imagem_login />
+
+    {showAlert && (
+        <div className="Popup_fundo">
+          <div className="Popup_caixa">
+            <div className="Popup_titulo">Preencha todos os campos</div>
+            <div className="Popup_mensagem">Por favor, preencha o email e a senha para continuar.</div>
+            <button className="Popup_botao" onClick={handleCloseAlert}>OK</button>
+          </div>
+        </div>
+      )}
    </div>
   )
 }

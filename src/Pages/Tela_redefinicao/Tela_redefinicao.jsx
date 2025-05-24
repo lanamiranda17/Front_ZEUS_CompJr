@@ -2,28 +2,30 @@ import Top_login from '../../components/Top_login/Top_login';
 import Imagem_recuperacao from '../../components/Imagens/Imagem_recuperacao';
 import Input_box from '../../components/Input_box/Input_box';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 import '../../components/Botao.css';
 import './Tela_redefinicao.css';
-import { useState } from 'react';
 
 function Tela_redefinicao() {
   const [senha, setSenha] = useState('');
   const [confirma_senha, setConfirma] = useState('');
+  const [showAlert, setShowAlert] = useState(false); // Estado para popup
   const navigate = useNavigate();
 
   // Função que roda quando o botão é clicado
   function redefinirSenha(event) {
     event.preventDefault();
-    console.log('Função redefinirSenha foi chamada!');
-  
     if (!senha.trim() || !confirma_senha.trim()) {
-      alert('Preencha todos os campos!');
+      setShowAlert(true); // Mostra popup se campos vazios
       return;
     }
+    navigate('/'); // Redireciona para "/" ao redefinir
+  }
 
-    navigate('/confirmacao');
-  };
+  function handleCloseAlert() {
+    setShowAlert(false);
+  }
 
   return (
    <div className='Tela_toda_redefinicao'>
@@ -43,12 +45,22 @@ function Tela_redefinicao() {
               <Input_box id='confirma_senha' label='Confirmar nova senha' type='password' value={confirma_senha}
                     onChange={(e) => setConfirma(e.target.value)}/>
 
-              <button onClick={redefinirSenha} className='Textos_pequenos Botao_entrar' type='submit'>Redefinir</button>
+              <button className='Textos_pequenos Botao_padrao' type='submit'>Redefinir</button>
             </form>
           </div>
         </div>
       </div>
     <Imagem_recuperacao />
+
+    {showAlert && (
+      <div className="Popup_fundo">
+        <div className="Popup_caixa">
+          <div className="Popup_titulo">Preencha todos os campos</div>
+          <div className="Popup_mensagem">Por favor, preencha e confirme a nova senha para continuar.</div>
+          <button className="Popup_botao" onClick={handleCloseAlert}>OK</button>
+        </div>
+      </div>
+    )}
    </div>
   )
 }

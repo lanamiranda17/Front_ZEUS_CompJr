@@ -1,18 +1,19 @@
 import Top_login from '../../components/Top_login/Top_login';
 import Imagem_recuperacao from '../../components/Imagens/Imagem_recuperacao';
 import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import '../../components/Botao.css';
 import './Tela_verificacao.css';
-import { useState, useEffect } from 'react';
 
 function Tela_verificacao() {
   const navigate = useNavigate();
   const [codigo, setCodigo] = useState(Array(6).fill(''));
+  const [showAlert, setShowAlert] = useState(false); // Estado para popup
 
-  useEffect(() => { // Pro foco ficar no primeiro input assim que carregar a tela
-      const primeiroInput = document.getElementById("dig0");
-      if (primeiroInput) primeiroInput.focus();
+  useEffect(() => {
+    const primeiroInput = document.getElementById("dig0");
+    if (primeiroInput) primeiroInput.focus();
   }, []);
 
   const handleInput = (e, index) => {
@@ -60,10 +61,15 @@ function Tela_verificacao() {
 
   const Verificar_codigo = (e) => {
     e.preventDefault();
-    console.log("Código enviado:", codigo.join(''));
-    // Validação do código pelo back-end viria aqui
+    if (codigo.some((dig) => dig === '')) {
+      setShowAlert(true); // Mostra popup se algum campo estiver vazio
+      return;
+    }
     navigate('/confirmacao');
+  };
 
+  const handleCloseAlert = () => {
+    setShowAlert(false);
   };
 
   return (
@@ -91,12 +97,22 @@ function Tela_verificacao() {
                   />
                 ))}
               </div>              
-              <button onClick={Verificar_codigo} className='Textos_pequenos Botao_entrar' type='submit'>Verificar</button>
+              <button className='Textos_pequenos Botao_padrao' type='submit'>Verificar</button>
             </form>
           </div>
         </div>
       </div>
-    <Imagem_recuperacao />
+      <Imagem_recuperacao />
+
+      {showAlert && (
+        <div className="Popup_fundo">
+          <div className="Popup_caixa">
+            <div className="Popup_titulo">Preencha todos os dígitos</div>
+            <div className="Popup_mensagem">Por favor, preencha todos os campos do código antes de verificar.</div>
+            <button className="Popup_botao" onClick={handleCloseAlert}>OK</button>
+          </div>
+        </div>
+      )}
    </div>
   )
 }

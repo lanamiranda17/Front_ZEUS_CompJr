@@ -100,6 +100,8 @@ const dadosOrcamento = [
  const utilizado = "48%";
 
   
+  const navigate = useNavigate();
+
   return (
     <Layout_Nav>
       <div className='Tela_toda'>
@@ -146,7 +148,7 @@ const dadosOrcamento = [
           </div>
           <div className='Card_criar'>
             <p className='Texto_criar_orcamento'>Crie um orcamento</p>
-            <button className= "Botao_entrar">Criar orçamento</button>
+            <button className="Botao_padrao Botao_adicionar" onClick={() => navigate('/novo_orcamento')}>Criar orçamento</button>
           </div>
           <div className='Tabela_orcamento'>
             <Tabela_MUI titulo="Histórico de orçamentos" colunas={colunasOrcamento} dados={dadosOrcamento} />

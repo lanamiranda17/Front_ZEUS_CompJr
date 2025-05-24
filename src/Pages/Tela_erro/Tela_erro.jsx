@@ -8,7 +8,7 @@ function Tela_erro() {
   const navigate = useNavigate();
 
   const handleVoltar = () => {
-    navigate('/dashboard');
+    navigate(-1);
   };
 
   return (
@@ -23,8 +23,8 @@ function Tela_erro() {
       <p>Ainda não construímos essa página.</p>
       <small>Estamos trabalhando para deixar tudo pronto em breve.</small>
 
-      <button className="Botao_entrar" onClick={handleVoltar}>
-        Voltar para o Dashboard
+      <button className="Botao_padrao Botao_erro" onClick={handleVoltar}>
+        Voltar para a página anterior
       </button>
     </div>
   );

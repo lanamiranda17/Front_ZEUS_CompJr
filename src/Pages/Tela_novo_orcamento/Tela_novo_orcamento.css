@@ -356,6 +356,13 @@
   .Caixa_pesquisa {
     width: 100%;
   }
+  .Top_novo_orcamento {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 8px;
+    gap: 8px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -368,6 +375,20 @@
     max-width: 100%;
     font-size: 1rem;
     padding: 10px 12px 10px 12px;
+  }
+}
+
+@media (max-width: 750px) {
+  .Form_novo_orcamento {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .Coluna_imputs_novo_orcamento{
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
   }
 }
 

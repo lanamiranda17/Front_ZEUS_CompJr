@@ -309,9 +309,8 @@
   background: #fff;
   font-size: 14px;
 }
-.Botao_adicionar_func {
+.Botao_adicionar {
   width: 100%;
-  max-width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,7 +508,6 @@
     flex-direction: column;
   }
 }
-
 
 /* Mobile e tablet: Top_direita acima do Top_esquerda */
 @media (max-width: 769px) {

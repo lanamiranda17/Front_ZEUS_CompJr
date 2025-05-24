@@ -16,3 +16,9 @@
     object-position: inherit;
 
 }
+
+@media (max-width: 900px) {
+    .Imagem_card{
+        display:none;
+    }
+}

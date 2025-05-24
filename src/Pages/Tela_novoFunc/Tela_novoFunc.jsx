@@ -119,7 +119,7 @@ function Tela_novoFunc() {
                       <div>2MB</div>
                     </div>
                   </div>
-                  <button className='Botao_entrar' type="submit">Adicionar funcionário</button>
+                  <button className='Botao_padrao' type="submit">Adicionar funcionário</button>
                 </div>
                 <div className='Coluna_imputs_novo'>
                   <Input_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />

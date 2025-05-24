@@ -522,3 +522,118 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .Form_novo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Coluna_imputs_novo,
+  .Coluna_avatar_novo {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .Card_novo {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .Botao_entrar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Top_novo {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .Texto_titulo_novo {
+    font-size: 18px;
+  }
+
+  .Texto_subtitulo_novo {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .Card_novo {
+    padding: 16px;
+  }
+
+  .Conteudo_novo {
+    width: 94%;
+  }
+}
+
+@media (max-width: 600px) {
+  .Form_novo {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .Coluna_imputs_novo,
+  .Coluna_avatar_novo {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Borda_avatar_novo {
+    padding: 20px 0;
+  }
+
+  .Icon_func {
+    width: 20px;
+    height: 28px;
+    margin: 0 0 12px 0;
+  }
+
+  .Texto_titulo_novo {
+    font-size: 16px;
+  }
+
+  .Texto_subtitulo_novo {
+    font-size: 11px;
+  }
+
+  .Link_voltar {
+    font-size: 0.95rem;
+  }
+
+  .Select_box {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .Botao_entrar {
+    font-size: 0.95rem;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+
+/* Mobile e tablet: Top_direita acima do Top_esquerda */
+@media (max-width: 769px) {
+  .Top_novo {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 8px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .AvatarUpload_circle {
+    width: 100px; 
+    height: 100px;
+  }
+}

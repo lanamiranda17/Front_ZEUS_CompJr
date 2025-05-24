@@ -1,6 +1,6 @@
 .Top_orcamento {
   display: flex;
-  width: 100%;
+  width: 96%;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
@@ -55,7 +55,7 @@ img.svg-verde {
   flex-direction: column;
   gap: 20px;
   background: #edeff8;
-  width: 96%;
+  width: 100%;
 }
 
 .Cards_orcamento {
@@ -66,18 +66,17 @@ img.svg-verde {
   justify-content: space-between;
   padding: 0 20px 0 20px;
 }
-
 .Card_criar{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 94%;
   gap: 16px;
   padding: 10px 20px 10px 20px;
-  margin: 0 15px 0 15px;
   background: white;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .Texto_criar_orcamento {
@@ -106,7 +105,7 @@ img.svg-verde {
 }
 
 .Tabela_orcamento {
-  width: 98%;
+  width: 96%;
   margin: 0 auto 30px auto;
   box-sizing: border-box;
 }
@@ -114,8 +113,6 @@ img.svg-verde {
 .Conteudo_Orcamento{
   padding: 20px;
 }
-
-
 
 .Botao_adicionar{
   width: 20%;
@@ -132,25 +129,7 @@ img.svg-verde {
 
 
 @media (max-width: 1000px) {
-  .Cards_orcamento {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    padding: 0 5px 10px 5px;
-  }
-  .Tabela_orcamento {
-    width: 100%;
-    margin: 0 0 20px 0;
-  }
-  .Card_pesquisa {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .Barra_pesquisa, .Filtro, .Texto_Orcamento, .Botao_adicionar {
-    min-width: 140px;
-    max-width: 100%;
-    flex: 1 1 140px;
-  }
+  
 }
 
 @media (max-width: 700px) {
@@ -209,5 +188,55 @@ img.svg-verde {
     max-width: 100%;
     font-size: 1rem;
     padding: 10px 12px 10px 12px;
+  }
+}
+
+/* --- Responsividade dos cards da tela orçamento igual à dashboard --- */
+
+/* Desktop grande (acima de 1200px) */
+@media (min-width: 1201px) {
+  .Cards_orcamento {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+  }
+}
+
+/* Tablet (até 1200px) */
+@media (max-width: 1200px) {
+  .Cards_orcamento {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile médio (até 900px) */
+@media (max-width: 900px) {
+  .Cards_orcamento {
+    flex: wrap;
+    gap: 12px;
+    padding: 0 8px 20px 8px;
+  }
+}
+
+/* Mobile pequeno (até 600px) */
+@media (max-width: 600px) {
+  .Cards_orcamento {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Mobile e tablet: Top_direita acima do Top_esquerda */
+@media (max-width: 680px) {
+  .Top_orcamento {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 8px;
+    gap: 8px;
   }
 }

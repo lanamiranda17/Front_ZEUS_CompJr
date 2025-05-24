@@ -18,7 +18,8 @@ function Tela_funcionarios() {
   const numero_funcionarios = 250;
   const [pagina, setPagina] = useState(0);
   const [itensPorPagina, setItensPorPagina] = useState(5);
-
+  
+  const navigate = useNavigate();
 
   const colunasFuncionariosDetalhado = [
   { id: 'sn', rotulo: 'S/N' },
@@ -237,9 +238,8 @@ const dadosFuncionariosDetalhado = [
                     </select>
                   )}
                 </div>
-                <div className='Botao_adicionar_func'>
-                  <button className='Botao_padrao'>Adicionar novo</button>
-                </div>
+                <button className='Botao_padrao' onClick={() => navigate('/novo')}>Adicionar novo</button>
+                
               </div>
             </div>
             <Tabela_MUI titulo="Todos os funcionários" colunas={colunasFuncionariosDetalhado} dados={dadosPaginados} />

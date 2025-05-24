@@ -1,8 +1,8 @@
 .Card {
   flex: 1 1 200px; /* Cresce, encolhe, começa com 200px */
-  min-width: 180px;
+  min-width: 200px;
   
-  max-height: 100px;
+  max-height: 80px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);

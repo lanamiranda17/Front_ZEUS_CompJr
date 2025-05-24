@@ -52,6 +52,11 @@
     background-clip: padding-box, border-box;
 
 }
+.Botao_criar_conta:hover {
+    border: 1px solid #14ADD6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
 
 .Texto_botao_criar_conta{
     
@@ -65,8 +70,5 @@
     flex-grow: 0;
 
 }
-@media (max-width: 468px){
-    .Top_login{
-        width: 100%
-    }
-}
+
+
