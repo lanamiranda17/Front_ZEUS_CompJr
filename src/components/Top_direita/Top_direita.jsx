@@ -15,16 +15,23 @@ function Top_direita() {
   // Estado do menu
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleClick_erro = () => {
+     navigate('/*');
+  };
+  
 
   return (
     <div className='Top_direita'>
-      <img src={Icon_notif} alt="Notificação" />
+      <button onClick={handleClick_erro} className="Botao_notificacao">
+        <img src={Icon_notif} alt="Notificação" />
+      </button>
       <img src={Icon_perfil} alt="Perfil" />
       <div className='Textos_direita'>
         <p className='Textos_pequenos'>{nome_usuario}</p>

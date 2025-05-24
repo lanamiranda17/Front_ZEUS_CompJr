@@ -89,3 +89,9 @@
   margin-right: 2px;
   stroke: #222;
 }
+.Botao_notificacao {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
