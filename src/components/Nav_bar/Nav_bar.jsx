@@ -52,9 +52,26 @@ function Nav_bar({ toggleDrawer, drawerOpen }) {
       {isMobile ? (
         <>
           {/* Botão de menu hambúrguer para abrir o Drawer */}
-          <IconButton edge="start" color="inherit" onClick={handleDrawerToggle}>
-              ☰ 
-          </IconButton>
+          <div className='Nav_bar_mobile'>
+            <button edge="start" color="inherit" onClick={handleDrawerToggle}>
+                ☰ 
+            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+              {renderizar_botao('/dashboard', Icon_dashboard)}
+              {renderizar_botao('/funcionarios', Icon_func_comprov)}
+              {renderizar_botao('/*', Icon_pag)}
+              {renderizar_botao('/*', Icon_comunicados)}
+              {renderizar_botao('/*', Icon_circ)}
+              {renderizar_botao('/*', Icon_manut)}
+              {renderizar_botao('/*', Icon_logist)}
+              {renderizar_botao('/orcamento', Icon_orcam)}
+              {renderizar_botao('/*', Icon_estoq)}
+              {renderizar_botao('/*', Icon_notif)}
+              {renderizar_botao('/*', Icon_capac)}
+              {renderizar_botao('/*', Icon_aquis)}
+            </div>
+          </div>
+
           <Drawer open={drawerOpen} onClose={handleDrawerToggle}>
             <div style={{ width: 250, padding: 20 }}>
               <img src={LogoComp} alt="Logo" style={{ width: 120, marginBottom: 24 }} />
@@ -98,3 +115,5 @@ function Nav_bar({ toggleDrawer, drawerOpen }) {
 }
 
 export default Nav_bar;
+
+

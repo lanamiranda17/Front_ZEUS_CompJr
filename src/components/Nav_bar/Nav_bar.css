@@ -1,51 +1,58 @@
-.Nav_bar{
-    width: 20%;
-    height: auto;
-    background-color: white;
-    padding-bottom: 10px;
-
+.Nav_bar {
+  width: 240px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-.Login_logo_navbar{
-    display:flex;
-    height: 150px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin: 0px;
+@media (max-width: 900px) {
+  .Nav_bar {
+    display: none; /* Oculta a barra fixa em telas pequenas */
+  }
+
+  .ConteudoDashboard {
+    margin-left: 0; /* Remove a margem quando o menu é ocultado */
+  }
+
+  .Icone_menu {
+    display: block;
+  }
+
+  .Botao_navbar {
+    display: block;
+  }
+
+  .Botao_selecionado {
+    display: block;
+  }
 }
 
+@media (min-width: 901px) {
+  .Nav_bar {
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
 
-.Botao_navbar img {
-  width: 18px;
-  height: 18px;
-  filter: brightness(0); /* ícone preto */
-
+  .ConteudoDashboard {
+    margin-left: 240px;
+  }
 }
 
-.Botao_navbar:hover img {
-    fill:#0d6efd;
-    filter: none;
-}
-
-.Botao_selecionado {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  width: 100%;
-  border: none;
-  background-color: #e6f0ff; /* azul clarinho */
-  color: #0d6efd; /* azul principal */
-  font-weight: 600;
-  border-left: 4px solid #0d6efd;
-  text-align: left;
-}
+/* Botões com apenas ícones dentro do Drawer */
 .Botao_navbar {
   display: flex;
   align-items: center;
   padding: 10px 16px;
-  padding-left: 16px; /* espaço para a barra */
+  padding-left: 16px;
   background-color: transparent;
   border: none;
   width: 100%;
@@ -57,12 +64,32 @@
   text-align: left;
 }
 
+.Botao_navbar img {
+  width: 24px;
+  height: 24px;
+}
+
 .Botao_navbar:hover {
   background-color: #f2f2f2;
   color: #0d6efd;
   font-weight: 600;
 }
 
+.Botao_selecionado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  width: 100%;
+  border: none;
+  background-color: #e6f0ff; /* Azul clarinho */
+  color: #0d6efd;
+  font-weight: 600;
+  border-left: 4px solid #0d6efd;
+  text-align: left;
+}
+
+/* Barra azul do botão */
 .Barra_azul {
   position: absolute;
   left: 0;
@@ -76,22 +103,21 @@
   transition: width 0.3s;
 }
 
-
 .Botao_navbar:hover .Barra_azul,
 .Botao_selecionado .Barra_azul {
   width: 6px;
 }
-.Botao_navbar, .Botao_selecionado {
-  position: relative; /* Adiciona essa linha */
+
+/* Ajustando o Drawer */
+.MuiDrawer-paper {
+  width: 250px;
+  background-color: #fff;
 }
 
-
-.Botao_navbar span,
-.Botao_selecionado span {
-  transition: padding-left 0.3s ease;
+.MuiDrawer-root {
+  background-color: transparent;
 }
-
-.Botao_navbar:hover span,
-.Botao_selecionado span {
-  padding-left: 4px;
+.Nav_bar_mobile{
+  display: flex;
+  flex-direction: column;
 }
