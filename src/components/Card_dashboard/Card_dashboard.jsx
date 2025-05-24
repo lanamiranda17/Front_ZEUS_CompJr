@@ -1,6 +1,7 @@
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 import './Card_dashboard.css';
 
+// Componente de card informativo do dashboard, exibe valores, variações e ícones de destaque.
 function Card_dashboard({ valor, titulo, variacao, tipoVariacao, icone}) {
   const isPositivo = tipoVariacao === 'positivo';
   const sem_variacao = tipoVariacao === '';

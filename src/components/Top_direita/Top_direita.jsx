@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+// Componente de topo direito das telas internas. Exibe informações do usuário, notificações e menu de ações (perfil, configurações, sair).
 function Top_direita() {
   const nome_usuario = "Lana";
   const setor = "Vendas";

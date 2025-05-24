@@ -1,3 +1,4 @@
+/* Estilos principais da tela de novo orçamento */
 .Top_novo_orcamento {
   display: flex;
   width: 99%;
@@ -299,7 +300,7 @@
   width: 20%;
 }
 
-
+/* Responsividade */
 @media (max-width: 1000px) {
   .Card_pesquisa {
     flex-wrap: wrap;
@@ -311,7 +312,6 @@
     flex: 1 1 140px;
   }
 }
-
 @media (max-width: 700px) {
   .Card_pesquisa {
     flex-direction: column;
@@ -343,7 +343,6 @@
     padding: 5px 10px;
   }
 }
-
 @media (max-width: 600px) {
   .Barra_pesquisa {
     max-width: 100%;
@@ -364,7 +363,6 @@
     gap: 8px;
   }
 }
-
 @media (max-width: 800px) {
   .Filtro {
     min-width: 120px;
@@ -377,7 +375,6 @@
     padding: 10px 12px 10px 12px;
   }
 }
-
 @media (max-width: 750px) {
   .Form_novo_orcamento {
     flex-direction: column;

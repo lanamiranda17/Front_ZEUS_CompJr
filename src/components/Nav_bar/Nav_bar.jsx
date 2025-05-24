@@ -16,6 +16,7 @@ import Icon_capac from "../../assets/Icons/Icon_capac.svg";
 import Icon_aquis from "../../assets/Icons/Icon_aquis.svg";
 import './Nav_bar.css';
 
+// Componente de barra de navegação lateral. Exibe os botões de navegação do sistema e adapta o layout para mobile ou desktop.
 function Nav_bar({ toggleDrawer, drawerOpen }) {
   const location = useLocation();
   const navigate = useNavigate();

@@ -1,3 +1,5 @@
+/* Estilos principais da tela de funcionários */
+
 .Top_funcionarios {
   display: flex;
   width: 99%;
@@ -401,8 +403,8 @@
 .Select_paginacao:focus {
   border-color: #2563eb;
 }
-/* Responsividade para Tela_funcionarios */
 
+/* Responsividade */
 @media (max-width: 1130px) {
   .Card_pesquisa {
     flex-direction: column;

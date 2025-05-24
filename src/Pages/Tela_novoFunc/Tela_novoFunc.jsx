@@ -12,7 +12,9 @@ import Select_box from '../../components/Input_box/Select_box';
 import Icon_check from '../../assets/Icons/Icon_check.svg';
 import { useState } from 'react';
 
+// Componente de cadastro de novo funcionário
 function Tela_novoFunc() {
+  // Estados para os campos do formulário
   const [genero, setGenero] = useState("");
   const [setor, setSetor] = useState("");
   const [cargo, setCargo] = useState("");
@@ -24,8 +26,10 @@ function Tela_novoFunc() {
   const [telefone, setTelefone] = useState("");
   const [dataAdmissao, setDataAdmissao] = useState("");
   const [habilidades, setHabilidades] = useState([]); // array vazio
+  // Estado para exibir popup de sucesso
   const [showPopup, setShowPopup] = useState(false);
 
+  // Opções de cargos por setor
   const opcoesCargoPorSetor = {
     vendas: [
       { value: "diretor comercial", label: "Diretor Comercial" },
@@ -53,15 +57,16 @@ function Tela_novoFunc() {
       { value: "assessor admFinanceiro", label: "Assessor Administrativo-Financeiro" },
     ],
   };
-
+  // Opções de cargo conforme setor selecionado
   const opcoesCargo = setor ? opcoesCargoPorSetor[setor] || [] : [];
 
+  // Hook de navegação do React Router
   const navigate = useNavigate();
 
+  // Handler de submit do formulário de novo funcionário
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Enviar os dados para a API ou fazer o que precisar
+    // Monta objeto do novo funcionário (poderia ser enviado para API)
     const novoFuncionario = {
       nome,
       email,
@@ -74,10 +79,10 @@ function Tela_novoFunc() {
       dataAdmissao,
       habilidades,
     };
-
-    setShowPopup(true);
+    setShowPopup(true); // Mostra popup de sucesso
   };
 
+  // Renderização principal da tela de cadastro de funcionário
   return (
     <Layout_Nav>
       <div className='Tela_toda'>
@@ -93,6 +98,7 @@ function Tela_novoFunc() {
             <Top_direita/>
           </div>
           <div className='Conteudo_novo'>
+            {/* Link para voltar para a listagem de funcionários */}
             <a className='Link_voltar' href="/funcionarios">
               <svg className="Link_voltar_icon" width="18" height="18" viewBox="0 0 18 18">
                 <defs>
@@ -108,6 +114,7 @@ function Tela_novoFunc() {
 
             <div className='Card_novo'>
               <div className='Texto_titulo_novo'>Adicionar funcionário</div>
+              {/* Formulário de cadastro */}
               <form className='Form_novo' onSubmit={handleSubmit}>
                 <div className='Coluna_avatar_novo'> 
                   <div className='Borda_avatar_novo'>
@@ -119,9 +126,11 @@ function Tela_novoFunc() {
                       <div>2MB</div>
                     </div>
                   </div>
+                  {/* Botão de submit */}
                   <button className='Botao_padrao' type="submit">Adicionar funcionário</button>
                 </div>
                 <div className='Coluna_imputs_novo'>
+                  {/* Campos do formulário */}
                   <Input_box id ="nome" label="Nome" type="text" placeholder="Digite o primeiro nome" value={nome} onChange={e => setNome(e.target.value)} />
                   <Input_box id ="email" label="Email" type="text" placeholder="Digite o endereço de email" value={email} onChange={e => setEmail(e.target.value)} />
                   <Select_box id="genero" label="Gênero" value={genero} placeholder="Selecione o gênero"
@@ -172,6 +181,7 @@ function Tela_novoFunc() {
           </div>
         </div>
       </div>
+      {/* Popup de sucesso ao cadastrar funcionário */}
       {showPopup && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">

@@ -46,19 +46,17 @@
 }
 
 
-/*RESPONSIVIDADE*/
-
+/* Responsividade */
 @media (max-width: 600px) {
     .Redefinicao_card_redefinicao{
         width: 100%;
     }
-    
 }
 @media (max-width: 928px) {
     .Recuperacao-redefinir_container_redefinicao{
-    h1{
-        font-size: 20px;
-    }
+        h1{
+            font-size: 20px;
+        }
     }
 }
 @media (min-width: 1200px) {

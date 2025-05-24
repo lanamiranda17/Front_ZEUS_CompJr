@@ -1,3 +1,4 @@
+/* Estilos principais da tela de login */
 .Login_card_login{
     display: flex;
     height: 100%;
@@ -89,6 +90,8 @@
     background-color: white;
     overflow-y: auto;
 }
+
+/* Responsividade */
 @media (max-width: 900px) {
     .Tela_toda_login {
         flex-direction: column;

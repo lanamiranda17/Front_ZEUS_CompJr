@@ -6,16 +6,22 @@ import { useState, useEffect } from 'react';
 import '../../components/Botao.css';
 import './Tela_verificacao.css';
 
+// Componente de verificação de código (ex: redefinição de senha)
 function Tela_verificacao() {
+  // Hook de navegação do React Router
   const navigate = useNavigate();
+  // Estado para armazenar os dígitos do código
   const [codigo, setCodigo] = useState(Array(6).fill(''));
+  // Estado para exibir alerta de campos obrigatórios
   const [showAlert, setShowAlert] = useState(false); // Estado para popup
 
+  // Foca automaticamente no primeiro input ao montar o componente
   useEffect(() => {
     const primeiroInput = document.getElementById("dig0");
     if (primeiroInput) primeiroInput.focus();
   }, []);
 
+  // Handler para inputs do código (teclas e mudanças)
   const handleInput = (e, index) => {
     const value = e.target.value.slice(0, 1); // só 1 caractere
 
@@ -59,31 +65,39 @@ function Tela_verificacao() {
     }
   };
 
-  const Verificar_codigo = (e) => {
+  // Handler de submit do formulário de verificação
+  function verificarCodigo(e) {
     e.preventDefault();
+    // Validação: todos os campos devem estar preenchidos
     if (codigo.some((dig) => dig === '')) {
-      setShowAlert(true); // Mostra popup se algum campo estiver vazio
+      setShowAlert(true); // Mostra alerta se algum campo estiver vazio
       return;
     }
+    // Após verificação, navega para tela de redefinição de senha
     navigate('/confirmacao');
-  };
+  }
 
-  const handleCloseAlert = () => {
+  // Handler para fechar alerta de campos obrigatórios
+  function handleCloseAlert() {
     setShowAlert(false);
-  };
+  }
 
+  // Renderização principal da tela de verificação
   return (
-   <div className='Tela_toda_verificacao'>
+    <div className='Tela_toda_verificacao'>
       <div className='Verificacao_card_verificacao'>
         <div className='Verificacao_container_verificacao'>
+          {/* Topo com logo */}
           <Top_login />
 
-          <div className='Recuperacao-verificar_container_verificacao'>
-            <form onSubmit={Verificar_codigo}>
-              <h2 className='Textos_pequenos'>Recuperação de senha</h2>
-              <h1>Verificação de email</h1>
-              <h2 style={{marginBottom: 40}} className='Textos_pequenos'>Por favor, digite o código de 6 dígitos que foi enviado para seu endereço de e-mail.</h2>
+          <div className='Verificacao-enviar_container_verificacao'>
+            {/* Formulário para digitar o código */}
+            <form onSubmit={verificarCodigo}>
+              <h2 className='Textos_pequenos'>Verificação de código</h2>
+              <h1>Digite o código recebido</h1>
+              <h2 style={{marginBottom: 20}} className='Textos_pequenos'>Insira o código enviado para seu e-mail para continuar.</h2>
                 <div className="Codigo_inputs_verificacao">
+                {/* Inputs individuais para cada dígito do código */}
                 {codigo.map((valor, index) => (
                   <input
                     key={index}
@@ -97,13 +111,16 @@ function Tela_verificacao() {
                   />
                 ))}
               </div>              
+              {/* Botão de submit */}
               <button className='Textos_pequenos Botao_padrao' type='submit'>Verificar</button>
             </form>
           </div>
         </div>
       </div>
+      {/* Imagem ilustrativa */}
       <Imagem_recuperacao />
 
+      {/* Popup de alerta para campos obrigatórios */}
       {showAlert && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">
@@ -113,7 +130,7 @@ function Tela_verificacao() {
           </div>
         </div>
       )}
-   </div>
-  )
+    </div>
+  );
 }
 export default Tela_verificacao

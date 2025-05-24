@@ -1,3 +1,4 @@
+/* Estilos principais da tela de orçamentos */
 .Top_orcamento {
   display: flex;
   width: 96%;
@@ -128,6 +129,7 @@ img.svg-verde {
 }
 
 
+/* Responsividade */
 @media (max-width: 1000px) {
   
 }
@@ -191,7 +193,7 @@ img.svg-verde {
   }
 }
 
-/* --- Responsividade dos cards da tela orçamento igual à dashboard --- */
+/* Responsividade dos cards da tela orçamento igual à dashboard --- */
 
 /* Desktop grande (acima de 1200px) */
 @media (min-width: 1201px) {
@@ -219,6 +221,9 @@ img.svg-verde {
     flex: wrap;
     gap: 12px;
     padding: 0 8px 20px 8px;
+  }
+  .Orcamento_card {
+    flex-direction: column;
   }
 }
 

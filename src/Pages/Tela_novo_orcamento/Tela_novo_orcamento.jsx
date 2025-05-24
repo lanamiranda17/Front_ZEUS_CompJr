@@ -12,6 +12,7 @@ import Tabela_MUI from '../../components/Tabela_MUI/Tabela_MUI';
 
 import { useState } from 'react';
 
+// Componente de criação de novo orçamento
 function Tela_novo_orcamento() {
   // Estados necessários para o formulário funcionar corretamente
   const [numero, setNumero] = useState("");
@@ -20,18 +21,24 @@ function Tela_novo_orcamento() {
   const [custos, setCustos] = useState("");
   const [cliente, setCliente] = useState("");
   const [membro, setMembro] = useState("");
+  // Estado para exibir popup de sucesso ao criar orçamento
   const [showPopup, setShowPopup] = useState(false);
+  // Estado para exibir popup ao enviar solicitação
+  const [showPopupEnviar, setShowPopupEnviar] = useState(false);
+  // Hook de navegação do React Router
+  const navigate = useNavigate();
 
-  // Função de submit (placeholder)
+  // Handler de submit do formulário de novo orçamento
   function handleSubmit(e) {
     e.preventDefault();
-    setShowPopup(true);
+    setShowPopup(true); // Mostra popup de sucesso
   }
-    const [showPopupEnviar, setShowPopupEnviar] = useState(false);
-    function handleEnviarClick() {
-      setShowPopupEnviar(true);
-    }
+  // Handler para popup de envio de solicitação
+  function handleEnviarClick() {
+    setShowPopupEnviar(true);
+  }
 
+  // Colunas e dados da tabela de solicitações
   const colunasSolicitacao = [
     { id: 'sn', rotulo: 'S/N' },
     { id: 'orcamento', rotulo: 'Orçamento nº' },
@@ -40,7 +47,6 @@ function Tela_novo_orcamento() {
     { id: 'dataCriacao', rotulo: 'Data de criação' },
     { id: 'acao', rotulo: '' } // coluna do botão (sem título)
   ];
-
   const dadosSolicitacao = [
     {
       sn: '01',
@@ -54,7 +60,7 @@ function Tela_novo_orcamento() {
     }
   ];
 
-
+  // Renderização principal da tela de novo orçamento
   return (
     <Layout_Nav>
       <div className='Tela_toda'>
@@ -70,6 +76,7 @@ function Tela_novo_orcamento() {
             <Top_direita/>
           </div>
           <div className='Conteudo_novo_orcamento'>
+            {/* Link para voltar para a tela de orçamentos */}
             <a className='Link_voltar' href="/orcamento">
               <svg className="Link_voltar_icon" width="18" height="18" viewBox="0 0 18 18">
                 <defs>
@@ -86,6 +93,7 @@ function Tela_novo_orcamento() {
             <div className='Card_novo_orcamento'>
               <div className='Texto_titulo_novo_orcamento'>Criar orçamento</div>
               <div classname= 'Texto_novo_orcamento'>Preencha o formulário abaixo para criar um novo orçamento.</div>
+              {/* Formulário de novo orçamento */}
               <form className='Form_novo_orcamento' onSubmit={handleSubmit}>
                 <div className='Coluna_imputs_novo_orcamento'>
                   <Input_box id ="numero" label="Número do orçamento" type="number" placeholder="Insira o número" value={numero} onChange={e => setNumero(e.target.value)} />
@@ -98,14 +106,17 @@ function Tela_novo_orcamento() {
                 <div className='Coluna_imputs_novo_orcamento'>
                   <Input_box id ="valor" label="Valor estimado" type="text" placeholder="Insira o valor estimado" value={valor} onChange={e => setValor(e.target.value)} />
                   <Input_box id ="membro" label="Membro responsável" type="text" placeholder="Selecione o membro" value={membro} onChange={e => setMembro(e.target.value)} />
+                  {/* Botão de submit */}
                   <button className="Botao_padrao" type="submit">Criar orçamento</button>
                 </div>
               </form>
             </div>
+            {/* Tabela de solicitações de orçamento */}
             <Tabela_MUI titulo="Solicitação de orçamento" colunas={colunasSolicitacao} dados={dadosSolicitacao} />
           </div>
         </div>
       </div>
+      {/* Popup de sucesso ao criar orçamento */}
       {showPopup && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">
@@ -116,16 +127,7 @@ function Tela_novo_orcamento() {
           </div>
         </div>
       )}
-      {showPopup && (
-        <div className="Popup_fundo">
-          <div className="Popup_caixa">
-            <img src={Icon_check} alt="Ícone de confirmação" className="Popup_icon" />
-            <div className="Popup_titulo">Orçamento criado!</div>
-            <div className="Popup_mensagem">Você criou um novo orçamento com sucesso.</div>
-            <button className="Popup_botao" onClick={() => setShowPopup(false)}>OK</button>
-          </div>
-        </div>
-      )}
+      {/* Popup de sucesso ao enviar solicitação */}
       {showPopupEnviar && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">

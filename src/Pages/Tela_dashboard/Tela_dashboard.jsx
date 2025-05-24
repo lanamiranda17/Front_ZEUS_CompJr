@@ -12,16 +12,17 @@ import Donut_MUI from '../../components/Donut_MUI/Donut_MUI';
 
 
 function Tela_dashboard() {
-
-    const dataAtual = new Date();
-    const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
-    const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+  // Data e informações do usuário e do dashboard
+  const dataAtual = new Date();
+  const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+  const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
                  'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
-    const dia_semana = diasSemana[dataAtual.getDay()];
-    const data_dia = dataAtual.getDate();
-    const data_mes = meses[dataAtual.getMonth()];
-    const data_ano = dataAtual.getFullYear();
+  const dia_semana = diasSemana[dataAtual.getDay()];
+  const data_dia = dataAtual.getDate();
+  const data_mes = meses[dataAtual.getMonth()];
+  const data_ano = dataAtual.getFullYear();
 
+  // Dados simulados para cards e gráficos
   const nome_usuario = "Lana";
   const funcionarios = 250;
   const variacao_func = 12; // Positivo ou negativo
@@ -31,175 +32,145 @@ function Tela_dashboard() {
   const variacao_proj = 2;
   const departamentos = 10;
 
+  // Colunas e dados da tabela de comunicados
   const colunasComunicados = [
-  { id: 'sn', rotulo: 'S/N' },
-  { id: 'titulo', rotulo: 'Título' },
-  { id: 'de', rotulo: 'Enviado de' },
-  { id: 'para', rotulo: 'Enviado para' },
-  { id: 'status', rotulo: 'Status' },
-];
-const dadosComunicados = [
-  {
-    sn: '01',
-    titulo: 'Comunicado de operações',
-    de: 'João Jão',
-    para: 'Israel',
-    status: 'Pendente',
-  },
-  {
-    sn: '02',
-    titulo: 'Projeto de operações',
-    de: 'Fatima',
-    para: 'Mu de Áries',
-    status: 'Aprovado',
-  },
-  {
-    sn: '03',
-    titulo: 'Aviso de projeto',
-    de: 'João Jão',
-    para: 'James brown',
-    status: 'Aprovado',
-  },
-  {
-    sn: '04',
-    titulo: 'Comunicado de operações',
-    de: 'Israel',
-    para: 'João Jão',
-    status: 'Aprovado',
-  },
-];
-
-const colunasFuncionarios = [
-  { id: 'sn', rotulo: 'S/N' },
-  { id: 'nome', rotulo: 'Nome' },
-  { id: 'funcao', rotulo: 'Função' },
-  { id: 'designacao', rotulo: 'Designação' },
-];
-
-const dadosFuncionarios = [
-  {
-    sn: '01',
-    nome: "Israel kamakawiwo'ole",
-    funcao: 'Admin',
-    designacao: 'Recursos Humanos'
-  },
-  {
-    sn: '02',
-    nome: 'Obi-Wan Kenobi',
-    funcao: 'Admin',
-    designacao: 'Gerenciamento'
-  },
-  {
-    sn: '03',
-    nome: 'Darth Sidious',
-    funcao: 'Head TI',
-    designacao: 'Pessoas e Operação'
-  },
-  {
-    sn: '04',
-    nome: 'Padmé Amidala',
-    funcao: 'Head Contas',
-    designacao: 'Contas'
-  }
-];
-
-const colunasPagamentos = [
-  { id: 'sn', rotulo: 'S/N' },
-  { id: 'assunto', rotulo: 'Assunto' },
-  { id: 'data', rotulo: 'Data' },
-  { id: 'status', rotulo: 'Status' },
-];
-
-const dadosPagamentos = [
-  {
-    sn: '01',
-    assunto: 'Solicitação de orçamento para outubro',
-    data: '25/01/2023',
-    status: 'Pendente'
-  },
-  {
-    sn: '02',
-    assunto: 'Solicitação de taxa de proposta',
-    data: '19/01/2023',
-    status: 'Aprovado'
-  },
-  {
-    sn: '03',
-    assunto: 'Solicitação de orçamento para fevereiro',
-    data: '10/01/2023',
-    status: 'Aprovado'
-  },
-  {
-    sn: '04',
-    assunto: 'Solicitação de taxa de proposta',
-    data: '03/01/2023',
-    status: 'Pendente'
-  }
-];
-const dadosCandidaturas = [
-    { id: 0, value: 370, label: 'Aprovado', color: '#1c9e4b' },
-    { id: 1, value: 80, label: 'Pendente', color: '#f2994a' },
-    { id: 2, value: 50, label: 'Rejeitado', color: '#eb5757' },
+    { id: 'sn', rotulo: 'S/N' },
+    { id: 'titulo', rotulo: 'Título' },
+    { id: 'de', rotulo: 'Enviado de' },
+    { id: 'para', rotulo: 'Enviado para' },
+    { id: 'status', rotulo: 'Status' },
+  ];
+  const dadosComunicados = [
+    {
+      sn: '01',
+      titulo: 'Comunicado de operações',
+      de: 'João Jão',
+      para: 'Israel',
+      status: 'Pendente',
+    },
+    {
+      sn: '02',
+      titulo: 'Projeto de operações',
+      de: 'Fatima',
+      para: 'Mu de Áries',
+      status: 'Aprovado',
+    },
+    {
+      sn: '03',
+      titulo: 'Aviso de projeto',
+      de: 'João Jão',
+      para: 'James brown',
+      status: 'Aprovado',
+    },
+    {
+      sn: '04',
+      titulo: 'Comunicado de operações',
+      de: 'Israel',
+      para: 'João Jão',
+      status: 'Aprovado',
+    },
   ];
 
+  const colunasFuncionarios = [
+    { id: 'sn', rotulo: 'S/N' },
+    { id: 'nome', rotulo: 'Nome' },
+    { id: 'funcao', rotulo: 'Função' },
+    { id: 'designacao', rotulo: 'Designação' },
+  ];
+
+  const dadosFuncionarios = [
+    {
+      sn: '01',
+      nome: "Israel kamakawiwo'ole",
+      funcao: 'Admin',
+      designacao: 'Recursos Humanos'
+    },
+    {
+      sn: '02',
+      nome: 'Obi-Wan Kenobi',
+      funcao: 'Admin',
+      designacao: 'Gerenciamento'
+    },
+    {
+      sn: '03',
+      nome: 'Darth Sidious',
+      funcao: 'Head TI',
+      designacao: 'Pessoas e Operação'
+    },
+    {
+      sn: '04',
+      nome: 'Padmé Amidala',
+      funcao: 'Head Contas',
+      designacao: 'Contas'
+    }
+  ];
+
+  const colunasPagamentos = [
+    { id: 'sn', rotulo: 'S/N' },
+    { id: 'assunto', rotulo: 'Assunto' },
+    { id: 'data', rotulo: 'Data' },
+    { id: 'status', rotulo: 'Status' },
+  ];
+
+  const dadosPagamentos = [
+    {
+      sn: '01',
+      assunto: 'Solicitação de orçamento para outubro',
+      data: '25/01/2023',
+      status: 'Pendente'
+    },
+    {
+      sn: '02',
+      assunto: 'Solicitação de taxa de proposta',
+      data: '19/01/2023',
+      status: 'Aprovado'
+    },
+    {
+      sn: '03',
+      assunto: 'Solicitação de orçamento para fevereiro',
+      data: '10/01/2023',
+      status: 'Aprovado'
+    },
+    {
+      sn: '04',
+      assunto: 'Solicitação de taxa de proposta',
+      data: '03/01/2023',
+      status: 'Pendente'
+    }
+  ];
+  const dadosCandidaturas = [
+      { id: 0, value: 370, label: 'Aprovado', color: '#1c9e4b' },
+      { id: 1, value: 80, label: 'Pendente', color: '#f2994a' },
+      { id: 2, value: 50, label: 'Rejeitado', color: '#eb5757' },
+    ];
+
+  // Renderização principal do dashboard
   return (
     <Layout_Nav>
-    <div className='Tela_toda_dashboard'>
-        <div className='Dashboard_card_dashboard'>
-          <div className='Top_dashboard'>
-          <div className='Top_esquerda_dashboard'>
-            <p className='Texto_saudacao_dashboard'> Bem-vindo {nome_usuario}!</p>
-            <p className='Texto_data_dashboard'> Hoje é {dia_semana}, {data_dia} de {data_mes} de {data_ano}.</p>
-          </div>
-          <Top_direita/>
-          </div>
-          <div className='Cards_dashboard'>
-            <Card_dashboard
-              valor={funcionarios}
-              titulo="Total de funcionários"
-              variacao={variacao_func}
-              tipoVariacao={variacao_func > 0 ? "positivo" : "negativo"}
-              icone={Icon_func}
-            />
-            <Card_dashboard
-              valor={candidaturas}
-              titulo="Total de candidaturas"
-              variacao={`${variacao_candid}%`}
-              tipoVariacao={variacao_candid > 0 ? "positivo" : "negativo"}
-              icone={Icon_candid}
-            />
-            <Card_dashboard
-              valor={projetos}
-              titulo="Total de projetos"
-              variacao={variacao_proj}
-              tipoVariacao={variacao_proj > 0 ? "positivo" : "negativo"}
-              icone={Icon_proj}
-            />
-            <Card_dashboard
-              valor={departamentos}
-              titulo="Total de departamentos"
-              variacao=''
-              tipoVariacao=''
-              icone={Icon_depart}
-            />
-          </div>
-          <div className='Tabelas_dashboard'>
-            <div className='Tabela_dashboard'>
-              <Tabela_MUI titulo="Comunicados" colunas={colunasComunicados} dados={dadosComunicados} />
-            </div>
-            <div className='Tabela_dashboard'>
-              <Tabela_MUI titulo="Lista de funcionários" colunas={colunasFuncionarios} dados={dadosFuncionarios} />
-            </div>
-            <div className='Tabela_dashboard'>
-              <Tabela_MUI titulo="Comprovantes de pagamentos" colunas={colunasPagamentos} dados={dadosPagamentos} />
-            </div>
-            <div className='Tabela_dashboard'>
-              <Donut_MUI titulo="Candidaturas" dados={dadosCandidaturas} />
-            </div>
-          </div>
+      {/* Topo do dashboard com saudação e data */}
+      <div className="Dashboard_topo">
+        <div className="Dashboard_saudacao">
+          <h1>Olá, {nome_usuario}!</h1>
+          <span>{dia_semana}, {data_dia} de {data_mes} de {data_ano}</span>
         </div>
-    </div>
-  </Layout_Nav>
-  )
+        <Top_direita />
+      </div>
+      {/* Cards de resumo */}
+      <div className="Dashboard_cards">
+        <Card_dashboard titulo="Funcionários" valor={funcionarios} variacao={variacao_func} icone={Icon_func} />
+        <Card_dashboard titulo="Candidaturas" valor={candidaturas} variacao={variacao_candid} icone={Icon_candid} />
+        <Card_dashboard titulo="Projetos" valor={projetos} variacao={variacao_proj} icone={Icon_proj} />
+        <Card_dashboard titulo="Departamentos" valor={departamentos} variacao={0} icone={Icon_depart} />
+      </div>
+      {/* Gráfico de donut com candidaturas */}
+      <div className="Dashboard_grafico">
+        <Donut_MUI titulo="Candidaturas por área" dados={[]} />
+      </div>
+      {/* Tabela de comunicados */}
+      <div className="Dashboard_tabela">
+        <Tabela_MUI titulo="Comunicados" colunas={colunasComunicados} dados={dadosComunicados} />
+      </div>
+    </Layout_Nav>
+  );
 }
 export default Tela_dashboard

@@ -1,4 +1,4 @@
-
+/* Estilos principais da tela de erro */
 .Tela_erro {
   height: 100vh;
   display: flex;
@@ -61,4 +61,6 @@ small {
     width: 20%;
     margin: 30px;
 }
+
+/* Não há media queries neste arquivo, então a responsividade deve ser tratada em outros lugares */
 

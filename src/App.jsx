@@ -1,4 +1,5 @@
 // src/App.jsx
+// Componente principal da aplicação. Define as rotas e páginas do sistema.
 import { Routes, Route } from 'react-router-dom';
 import Tela_login from './Pages/Tela_login/Tela_login';
 import Tela_autenticacao from './Pages/Tela_autenticacao/Tela_autenticacao';

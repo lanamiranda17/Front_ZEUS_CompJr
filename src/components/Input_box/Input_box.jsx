@@ -1,5 +1,6 @@
 import './Input_box.css'
 
+// Componente de campo de entrada customizado (input box), utilizado em formulários para digitação de dados.
 function Input_box ({id, label, type = 'text', placeholder = '', value, onChange }){
     return (
         <div className='Input_box'>

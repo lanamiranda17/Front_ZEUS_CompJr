@@ -2,6 +2,8 @@ import { PieChart } from '@mui/x-charts';
 import { useMediaQuery, useTheme } from '@mui/material';
 import './Donut_MUI.css';
 
+// Componente de gráfico do tipo donut utilizando Material-UI, para visualização de dados em formato de pizza.
+
 export default function Donut_MUI({ titulo, dados }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));

@@ -18,6 +18,7 @@ const MenuProps = {
   },
 };
 
+// Componente de campo de seleção customizado (select box), utilizado em formulários para seleção de opções.
 function Select_box({ id, label, value, onChange, options, placeholder, disabled, multiple }) {
   const [showSetorMsg, setShowSetorMsg] = React.useState(false);
 

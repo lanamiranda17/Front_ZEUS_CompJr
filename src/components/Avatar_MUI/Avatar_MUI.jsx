@@ -2,6 +2,7 @@ import * as React from 'react';
 import './Avatar_MUI.css';
 import Icon_camera from '../../assets/Icons/Icon_camera.svg';
 
+// Componente de avatar customizado utilizando Material-UI, usado para exibir a foto do usuário ou funcionário.
 export default function UploadAvatars() {
   const [avatarSrc, setAvatarSrc] = React.useState(undefined);
 

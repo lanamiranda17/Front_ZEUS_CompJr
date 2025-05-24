@@ -1,3 +1,4 @@
+/* Estilos principais da tela de dashboard */
 .Top_dashboard {
   display: flex;
   width: 100%;
@@ -77,7 +78,7 @@
   box-sizing: border-box;
 }
 
-/* Responsividade para Tela_dashboard */
+/* Responsividade */
 
 /* Tablet (até 1200px) */
 @media (max-width: 1200px) {

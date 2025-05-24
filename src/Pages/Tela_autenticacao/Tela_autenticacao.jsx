@@ -6,20 +6,27 @@ import '../../components/Botao.css';
 import './Tela_autenticacao.css';
 import Icon_check from "../../assets/Icons/Icon_check.svg";
 
+// Componente de autenticação por código enviado ao e-mail do usuário
 function Tela_autenticacao() {
+  // Estado para armazenar os dígitos do código
   const [codigo, setCodigo] = useState(Array(6).fill(''));
+  // Estado para exibir popup de sucesso
   const [showPopup, setShowPopup] = useState(false);
+  // Estado para exibir alerta de campos obrigatórios
   const [showAlert, setShowAlert] = useState(false); // Novo estado para alerta
+  // Hook de navegação do React Router
   const navigate = useNavigate();
 
+  // Foca automaticamente no primeiro input ao montar o componente
   useEffect(() => {
     const primeiroInput = document.getElementById("dig0");
     if (primeiroInput) primeiroInput.focus();
   }, []);
 
+  // Handler para inputs do código (teclas e mudanças)
   const handleInput = (e, index) => {
     const value = e.target.value.slice(0, 1);
-
+    // Navegação entre campos com setas e backspace
     if (e.type === 'keydown'){
       if (e.key === 'Backspace') {
         if (!codigo[index] && index > 0) {
@@ -44,48 +51,55 @@ function Tela_autenticacao() {
       }
       return;
     }
-
+    // Preenche o campo e avança para o próximo
     if (e.type === 'change') {
       if (!isNaN(value) && value.length === 1) {
         const novoCodigo = [...codigo];
         novoCodigo[index] = value;
         setCodigo(novoCodigo);
-
         const proximo = document.getElementById(`dig${index + 1}`);
         if (proximo) proximo.focus();
       }
     }
   };
 
+  // Handler de submit do formulário de verificação
   const Verificar_codigo = (e) => {
     e.preventDefault();
+    // Validação: todos os campos devem estar preenchidos
     if (codigo.some((dig) => dig === '')) {
       setShowAlert(true); // Mostra alerta se algum campo estiver vazio
       return;
     }
-    setShowPopup(true);
+    setShowPopup(true); // Mostra popup de sucesso
   };
 
+  // Handler para fechar popup de sucesso e navegar para dashboard
   const handleOkPopup = () => {
     setShowPopup(false);
     navigate('/dashboard');
   };
 
+  // Handler para fechar alerta de campos obrigatórios
   const handleCloseAlert = () => {
     setShowAlert(false);
   };
 
+  // Renderização principal da tela de autenticação
   return (
     <div className='Tela_toda_autenticacao'>
       <div className='Autenticacao_card_autenticacao'>
         <div className='Autenticacao_container_autenticacao'>        
+          {/* Logo da empresa */}
           <div className="Login_logo_autenticacao">
             <img src={LogoComp} />
           </div>
           <div className='Insira-verificar_container_autenticacao'>
+            {/* Formulário para digitar o código */}
             <form onSubmit={Verificar_codigo}>
               <h1>Insira o código enviado para seu e-mail</h1>
               <div className="Codigo_inputs_autenticacao">
+                {/* Inputs individuais para cada dígito do código */}
                 {codigo.map((valor, index) => (
                   <input
                     key={index}
@@ -99,13 +113,16 @@ function Tela_autenticacao() {
                   />
                 ))}
               </div>              
+              {/* Botão de submit */}
               <button className='Textos_pequenos Botao_padrao' type='submit'>Verificar</button>
             </form>
           </div>
         </div>
       </div>
+      {/* Imagem ilustrativa */}
       <Imagem_login />
 
+      {/* Popup de sucesso ao verificar código */}
       {showPopup && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">
@@ -117,6 +134,7 @@ function Tela_autenticacao() {
         </div>
       )}
 
+      {/* Popup de alerta para campos obrigatórios */}
       {showAlert && (
         <div className="Popup_fundo">
           <div className="Popup_caixa">

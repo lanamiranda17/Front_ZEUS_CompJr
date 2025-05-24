@@ -1,3 +1,4 @@
+/* Estilos principais da tela de cadastro de novo funcionário */
 .Top_novo {
   display: flex;
   width: 99%;
@@ -451,6 +452,7 @@
   font-size: 14px;
 }
 
+/* Responsividade */
 @media (max-width: 1000px) {
   .Card_pesquisa {
     flex-wrap: wrap;

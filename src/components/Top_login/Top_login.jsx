@@ -2,6 +2,7 @@ import "./Top_login.css";
 import LogoComp from "../../assets/logo.svg";
 import { useNavigate } from 'react-router-dom';
 
+// Componente de topo da tela de login. Exibe o logo e o botão para criar conta.
 function Top_login() {
     const navigate = useNavigate();
     return (
