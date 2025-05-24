@@ -76,3 +76,85 @@
   width: 49%;
   box-sizing: border-box;
 }
+
+/* Responsividade para Tela_dashboard */
+
+/* Tablet (até 1200px) */
+@media (max-width: 1200px) {
+  .Cards_dashboard,
+  .Tabelas_dashboard {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0 10px 20px 10px;
+  }
+  .Tabela_dashboard {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+
+/* Mobile pequeno (até 600px) */
+@media (max-width: 600px) {
+  .Top_dashboard {
+    font-size: 14px;
+    padding: 8px 4px;
+  }
+  .Texto_saudacao_dashboard {
+    font-size: 16px;
+    margin-left: 4px;
+  }
+  .Texto_data_dashboard {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+  .Cards_dashboard,
+  .Tabelas_dashboard {
+    gap: 8px;
+  }
+  .Tabela_dashboard {
+    margin-bottom: 8px;
+  }
+}
+
+/* Laptop e PC (acima de 1200px) */
+@media (min-width: 1201px) {
+  .Cards_dashboard {
+    flex-direction: row;
+    gap: 16px;
+    width: 96%;
+    padding: 0 20px 10px 20px;
+  }
+  .Tabelas_dashboard {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 20px 40px 20px;
+  }
+  .Tabela_dashboard {
+    width: 49%;
+    margin-bottom: 0;
+  }
+}
+
+/* Entre 1200px e 1279px: tabelas ocupam mais espaço */
+@media (min-width: 1201px) and (max-width: 1279px) {
+  .Tabelas_dashboard {
+    gap: 16px;
+    padding: 0 8px 32px 8px;
+  }
+  .Tabela_dashboard {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+/* Mobile e tablet: Top_direita acima do Top_esquerda */
+@media (max-width: 500px) {
+  .Top_dashboard {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 8px;
+    gap: 8px;
+  }
+}
