@@ -43,15 +43,17 @@
 
 .Tela_toda {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-y: auto; 
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .Funcionarios_card {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto !important;
   background: #edeff8;
   display: flex;
   flex-direction: column;
@@ -65,13 +67,22 @@
   flex-wrap: wrap;
   background: white;
   width: 100%;
-  gap: 12px;
   border-radius: 20px;
   justify-content: space-between;
   margin-bottom: 24px;
   box-sizing: border-box;
   padding: 20px;
 }
+
+.Card_esquerda,
+.Card_direita {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
 .Paginacao_func {
   display: flex;
   flex-wrap: wrap;
@@ -179,9 +190,11 @@
   margin: 0;
   border: 1.5px solid #d1d1d1;
   width: 100%;
+  box-sizing: border-box;
+
 }
 
-.Texto_pesquisa {
+.Texto_pesquisa_func {
   margin-bottom: 12px;
   margin-left: 2px;
   display: flex;
@@ -194,7 +207,6 @@
 }
 
 .Input_pesquisa {
-  flex: 1;
   border: none;
   outline: none;
   font-size: 0.9rem;
@@ -202,6 +214,8 @@
   background: transparent;
   color: #444;
   padding: 0.5rem 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .Input_pesquisa::placeholder {
@@ -229,10 +243,10 @@
   color: #272525;
 }
 
-.Barra_pesquisa {
+.Barra_pesquisa_func {
   display: flex;
   flex-direction: column;
-  width: 28%
+  width: 100%;
 }
 
 .Botao_pesquisa:hover svg {
@@ -244,7 +258,8 @@
   font-weight: 400;
   font-size: 14px;
   color: #515151;
-  width: 13%
+  width: 100%;
+  margin-left: 60px;
 }
 
 .Numero_funcionarios{
@@ -260,14 +275,13 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 6px;
-  width: 20%;
+  width: 100%;
 }
 
 
 .Select_filtro {
   width: 100%;
   min-width: 150px;
-  max-width: 220px;
   background: #F2F7FF;
   border-radius: 10px;
   border: none;
@@ -295,9 +309,12 @@
   background: #fff;
   font-size: 14px;
 }
-
-.Botao_adicionar{
-  width: 20%;
+.Botao_adicionar_func {
+  width: 100%;
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* PAGINAÇÃO FUNCIONÁRIOS */
@@ -385,74 +402,122 @@
 .Select_paginacao:focus {
   border-color: #2563eb;
 }
+/* Responsividade para Tela_funcionarios */
 
-@media (max-width: 1000px) {
-  .Card_pesquisa {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
-    min-width: 140px;
-    max-width: 100%;
-    flex: 1 1 140px;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 1130px) {
   .Card_pesquisa {
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
   }
-  .Barra_pesquisa, .Filtro, .Texto_funcionarios, .Botao_adicionar {
+  .Texto_funcionarios {
+    margin-left: 0;
+  }
+  .Card_esquerda, .Card_direita {
     width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 30px;
   }
-  .Paginacao_func {
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 16px;
-  }
-  .Botao_paginacao, .Seta_paginacao {
-    min-width: 30px;
-    min-height: 30px;
-    font-size: 0.95rem;
-  }
-  .Info_paginacao {
-    font-size: 0.8rem;
-    margin: 0 4px;
-  }
-  .Select_paginacao {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+  .Texto_pesquisa_func{
+    margin-top: 20px;
   }
 }
 
 @media (max-width: 600px) {
-  .Barra_pesquisa {
-    max-width: 100%;
-    height: 42px;
-    padding: 0 0.7rem;
+  .Top_funcionarios {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 16px;
+    gap: 8px;
   }
+
+  .Texto_funcionarios {
+    margin-left: 0;
+  }
+
+  .Texto_titulo,
+  .Numero_funcionarios {
+    font-size: 18px;
+  }
+
+  .Texto_subtitulo {
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .Botao_adicionar_func {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .Card_esquerda,
+  .Card_direita {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .Input_pesquisa {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
-  .Caixa_pesquisa {
+
+  .Select_filtro,
+  .Select_paginacao {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  .Tabela_MUI {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+/* 💻 Tablet (geralmente entre 601px e 768px) */
+@media (max-width: 768px) {
+  .Top_funcionarios {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    height: auto;
+    gap: 12px;
+  }
+
+  .Card_direita {
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .Texto_funcionarios {
+    margin-left: 0;
+  }
+
+  .Botao_adicionar_func {
     width: 100%;
   }
 }
 
-@media (max-width: 800px) {
-  .Filtro {
-    min-width: 120px;
-    max-width: 100%;
+
+/* Responsivo: empilha no mobile */
+@media (max-width: 900px) {
+  .Card_pesquisa {
+    flex-direction: column;
+    gap: 10px;
   }
-  .Select_filtro {
-    min-width: 100px;
-    max-width: 100%;
-    font-size: 1rem;
-    padding: 10px 12px 10px 12px;
+  .Card_esquerda,
+  .Card_direita {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+
+/* Mobile e tablet: Top_direita acima do Top_esquerda */
+@media (max-width: 769px) {
+  .Top_funcionarios {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 8px;
+    gap: 8px;
   }
 }

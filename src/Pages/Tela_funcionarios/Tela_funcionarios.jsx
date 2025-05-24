@@ -183,59 +183,63 @@ const dadosFuncionariosDetalhado = [
           </div>
           <div className='Conteudo_funcionarios'>
             <div className='Card_pesquisa'>
-              <div className='Barra_pesquisa'>
-                <div className='Texto_pesquisa'>Pesquisa rápida de um funcionário</div>
-                <div className='Caixa_pesquisa'>
-                  <input
-                    type="text"
-                    className='Input_pesquisa'
-                    placeholder='Digite o nome da pesquisa'
-                    value={pesquisa}
-                    onChange={e => {
-                      setPesquisa(e.target.value);
-                      if (e.target.value === '') setPesquisaAtiva('');
-                    }}
-                    onKeyDown={e => { if (e.key === 'Enter') { setPesquisaAtiva(pesquisa); } }}
-                  />
-                  <button
-                    className='Botao_pesquisa'
-                    style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
-                    onClick={e => { e.preventDefault(); setPesquisaAtiva(pesquisa); }}
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#555"><circle cx="11" cy="11" r="7" stroke="#555" strokeWidth="2" fill="none"/><line x1="16" y1="16" x2="21" y2="21" stroke="#555" strokeWidth="2"/></svg>
-                  </button>
+              <div className='Card_esquerda'>
+                <div className='Barra_pesquisa_func'>
+                  <div className='Texto_pesquisa'>Pesquisa rápida de um funcionário</div>
+                  <div className='Caixa_pesquisa'>
+                    <input
+                      type="text"
+                      className='Input_pesquisa'
+                      placeholder='Digite o nome da pesquisa'
+                      value={pesquisa}
+                      onChange={e => {
+                        setPesquisa(e.target.value);
+                        if (e.target.value === '') setPesquisaAtiva('');
+                      }}
+                      onKeyDown={e => { if (e.key === 'Enter') { setPesquisaAtiva(pesquisa); } }}
+                    />
+                    <button
+                      className='Botao_pesquisa'
+                      style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+                      onClick={e => { e.preventDefault(); setPesquisaAtiva(pesquisa); }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="#555"><circle cx="11" cy="11" r="7" stroke="#555" strokeWidth="2" fill="none"/><line x1="16" y1="16" x2="21" y2="21" stroke="#555" strokeWidth="2"/></svg>
+                    </button>
+                  </div>
+                </div>
+                <div className='Texto_funcionarios'>
+                  <div className='Numero_funcionarios'>{numero_funcionarios}</div>
+                  <div>Total de funcionários</div>
                 </div>
               </div>
-              <div className='Texto_funcionarios'>
-                <div className='Numero_funcionarios'>{numero_funcionarios}</div>
-                <div>Total de funcionários</div>
-              </div>
-              <div className='Filtro'>
-                <div className='Texto_pesquisa'>Filtrar funcionário</div>
-                <select className='Select_filtro' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
-                  <option value="todos">Todos</option>
-                  <option value="area">Área</option>
-                  <option value="cargo">Cargo</option>
-                </select>
-                {filtro === 'area' && (
-                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
-                    <option value="">Selecione a área</option>
-                    {areasUnicas.map(area => (
-                      <option key={area} value={area}>{area}</option>
-                    ))}
+              <div className='Card_direita'>
+                <div className='Filtro'>
+                  <div className='Texto_pesquisa_func'>Filtrar funcionário</div>
+                  <select className='Select_filtro' value={filtro} onChange={e => { setFiltro(e.target.value); setValorFiltro(''); }}>
+                    <option value="todos">Todos</option>
+                    <option value="area">Área</option>
+                    <option value="cargo">Cargo</option>
                   </select>
-                )}
-                {filtro === 'cargo' && (
-                  <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
-                    <option value="">Selecione o cargo</option>
-                    {cargosUnicos.map(cargo => (
-                      <option key={cargo} value={cargo}>{cargo}</option>
-                    ))}
-                  </select>
-                )}
-              </div>
-              <div className='Botao_adicionar'>
-                <button className='Botao_entrar'>Adicionar novo</button>
+                  {filtro === 'area' && (
+                    <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                      <option value="">Selecione a área</option>
+                      {areasUnicas.map(area => (
+                        <option key={area} value={area}>{area}</option>
+                      ))}
+                    </select>
+                  )}
+                  {filtro === 'cargo' && (
+                    <select className='Select_filtro' style={{marginTop: 8}} value={valorFiltro} onChange={e => setValorFiltro(e.target.value)}>
+                      <option value="">Selecione o cargo</option>
+                      {cargosUnicos.map(cargo => (
+                        <option key={cargo} value={cargo}>{cargo}</option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+                <div className='Botao_adicionar_func'>
+                  <button className='Botao_padrao'>Adicionar novo</button>
+                </div>
               </div>
             </div>
             <Tabela_MUI titulo="Todos os funcionários" colunas={colunasFuncionariosDetalhado} dados={dadosPaginados} />
