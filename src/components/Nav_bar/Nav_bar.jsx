@@ -13,7 +13,8 @@ import Icon_orcam from "../../assets/Icons/Icon_orcam.svg";
 import Icon_estoq from "../../assets/Icons/Icon_estoq.svg"; 
 import Icon_notif from "../../assets/Icons/Icon_notif.svg"; 
 import Icon_capac from "../../assets/Icons/Icon_capac.svg"; 
-import Icon_aquis from "../../assets/Icons/Icon_aquis.svg"; 
+import Icon_aquis from "../../assets/Icons/Icon_aquis.svg";
+import './Nav_bar.css';
 
 function Nav_bar({ toggleDrawer, drawerOpen }) {
   const location = useLocation();
@@ -53,10 +54,10 @@ function Nav_bar({ toggleDrawer, drawerOpen }) {
         <>
           {/* Botão de menu hambúrguer para abrir o Drawer */}
           <div className='Nav_bar_mobile'>
-            <button edge="start" color="inherit" onClick={handleDrawerToggle}>
+            <div classname='Botao_navbar'>
+              <button className="Botao_navbar" edge="start" color="inherit" onClick={handleDrawerToggle}>
                 ☰ 
-            </button>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+              </button>
               {renderizar_botao('/dashboard', Icon_dashboard)}
               {renderizar_botao('/funcionarios', Icon_func_comprov)}
               {renderizar_botao('/*', Icon_pag)}
@@ -73,8 +74,8 @@ function Nav_bar({ toggleDrawer, drawerOpen }) {
           </div>
 
           <Drawer open={drawerOpen} onClose={handleDrawerToggle}>
-            <div style={{ width: 250, padding: 20 }}>
-              <img src={LogoComp} alt="Logo" style={{ width: 120, marginBottom: 24 }} />
+            <div style={{ width: 220, padding: 0 }}>
+              <img src={LogoComp} alt="Logo" className='Login_logo_navbar_mobile'/>
               {renderizar_botao('/dashboard', Icon_dashboard, 'Dashboard')}
               {renderizar_botao('/funcionarios', Icon_func_comprov, 'Funcionários')}
               {renderizar_botao('/*', Icon_pag, 'Pagamentos recebidos')}
