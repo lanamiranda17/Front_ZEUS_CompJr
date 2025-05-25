@@ -11,7 +11,7 @@ function Top_login() {
                 <img src= {LogoComp} />
             </div>
             <div className='Login_botao_criar'>
-                <button className='Botao_criar_conta' onClick={() => navigate('/criar-conta')}>
+                <button className='Botao_criar_conta' onClick={() => navigate('/*')}>
                     <span className='Texto_botao_criar_conta'>Criar conta</span>
                 </button>
             </div>

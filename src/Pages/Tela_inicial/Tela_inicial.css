@@ -1,0 +1,27 @@
+.tela-inicial-container {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #0047ab, #1e90ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tela-inicial-logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+  
+}
+
+.tela-inicial-titulo {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-family: Nunito;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}

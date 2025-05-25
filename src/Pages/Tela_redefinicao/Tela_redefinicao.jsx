@@ -27,7 +27,7 @@ function Tela_redefinicao() {
       return;
     }
     // Após redefinir, navega para tela de login
-    navigate('/'); // Redireciona para "/" ao redefinir
+    navigate('/login'); // Redireciona para "/login" ao redefinir
   }
 
   // Handler para fechar o popup de alerta

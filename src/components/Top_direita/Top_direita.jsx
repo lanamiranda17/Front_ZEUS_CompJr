@@ -37,7 +37,7 @@ function Top_direita() {
   };
   const handleConfirmLogout = () => {
     setShowConfirm(false);
-    navigate('/');
+    navigate('/login');
   };
   const handleCancelLogout = () => {
     setShowConfirm(false);

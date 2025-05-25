@@ -1,6 +1,7 @@
 // src/App.jsx
-// Componente principal da aplicação. Define as rotas e páginas do sistema.
 import { Routes, Route } from 'react-router-dom';
+
+import Tela_inicial from './Pages/Tela_inicial/Tela_inicial'; // importação da splash
 import Tela_login from './Pages/Tela_login/Tela_login';
 import Tela_autenticacao from './Pages/Tela_autenticacao/Tela_autenticacao';
 import Tela_esqueceu from './Pages/Tela_esqueceu/Tela_esqueceu';
@@ -16,21 +17,23 @@ import Tela_erro from './Pages/Tela_erro/Tela_erro';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Tela_login />} />
+      {/* Tela incial na raiz */}
+      <Route path="/" element={<Tela_inicial />} />
+
+      <Route path="/login" element={<Tela_login />} />
       <Route path="/verificar" element={<Tela_autenticacao />} />
       <Route path="/recuperacao_de_senha" element={<Tela_esqueceu />} />
       <Route path="/redefinicao" element={<Tela_verificacao />} />
       <Route path="/confirmacao" element={<Tela_redefinicao />} />
       <Route path="/dashboard" element={<Tela_dashboard />} />
       <Route path="/funcionarios" element={<Tela_funcionarios />} />
-      <Route path="/novo" element={<Tela_novoFunc/>} />
+      <Route path="/novo" element={<Tela_novoFunc />} />
       <Route path="/orcamento" element={<Tela_orcamento />} />
       <Route path="/novo_orcamento" element={<Tela_novo_orcamento />} />
-      <Route path="/*" element={<Tela_erro />} />
 
+      <Route path="/*" element={<Tela_erro />} />
     </Routes>
   );
 }
 
 export default App;
-

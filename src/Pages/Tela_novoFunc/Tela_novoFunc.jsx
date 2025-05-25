@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import './Tela_novoFunc.css';
 import '../../components/Popup_novo.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
@@ -28,6 +27,7 @@ function Tela_novoFunc() {
   const [habilidades, setHabilidades] = useState([]); // array vazio
   // Estado para exibir popup de sucesso
   const [showPopup, setShowPopup] = useState(false);
+  const [showAlert, setShowAlert] = useState(false); // Novo estado para alerta de campos obrigatórios
 
   // Opções de cargos por setor
   const opcoesCargoPorSetor = {
@@ -60,12 +60,14 @@ function Tela_novoFunc() {
   // Opções de cargo conforme setor selecionado
   const opcoesCargo = setor ? opcoesCargoPorSetor[setor] || [] : [];
 
-  // Hook de navegação do React Router
-  const navigate = useNavigate();
-
   // Handler de submit do formulário de novo funcionário
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Verifica se todos os campos obrigatórios (exceto foto/avatar) estão preenchidos
+    if (!nome.trim() || !email.trim() || !genero.trim() || !setor.trim() || !cargo.trim() || !dataNascimento.trim() || !cpf.trim() || !telefone.trim() || !dataAdmissao.trim() || habilidades.length === 0) {
+      setShowAlert(true); // Mostra alerta se faltar campo
+      return;
+    }
     // Monta objeto do novo funcionário (poderia ser enviado para API)
     const novoFuncionario = {
       nome,
@@ -189,6 +191,16 @@ function Tela_novoFunc() {
             <div className="Popup_titulo">Funcionário cadastrado!</div>
             <div className="Popup_mensagem">Você adicionou um novo funcionário com sucesso.</div>
             <button className="Popup_botao" onClick={() => setShowPopup(false)}>OK</button>
+          </div>
+        </div>
+      )}
+      {/* Popup de alerta para campos obrigatórios */}
+      {showAlert && (
+        <div className="Popup_fundo">
+          <div className="Popup_caixa">
+            <div className="Popup_titulo">Preencha todos os campos</div>
+            <div className="Popup_mensagem">Por favor, preencha todos os campos obrigatórios para adicionar um funcionário.</div>
+            <button className="Popup_botao" onClick={() => setShowAlert(false)}>OK</button>
           </div>
         </div>
       )}

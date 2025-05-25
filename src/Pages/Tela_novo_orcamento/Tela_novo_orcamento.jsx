@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import './Tela_novo_orcamento.css';
 import '../../components/Popup_novo.css';
 import Top_direita from '../../components/Top_direita/Top_direita';
@@ -25,12 +24,17 @@ function Tela_novo_orcamento() {
   const [showPopup, setShowPopup] = useState(false);
   // Estado para exibir popup ao enviar solicitação
   const [showPopupEnviar, setShowPopupEnviar] = useState(false);
+  const [showAlert, setShowAlert] = useState(false); // Novo estado para alerta de campos obrigatórios
   // Hook de navegação do React Router
-  const navigate = useNavigate();
 
   // Handler de submit do formulário de novo orçamento
   function handleSubmit(e) {
     e.preventDefault();
+    // Verifica se todos os campos estão preenchidos
+    if (!numero.trim() || !descricao.trim() || !valor.trim() || !custos.trim() || !cliente.trim() || !membro.trim()) {
+      setShowAlert(true); // Mostra alerta se faltar campo
+      return;
+    }
     setShowPopup(true); // Mostra popup de sucesso
   }
   // Handler para popup de envio de solicitação
@@ -124,6 +128,16 @@ function Tela_novo_orcamento() {
             <div className="Popup_titulo">Orçamento criado!</div>
             <div className="Popup_mensagem">Você criou um novo orçamento com sucesso.</div>
             <button className="Popup_botao" onClick={() => setShowPopup(false)}>OK</button>
+          </div>
+        </div>
+      )}
+      {/* Popup de alerta para campos obrigatórios */}
+      {showAlert && (
+        <div className="Popup_fundo">
+          <div className="Popup_caixa">
+            <div className="Popup_titulo">Preencha todos os campos</div>
+            <div className="Popup_mensagem">Por favor, preencha todos os campos para adicionar um orçamento.</div>
+            <button className="Popup_botao" onClick={() => setShowAlert(false)}>OK</button>
           </div>
         </div>
       )}

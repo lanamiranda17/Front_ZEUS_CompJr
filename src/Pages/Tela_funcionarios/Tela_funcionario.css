@@ -1,5 +1,3 @@
-/* Estilos principais da tela de funcionários */
-
 .Top_funcionarios {
   display: flex;
   width: 99%;
@@ -311,8 +309,9 @@
   background: #fff;
   font-size: 14px;
 }
-.Botao_adicionar {
+.Botao_adicionar_func {
   width: 100%;
+  max-width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,8 +402,8 @@
 .Select_paginacao:focus {
   border-color: #2563eb;
 }
+/* Responsividade para Tela_funcionarios */
 
-/* Responsividade */
 @media (max-width: 1130px) {
   .Card_pesquisa {
     flex-direction: column;
@@ -510,6 +509,7 @@
     flex-direction: column;
   }
 }
+
 
 /* Mobile e tablet: Top_direita acima do Top_esquerda */
 @media (max-width: 769px) {
